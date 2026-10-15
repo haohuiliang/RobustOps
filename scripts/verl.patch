@@ -1,0 +1,417 @@
+diff --git a/verl/model_merger/base_model_merger.py b/verl/model_merger/base_model_merger.py
+index 1c67f51..e7385ce 100644
+--- a/verl/model_merger/base_model_merger.py
++++ b/verl/model_merger/base_model_merger.py
+@@ -46,6 +46,8 @@ def parse_args():
+         help="Whether to tie word embedding weights (currently only Megatron supported)",
+     )
+     base_op_parser.add_argument("--trust-remote-code", action="store_true", help="Whether to trust remote code")
++    base_op_parser.add_argument("--output-dtype", choices=["bfloat16", "float32"], default="bfloat16",
++                                help="FSDP merge output precision; float32 preserves small training updates")
+     base_op_parser.add_argument(
+         "--is-value-model",
+         action="store_true",
+@@ -115,6 +117,7 @@ class ModelMergerConfig:
+     hf_model_config_path: Optional[str] = None
+     hf_upload: bool = field(init=False)
+     use_cpu_initialization: bool = False
++    output_dtype: str = "bfloat16"
+ 
+     def __post_init__(self):
+         self.hf_upload = self.operation == "merge" and bool(self.hf_upload_path)
+@@ -149,6 +152,7 @@ def generate_config_from_args(args: argparse.Namespace) -> ModelMergerConfig:
+         "local_dir": args.local_dir,
+         "hf_model_config_path": _default_hf_model_config_path(args.backend, args.local_dir),
+         "use_cpu_initialization": args.use_cpu_initialization,
++        "output_dtype": args.output_dtype,
+     }
+ 
+     if args.operation == "merge":
+@@ -393,7 +397,8 @@ class BaseModelMerger(ABC):
+         auto_model_class = self.get_transformers_auto_model_class()
+         with init_empty_weights():
+             model = auto_model_class.from_config(
+-                self.model_config, torch_dtype=torch.bfloat16, trust_remote_code=self.config.trust_remote_code
++                self.model_config, torch_dtype=getattr(torch, self.config.output_dtype),
++                trust_remote_code=self.config.trust_remote_code, attn_implementation="eager"
+             )
+         model.to_empty(device="cpu")
+         model = self.patch_model_generation_config(model)
+diff --git a/verl/model_merger/fsdp_model_merger.py b/verl/model_merger/fsdp_model_merger.py
+index 7853b2b..f42ffb7 100644
+--- a/verl/model_merger/fsdp_model_merger.py
++++ b/verl/model_merger/fsdp_model_merger.py
+@@ -166,7 +166,7 @@ class FSDPModelMerger(BaseModelMerger):
+                 # add tensor shard in order of rank to state_dict[key]
+                 tensor = model_state_shard.pop(key)
+                 if isinstance(tensor, DTensor):
+-                    state_dict[key].append(tensor._local_tensor.bfloat16())
++                    state_dict[key].append(tensor._local_tensor.to(getattr(torch, self.config.output_dtype)))
+ 
+                     placements = tuple(tensor.placements)
+                     # replicated placement at dp dimension can be discarded
+@@ -178,7 +178,7 @@ class FSDPModelMerger(BaseModelMerger):
+                     else:
+                         assert param_placements[key] == placements
+                 else:
+-                    state_dict[key].append(tensor.bfloat16())
++                    state_dict[key].append(tensor.to(getattr(torch, self.config.output_dtype)))
+ 
+         del model_state_dict_lst
+ 
+@@ -199,7 +199,9 @@ class FSDPModelMerger(BaseModelMerger):
+                     # 2-D list, FSDP + TP
+                     raise NotImplementedError("FSDP + TP is not supported yet")
+             else:
+-                state_dict[key] = torch.cat(state_dict[key], dim=0)
++                # A single FSDP rank stores full tensors, including scalar parameters.
++                tensors = state_dict[key]
++                state_dict[key] = tensors[0] if len(tensors) == 1 else torch.cat(tensors, dim=0)
+ 
+         return state_dict
+ 
+diff --git a/verl/trainer/ppo/ray_trainer.py b/verl/trainer/ppo/ray_trainer.py
+index 908d36b..9432b8c 100644
+--- a/verl/trainer/ppo/ray_trainer.py
++++ b/verl/trainer/ppo/ray_trainer.py
+@@ -980,7 +980,7 @@ class RayPPOTrainer:
+         # sleep all replicas to load checkpoint
+         self.checkpoint_manager.sleep_replicas()
+ 
+-    def _save_checkpoint(self):
++    def _save_checkpoint(self, *, dataloader_state=None, export_model=True):
+         from verl.utils.fs import local_mkdir_safe
+ 
+         # path: given_path + `/global_step_{global_steps}` + `/actor`
+@@ -1010,6 +1010,22 @@ class RayPPOTrainer:
+             self.config.trainer.get("max_critic_ckpt_to_keep", None) if not remove_previous_ckpt_in_save else 1
+         )
+ 
++        recovery_storage = bool(self.config.get('recovery', {}).get('checkpoint_state_json'))
++        if recovery_storage:
++            import json
++            from robustops.training.recovery_rl_core import write_json
++            recovery_checkpoint = json.loads(self.config.recovery.checkpoint_state_json)
++            # Also cover lease-expiry saves outside the scheduled frequency.
++            with open(os.path.join(self.config.recovery.output, 'recovery_states', f'{self.global_steps}.json')) as stream:
++                recovery_state = json.load(stream)
++            recovery_state.update(json.loads(recovery_checkpoint['metadata_json']))
++            save_root = recovery_checkpoint['directory']
++            local_global_step_folder = os.path.join(str(save_root), f'global_step_{self.global_steps}')
++            actor_local_path = os.path.join(local_global_step_folder, 'actor')
++            write_json(os.path.join(local_global_step_folder, 'recovery_state.json'), recovery_state)
++            # Retention is transactional after data/optimizer/model are all saved.
++            max_actor_ckpt_to_keep = None
++
+         self.actor_rollout_wg.save_checkpoint(
+             actor_local_path, actor_remote_path, self.global_steps, max_ckpt_to_keep=max_actor_ckpt_to_keep
+         )
+@@ -1030,9 +1046,18 @@ class RayPPOTrainer:
+         # save dataloader
+         local_mkdir_safe(local_global_step_folder)
+         dataloader_local_path = os.path.join(local_global_step_folder, "data.pt")
+-        dataloader_state_dict = self.train_dataloader.state_dict()
++        dataloader_state_dict = self.train_dataloader.state_dict() if dataloader_state is None else dataloader_state
+         torch.save(dataloader_state_dict, dataloader_local_path)
+ 
++        if recovery_storage:
++            from robustops.training.recovery_rl_storage import finish_checkpoint
++            finish_checkpoint(save_root, self.global_steps,
++                max_to_keep=recovery_checkpoint.get('max_to_keep'))
++            if export_model and self.global_steps in recovery_checkpoint.get('hf_export_steps', []):
++                from robustops.training.recovery_rl_storage import export_full_model
++                export_full_model(local_global_step_folder, self.config.recovery.output, self.global_steps)
++            return
++
+         # latest checkpointed iteration tracker (for atomic usage)
+         if (
+             hasattr(self.config.actor_rollout_ref.actor.checkpoint, "async_save")
+@@ -1378,6 +1403,16 @@ class RayPPOTrainer:
+         return critic_output
+ 
+     def fit(self):
++        recovery = self.config.get('recovery', {})
++        self._failure_guard = None
++        if recovery.get('checkpoint_state_json'):
++            from robustops.training.recovery_rl_emergency import TrainingFailureGuard
++            with TrainingFailureGuard(self) as guard:
++                self._failure_guard = guard
++                return self._fit()
++        return self._fit()
++
++    def _fit(self):
+         """
+         The training loop of PPO.
+         The driver process only need to call the compute functions of the worker group through RPC
+@@ -1402,6 +1437,13 @@ class RayPPOTrainer:
+ 
+         # load checkpoint and update weights before doing anything
+         self._load_checkpoint()
++        if self._failure_guard:
++            self._failure_guard.commit(self.global_steps)
++        if self.config.get('recovery', {}).get('sft_val_every_step', False):
++            from robustops.training.recovery_rl_val_loss import evaluate_validation
++            initial_sft_metrics = evaluate_validation(self, self.global_steps)
++            logger.log(data=initial_sft_metrics, step=self.global_steps)
++            pprint(f"Initial fixed SFT validation: {initial_sft_metrics}")
+         self.checkpoint_manager.update_weights(self.global_steps)
+ 
+         current_epoch = self.global_steps // len(self.train_dataloader)
+@@ -1437,8 +1479,11 @@ class RayPPOTrainer:
+         )
+         next_step_profile = False
+ 
++
+         for epoch in range(current_epoch, self.config.trainer.total_epochs):
+             for batch_dict in self.train_dataloader:
++                if self._failure_guard:
++                    self._failure_guard.check_stop()
+                 if hasattr(self.actor_rollout_wg, "async_calls_finalize_fn_exec"):
+                     self.actor_rollout_wg.async_calls_finalize_fn_exec(blocking=False)
+                 metrics = {}
+@@ -1588,6 +1633,9 @@ class RayPPOTrainer:
+                                 from verl.utils.debug.metrics import calculate_debug_metrics
+ 
+                                 metrics.update(calculate_debug_metrics(batch))
++                                if self.config.get('recovery', {}).get('alignment_monitoring', False):
++                                    from robustops.training.recovery_rl_alignment import record_alignment
++                                    metrics.update(record_alignment(batch, self.global_steps, self.config.recovery))
+ 
+                     assert "old_log_probs" in batch.batch, f'"old_log_prob" not in {batch.batch.keys()=}'
+                     if self.use_reference_policy:
+@@ -1639,15 +1687,24 @@ class RayPPOTrainer:
+                             "norm_adv_by_std_in_grpo", True
+                         )  # GRPO adv normalization factor
+ 
+-                        batch = compute_advantage(
+-                            batch,
+-                            adv_estimator=self.config.algorithm.adv_estimator,
+-                            gamma=self.config.algorithm.gamma,
+-                            lam=self.config.algorithm.lam,
+-                            num_repeat=self.config.actor_rollout_ref.rollout.n,
+-                            norm_adv_by_std_in_grpo=norm_adv_by_std_in_grpo,
+-                            config=self.config.algorithm,
+-                        )
++                        if self.config.get('recovery', {}).get('advantage_estimator') == 'grpo':
++                            from robustops.training.rl_credit import prepare_advantages
++                            metrics.update(prepare_advantages(batch, self.config.recovery))
++                        else:
++                            batch = compute_advantage(
++                                batch,
++                                adv_estimator=self.config.algorithm.adv_estimator,
++                                gamma=self.config.algorithm.gamma,
++                                lam=self.config.algorithm.lam,
++                                num_repeat=self.config.actor_rollout_ref.rollout.n,
++                                norm_adv_by_std_in_grpo=norm_adv_by_std_in_grpo,
++                                config=self.config.algorithm,
++                            )
++                    if self.config.get('recovery', {}).get('joint_rollout', False):
++                        from robustops.training.recovery_rl_alignment import prepare_joint_loss
++                        metrics.update(prepare_joint_loss(batch, self.config.recovery))
++                    if self._failure_guard:
++                        self._failure_guard.before_update()
+                     # update critic
+                     if self.use_critic:
+                         with marked_timer("update_critic", timing_raw, color="pink"):
+@@ -1663,6 +1720,28 @@ class RayPPOTrainer:
+                         # update actor
+                         with marked_timer("update_actor", timing_raw, color="red"):
+                             actor_output = self._update_actor(batch)
++                        if self._failure_guard:
++                            self._failure_guard.commit(self.global_steps, reduce_metrics(actor_output.meta_info["metrics"]))
++
++                        if self.config.get('recovery', {}).get('post_update_probe', False):
++                            # Teacher-forced same-batch probe, before weight synchronization/checkpoint.
++                            # This costs one additional actor forward pass, not another rollout.
++                            from robustops.training.rl_credit import post_update_metrics
++                            from robustops.training.recovery_rl_core import write_json
++                            from pathlib import Path
++                            with marked_timer('post_update_probe', timing_raw):
++                                probe, _ = self._compute_old_log_prob(batch)
++                            update_metrics = post_update_metrics(batch, probe.batch['old_log_probs'])
++                            metrics.update(update_metrics)
++                            write_json(Path(self.config.recovery.output) / 'updates' / f'{self.global_steps}.json',
++                                       dict(step=self.global_steps, metrics=update_metrics,
++                                            probe_seconds=timing_raw['post_update_probe'],
++                                            scope='teacher-forced same-batch actor pre/post update; not fresh-rollout success'))
++
++                        if self.config.get('recovery', {}).get('sft_val_every_step', False):
++                            from robustops.training.recovery_rl_val_loss import evaluate_validation
++                            with marked_timer('sft_val', timing_raw):
++                                metrics.update(evaluate_validation(self, self.global_steps))
+ 
+                         # Check if the ESI (Elastic Server Instance)/training plan is close to expiration.
+                         esi_close_to_expiration = should_save_ckpt_esi(
+@@ -1676,15 +1755,25 @@ class RayPPOTrainer:
+                         # 2. It's the last training step.
+                         # 3. The current step number is a multiple of the save frequency.
+                         # 4. The ESI(Elastic Server Instance)/training plan is close to expiration.
++                        recovery_milestone = False
++                        if self.config.get('recovery'):
++                            from robustops.training.recovery_rl_storage import checkpoint_milestone
++                            recovery_milestone = checkpoint_milestone(self.config.recovery, self.global_steps)
+                         if self.config.trainer.save_freq > 0 and (
+-                            is_last_step
++                            recovery_milestone
++                            or is_last_step
+                             or self.global_steps % self.config.trainer.save_freq == 0
+                             or esi_close_to_expiration
+                         ):
+                             if esi_close_to_expiration:
+                                 print("Force saving checkpoint: ESI instance expiration approaching.")
+                             with marked_timer("save_checkpoint", timing_raw, color="green"):
++                                if self._failure_guard:
++                                    self._failure_guard.phase = 'checkpoint'
+                                 self._save_checkpoint()
++                                if self._failure_guard:
++                                    self._failure_guard.phase = 'safe'
++                                    self._failure_guard.check_stop()
+ 
+                         # update weights from trainer to rollout
+                         with marked_timer("update_weights", timing_raw, color="red"):
+@@ -1762,9 +1851,15 @@ class RayPPOTrainer:
+                     )
+                 )
+ 
++                if self.config.get('recovery', {}).get('advantage_estimator') == 'grpo':
++                    from robustops.training.rl_metrics import record_metrics
++                    metrics.update(record_metrics(batch, metrics, self.global_steps, self.config.recovery))
+                 # TODO: make a canonical logger that supports various backend
+                 logger.log(data=metrics, step=self.global_steps)
+ 
++
++                if self._failure_guard:
++                    self._failure_guard.check_stop()
+                 progress_bar.update(1)
+                 self.global_steps += 1
+                 SkipManager.set_step(self.global_steps)
+diff --git a/verl/trainer/sft_trainer.py b/verl/trainer/sft_trainer.py
+index 0c4aa8e..0c2aa72 100644
+--- a/verl/trainer/sft_trainer.py
++++ b/verl/trainer/sft_trainer.py
+@@ -337,8 +337,10 @@ class SFTTrainer:
+                 log_only_rank_0=True,
+             )
+ 
+-        # Calculate which epoch we're starting from for sampler.set_epoch()
+-        start_epoch = global_step // self.steps_per_epoch
++        # Checkpoints are saved after yielding a batch, before the stateful
++        # loader observes StopIteration. At an epoch boundary, first drain
++        # that saved iterator before advancing the sampler to the next epoch.
++        start_epoch = max(global_step - 1, 0) // self.steps_per_epoch
+ 
+         meta_info = {
+             "use_remove_padding": self.config.model.use_remove_padding,
+diff --git a/verl/utils/checkpoint/checkpoint_handler.py b/verl/utils/checkpoint/checkpoint_handler.py
+index 65c9d1d..866307e 100644
+--- a/verl/utils/checkpoint/checkpoint_handler.py
++++ b/verl/utils/checkpoint/checkpoint_handler.py
+@@ -19,6 +19,7 @@ import json
+ import logging
+ import os
+ import re
++import shutil
+ from enum import Enum
+ 
+ import torch
+@@ -66,6 +67,10 @@ class CheckpointHandler:
+         mode=OrchestrationMode.SPMD,
+         lora_train_meta=None,
+     ):
++        if max_ckpt_to_keep is not None and (
++            type(max_ckpt_to_keep) is not int or max_ckpt_to_keep <= 0
++        ):
++            raise ValueError("max_ckpt_to_keep must be null or a positive integer")
+         self.default_local_dir = default_local_dir
+         self.max_ckpt_to_keep = max_ckpt_to_keep
+         self.default_hdfs_dir = default_hdfs_dir
+@@ -96,12 +101,9 @@ class CheckpointHandler:
+         if self.rank == 0:
+             print(f"Saving checkpoint to: {local_global_step_folder}")
+ 
+-        # Get max checkpoints to keep
+-        max_ckpt_to_keep = self.max_ckpt_to_keep
+-
+-        # Use checkpoint manager to save
++        # Retire older generations only after model and dataloader state are saved.
+         self.engine.save_checkpoint(
+-            local_path=local_global_step_folder, global_step=step, max_ckpt_to_keep=max_ckpt_to_keep
++            local_path=local_global_step_folder, global_step=step, max_ckpt_to_keep=None
+         )
+ 
+         # Save dataloader state. Note that we only save the iterator in the train_dataloader.
+@@ -123,6 +125,9 @@ class CheckpointHandler:
+             torch.save(dataloader_state_dict, dataloader_local_path)
+             print(f"Saved dataloader state to: {dataloader_local_path}")
+ 
++        if self.mode == OrchestrationMode.SPMD:
++            torch.distributed.barrier()
++
+         if self.rank == 0:
+             # Update latest checkpoint tracker (atomic write)
+             tracker_file = get_checkpoint_tracker_filename(self.default_local_dir)
+@@ -137,6 +142,22 @@ class CheckpointHandler:
+             hdfs_io.makedirs(self.default_hdfs_dir, exist_ok=True)
+             hdfs_io.copy(src=local_global_step_folder, dst=self.default_hdfs_dir, dirs_exist_ok=True)
+ 
++        if self.rank == 0 and self.max_ckpt_to_keep is not None:
++            # Discover prior saves from disk so retention also works after resume.
++            generations = []
++            with os.scandir(self.default_local_dir) as entries:
++                for entry in entries:
++                    match = re.fullmatch(r"global_step_(\d+)", entry.name)
++                    if (
++                        match
++                        and entry.is_dir(follow_symlinks=False)
++                        and int(match[1]) <= step
++                        and os.path.isfile(os.path.join(entry.path, "data_0.pt"))
++                    ):
++                        generations.append((int(match[1]), entry.path))
++            for _, path in sorted(generations)[:-self.max_ckpt_to_keep]:
++                shutil.rmtree(path)
++
+         if self.mode == OrchestrationMode.SPMD:
+             torch.distributed.barrier()
+ 
+diff --git a/verl/workers/utils/losses.py b/verl/workers/utils/losses.py
+index ebaa4e4..2c4d8e2 100644
+--- a/verl/workers/utils/losses.py
++++ b/verl/workers/utils/losses.py
+@@ -84,6 +84,8 @@ def ppo_loss(config: ActorConfig, model_output, data: TensorDict, dp_group=None)
+ 
+     # select fields and convert to padded tensor
+     fields = ["response_mask", "old_log_probs", "advantages"]
++    if "recovery_loss_weights" in data:
++        fields.append("recovery_loss_weights")
+     if "rollout_is_weights" in data:
+         fields.append("rollout_is_weights")
+     if "ref_log_prob" in data:
+@@ -94,6 +96,10 @@ def ppo_loss(config: ActorConfig, model_output, data: TensorDict, dp_group=None)
+     # compute policy loss
+     old_log_prob = data["old_log_probs"]
+     advantages = data["advantages"]
++    flow_weights = data.get("recovery_loss_weights", None)
++    if flow_weights is not None:
++        # Positive per-flow factors preserve PPO clipping and advantage signs.
++        advantages = advantages * flow_weights
+     rollout_is_weights = data.get("rollout_is_weights", None)
+ 
+     loss_agg_mode = config.loss_agg_mode
+@@ -121,6 +127,8 @@ def ppo_loss(config: ActorConfig, model_output, data: TensorDict, dp_group=None)
+ 
+     # add entropy loss
+     if entropy is not None:
++        if flow_weights is not None:
++            entropy = entropy * flow_weights
+         entropy_loss = agg_loss(
+             loss_mat=entropy, loss_mask=response_mask, loss_agg_mode=loss_agg_mode, **config.global_batch_info
+         )
+@@ -133,6 +141,8 @@ def ppo_loss(config: ActorConfig, model_output, data: TensorDict, dp_group=None)
+         ref_log_prob = data["ref_log_prob"]
+         # compute kl loss
+         kld = kl_penalty(logprob=log_prob, ref_logprob=ref_log_prob, kl_penalty=config.kl_loss_type)
++        if flow_weights is not None:
++            kld = kld * flow_weights
+         kl_loss = agg_loss(
+             loss_mat=kld, loss_mask=response_mask, loss_agg_mode=config.loss_agg_mode, **config.global_batch_info
+         )

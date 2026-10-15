@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "case_id": "heldout_predicate",
+      "task_id": "task_20251201_164641_724_109c89c0_1b29acb9",
+      "domain": "csm",
+      "mode": "oracle",
+      "partition": "test",
+      "seed": 20260917,
+      "selection": {
+        "tools": [
+          {
+            "tool": "update_user_details",
+            "role": "write",
+            "reason": "Task requires deactivating the former primary contact's portal user; this is the exposed partial-update write for users and returns the updated user object.",
+            "recovery_tools": [
+              "list_users"
+            ],
+            "replay_basis": "Known-value replacement: the requested active=false and email are known; list_users can be filtered by user_id or email to confirm active status after a lost acknowledgement.",
+            "faults": [
+              "unknown_commit",
+              "transient_unexecuted"
+            ]
+          },
+          {
+            "tool": "update_case",
+            "role": "write",
+            "reason": "Task requires reassigning open Globex cases away from the former primary contact; this is the exposed partial-update write for cases and returns the updated case object.",
+            "recovery_tools": [
+              "search_cases"
+            ],
+            "replay_basis": "Known-value replacement: contact_id is a known requested field; search_cases by account_id and contact_id can confirm no open cases remain assigned to the former contact.",
+            "faults": [
+              "unknown_commit",
+              "transient_unexecuted"
+            ]
+          },
+          {
+            "tool": "find_contacts",
+            "role": "read",
+            "reason": "Needed to identify Globex contacts, determine the current primary and most recent secondary contact, and verify contact active/is_primary state.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "partial_read",
+              "ignored_filter",
+              "reply_mixup"
+            ]
+          },
+          {
+            "tool": "list_users",
+            "role": "read",
+            "reason": "Needed to identify the portal user linked to the former primary contact and to verify user active status after deactivation.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "partial_read",
+              "ignored_filter",
+              "reply_mixup"
+            ]
+          },
+          {
+            "tool": "send_notification",
+            "role": "write",
+            "reason": "Task requires notifying the newly assigned primary contact after restructuring; this creates a notification record and returns the created notification.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "transient_unexecuted"
+            ]
+          },
+          {
+            "tool": "update_contact",
+            "role": "write",
+            "reason": "Task requires promoting the secondary contact to primary and deactivating the former primary contact; this is the exposed partial-update write for contacts.",
+            "recovery_tools": [
+              "find_contacts"
+            ],
+            "replay_basis": "Known-value replacement: is_primary and active are known requested fields; find_contacts by contact_id or account_id can confirm the resulting contact state.",
+            "faults": [
+              "unknown_commit",
+              "transient_unexecuted"
+            ]
+          },
+          {
+            "tool": "find_account",
+            "role": "read",
+            "reason": "Needed to resolve Globex to its account_id, which scopes contacts, cases, and the new handover case.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "reply_mixup"
+            ]
+          },
+          {
+            "tool": "search_cases",
+            "role": "read",
+            "reason": "Needed to find all open Globex cases assigned to the former primary contact and to verify reassignment and the new handover case.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "partial_read",
+              "ignored_filter",
+              "reply_mixup"
+            ]
+          },
+          {
+            "tool": "create_new_case",
+            "role": "write",
+            "reason": "Task requires logging a moderate-priority handover case under Globex; this creates a case and returns the created case record.",
+            "recovery_tools": [
+              "search_cases"
+            ],
+            "replay_basis": "Creation receipt loss: search_cases can discover the created case by original known properties account_id, contact_id, priority, state, and channel.",
+            "faults": [
+              "unknown_commit_create",
+              "transient_unexecuted"
+            ]
+          }
+        ]
+      },
+      "conditions": [
+        "clean",
+        "fault"
+      ],
+      "initial_state": "seeded_task",
+      "fault": {
+        "kind": "ignored_filter",
+        "budget": 2,
+        "binding": "eligible_calls",
+        "point_policy": "earliest_strictly_eligible"
+      }
+    }
+  ]
+}

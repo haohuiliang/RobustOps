@@ -1,0 +1,2352 @@
+{
+  "schema_version": 1,
+  "teacher_records": 692,
+  "source": "Successful teacher attempts used by the accepted SFT dataset",
+  "rows": [
+    {
+      "task_id": "task_20251121_102744_757_7ebc1127_dadb0c94",
+      "mode": "oracle",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20251123_232016_480_7ebc1127_7a8d85a7",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251125_110309_032_464ee3e0_33f12828",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251125_113335_636_7ebc1127_a4ebffe8",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251125_150631_436_e5bf1251_77dd7cbb",
+      "mode": "oracle",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20251126_070103_077_501bbb2c_7c7c4ea6",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251126_122314_557_be6c9105_daf0aae1",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251126_122314_557_be6c9105_daf0aae1",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251126_174607_703_8ce75c22_a984b9e7",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251126_174607_703_8ce75c22_a984b9e7",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251126_230708_209_a9f62433_84d414ed",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251126_230708_209_a9f62433_84d414ed",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251127_173847_074_4d9df647_632c493d",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251128_123301_181_64a4ebb9_4c1d5329",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251128_154607_365_1628b966_a730b5cf",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251128_154607_365_1628b966_a730b5cf",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251128_212546_987_b5bd4eb9_fe2748c8",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251128_212546_987_b5bd4eb9_fe2748c8",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251128_220140_863_df2c536d_4aa7dcfd",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251128_220140_863_df2c536d_4aa7dcfd",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251129_042357_079_d809b0d6_b11e3d3b",
+      "mode": "oracle",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20251129_042357_079_d809b0d6_b11e3d3b",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251203_064555_149_66392a82_d124b805",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251203_064555_149_66392a82_d124b805",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251203_115913_239_b5bd4eb9_2e02dcf0",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251203_115913_239_b5bd4eb9_2e02dcf0",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251203_133512_548_e81f6083_738dfe0c",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251203_133512_548_e81f6083_738dfe0c",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251203_142634_160_bca89e7d_193f597f",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251203_180743_144_e7cfb93b_56dbcb89",
+      "mode": "oracle",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20251203_180743_144_e7cfb93b_56dbcb89",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251203_192307_250_bca89e7d_f0f2e9d5",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251204_045548_265_4d9df647_18dae74a",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251204_045548_265_4d9df647_18dae74a",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251204_100249_196_701c5774_af32832e",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251204_100249_196_701c5774_af32832e",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251204_132620_055_5c0cd3a2_048c6e95",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251204_132620_055_5c0cd3a2_048c6e95",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251204_142444_575_e5bf1251_65039f7d",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251204_142444_575_e5bf1251_65039f7d",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251204_142744_756_e5bf1251_9501fccb",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251204_142744_756_e5bf1251_9501fccb",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251204_144745_585_e5bf1251_4e4c189d",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251204_144745_585_e5bf1251_4e4c189d",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251204_145059_811_e5bf1251_3b195ec1",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251204_145059_811_e5bf1251_3b195ec1",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251204_151109_029_ae7b45e2_1fa53dbc",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251204_151109_029_ae7b45e2_1fa53dbc",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251204_155848_470_1628b966_f45fd2fb",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251204_155848_470_1628b966_f45fd2fb",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251204_160336_295_5c0cd3a2_26d1b04a",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251204_161024_294_46ca2862_1cc82f4c",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251204_180957_224_6f5b66fc_aaa65d0e",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251204_180957_224_6f5b66fc_aaa65d0e",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251205_072016_336_46ca2862_e9006fbb",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251205_134123_742_b5bd4eb9_003270a9",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251205_143732_430_4d9df647_6aceefba",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251205_143732_430_4d9df647_6aceefba",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251205_153330_906_a8eea1c0_8c7a6205",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251205_162218_909_4d9df647_8538c2ae",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251205_162218_909_4d9df647_8538c2ae",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251205_192805_864_464ee3e0_91f2c02f",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251205_192805_864_464ee3e0_91f2c02f",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251206_091748_833_a8eea1c0_7775ff15",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251206_091748_833_a8eea1c0_7775ff15",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251207_012657_395_accab84d_6ec27d2f",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251208_153512_199_46ca2862_3f951375",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251208_153512_199_46ca2862_3f951375",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251210_002938_761_897c3e0b_f075229a",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251210_150413_088_8db296d5_81f04ff0",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251210_200511_673_4a23b9c9_dcd88f59",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251210_200511_673_4a23b9c9_dcd88f59",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251211_054846_540_e5bf1251_265c5883",
+      "mode": "oracle",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20251211_054846_540_e5bf1251_265c5883",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251211_100706_985_701c5774_8d658f71",
+      "mode": "oracle",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20251211_105500_082_ae7b45e2_ee28e324",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251212_072144_983_8ce75c22_1b848fdd",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251212_162948_602_8ce75c22_8b25a027",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251212_162948_602_8ce75c22_8b25a027",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20251212_222304_435_66392a82_815cd745",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251212_222304_435_66392a82_815cd745",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251215_113102_438_df2c536d_49cda522",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251215_113102_438_df2c536d_49cda522",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251217_081417_887_0a0bf089_487054de",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251217_081417_887_0a0bf089_487054de",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251217_140216_182_701c5774_9fcdf867",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251217_140216_182_701c5774_9fcdf867",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251217_153037_688_97d7df7d_be0bd794",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251217_153037_688_97d7df7d_be0bd794",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251217_183416_700_764e5ead_4c46beb0",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251217_183416_700_764e5ead_4c46beb0",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251217_205244_161_764e5ead_20429ef8",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251217_205244_161_764e5ead_20429ef8",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251217_231709_248_b25153b4_4c5f9bde",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251217_231709_248_b25153b4_4c5f9bde",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251218_063226_501_97d7df7d_8fd400d1",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251218_063226_501_97d7df7d_8fd400d1",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251218_093719_611_764e5ead_5817d09a",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251218_093719_611_764e5ead_5817d09a",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251218_102205_211_1628b966_06687c79",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251218_102205_211_1628b966_06687c79",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251218_103430_472_701c5774_42c99459",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251218_104259_233_66392a82_74b17170",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251218_114039_038_66392a82_c66d4f22",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251218_114039_038_66392a82_c66d4f22",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251218_120340_971_701c5774_de18aa54",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251218_120340_971_701c5774_de18aa54",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251218_121722_423_1d219d93_8218da6c",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251218_132315_968_66392a82_d610f253",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251218_132315_968_66392a82_d610f253",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251218_155314_617_c5ca08eb_3ce3c52f",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251218_220134_063_391f1eff_30369342",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251218_220134_063_391f1eff_30369342",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251219_062202_346_66392a82_1d2065dd",
+      "mode": "oracle",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20251219_062202_346_66392a82_1d2065dd",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251219_081545_939_99ba2325_887f5580",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251219_115925_475_1d219d93_53d34d23",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251219_115925_475_1d219d93_53d34d23",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251219_134543_563_fa1836dc_00dab62f",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251219_155520_685_a8eea1c0_c6fb88a1",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251219_155520_685_a8eea1c0_c6fb88a1",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20251221_150109_770_e5bf1251_93959046",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251221_150109_770_e5bf1251_93959046",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251221_191123_397_97d7df7d_7196ef19",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251221_222713_409_64a4ebb9_9915366d",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251221_222713_409_64a4ebb9_9915366d",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251221_222834_884_97d7df7d_c088062a",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251221_231733_401_66392a82_514cea3c",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251221_231733_401_66392a82_514cea3c",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251222_072805_599_99ba2325_ae6b0778",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251222_072805_599_99ba2325_ae6b0778",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251222_120551_813_1628b966_8e21a82f",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251222_124541_619_64a4ebb9_abb23ceb",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251222_124541_619_64a4ebb9_abb23ceb",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251222_151946_409_060e2c81_253357ab",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251222_151946_409_060e2c81_253357ab",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251222_181355_411_764e5ead_48850a98",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251223_044459_066_97d7df7d_6de880ec",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251223_044459_066_97d7df7d_6de880ec",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251223_064932_736_01395ded_eff85dae",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251223_101136_983_1d219d93_d1ba6c2d",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251223_174414_238_a8eea1c0_0c3b20c1",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251223_184833_888_a8eea1c0_87c53cb9",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251223_184833_888_a8eea1c0_87c53cb9",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251223_224508_138_97d7df7d_b4505336",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251224_150114_483_a8eea1c0_d44f97ad",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251224_183116_594_e5bf1251_c2cb6205",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251225_124750_039_7e2e0039_de8a9d94",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251225_124750_039_7e2e0039_de8a9d94",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251225_165311_201_4d9df647_7b3f1641",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20251225_165311_201_4d9df647_7b3f1641",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251225_180047_141_a8eea1c0_002e725f",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251225_180047_141_a8eea1c0_002e725f",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251226_090527_363_b25153b4_6caf1a47",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251226_102334_184_b25153b4_08c0849c",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20251226_102334_184_b25153b4_08c0849c",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20251226_104747_127_30600918_559da326",
+      "mode": "oracle",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20251226_104747_127_30600918_559da326",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20251226_133324_902_e5bf1251_942c943a",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251226_133324_902_e5bf1251_942c943a",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251226_173040_372_95fd9f79_c7e85ec1",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251226_173040_372_95fd9f79_c7e85ec1",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20251226_180126_405_bca89e7d_c0d5b9ee",
+      "mode": "oracle",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20251226_180126_405_bca89e7d_c0d5b9ee",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20251226_225931_685_bca89e7d_597733d7",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260102_063731_186_d4a463c3_f1c4df9b",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260102_063731_186_d4a463c3_f1c4df9b",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260102_080520_113_d4a463c3_90b440a8",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260102_080520_113_d4a463c3_90b440a8",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260102_172945_725_ad5a67e3_5480e26f",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260104_202644_765_00364ece_a86667c0",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260105_074654_229_bca89e7d_39d9c8ac",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260105_074654_229_bca89e7d_39d9c8ac",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260105_095412_678_a9f62433_bb5f5bb7",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260105_095412_678_a9f62433_bb5f5bb7",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260105_105429_833_a9f62433_b38b55f2",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260105_105429_833_a9f62433_b38b55f2",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260105_124102_961_e0ac0c6d_0b196906",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260105_124102_961_e0ac0c6d_0b196906",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260105_135614_999_8e9e30d7_f02407b9",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260105_135614_999_8e9e30d7_f02407b9",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20260105_145825_060_701c5774_1054ca6e",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260105_145825_060_701c5774_1054ca6e",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260105_153912_808_8ce75c22_f7553dba",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260105_153912_808_8ce75c22_f7553dba",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260105_155141_430_a9f62433_b5eb63ea",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260105_170909_782_a9f62433_ecdfc657",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260105_170909_782_a9f62433_ecdfc657",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260105_173202_829_8e9e30d7_9740a454",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260105_173202_829_8e9e30d7_9740a454",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260105_173701_207_8ce75c22_3b124b32",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260105_175342_189_e5bf1251_60089921",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260105_175342_189_e5bf1251_60089921",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260105_182555_369_e7cfb93b_c2cc205b",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260105_182555_369_e7cfb93b_c2cc205b",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260105_212045_832_e0ac0c6d_84c7f524",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260105_212045_832_e0ac0c6d_84c7f524",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260105_214127_504_e7cfb93b_e6640be3",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260105_221239_098_e0ac0c6d_f5f338f3",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260105_221239_098_e0ac0c6d_f5f338f3",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260105_233603_790_e7cfb93b_cc802e4b",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260105_233603_790_e7cfb93b_cc802e4b",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260106_003109_589_b5bd4eb9_d0454fa5",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260106_003109_589_b5bd4eb9_d0454fa5",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260106_040225_149_7ebc1127_e9ac645c",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260106_040225_149_7ebc1127_e9ac645c",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260106_052248_226_1628b966_d8c22aed",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260106_052248_226_1628b966_d8c22aed",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260106_053348_337_1628b966_4896f265",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260106_053348_337_1628b966_4896f265",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260106_054515_137_1628b966_fe1068d4",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260106_054515_137_1628b966_fe1068d4",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260106_060646_574_1628b966_0fc7207a",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260106_060646_574_1628b966_0fc7207a",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260106_070321_497_accab84d_6f4a8da8",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260106_090444_873_99ba2325_980a3405",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260106_093832_516_bca89e7d_3703f213",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260106_093832_516_bca89e7d_3703f213",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260106_102032_602_8e9e30d7_286c0816",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260106_102032_602_8e9e30d7_286c0816",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260106_103319_873_baf0b358_69ce7445",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260106_103319_873_baf0b358_69ce7445",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260106_104903_639_0154326e_81f6a68a",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260106_104903_639_0154326e_81f6a68a",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260106_114228_782_79b3b025_b556c84d",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260106_114228_782_79b3b025_b556c84d",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260106_123222_425_8e9e30d7_7dea421b",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260106_132019_309_bca89e7d_5ae689d9",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260106_144651_681_4d9df647_72f9f11e",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260106_145907_700_a8eea1c0_f5bae698",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260106_145907_700_a8eea1c0_f5bae698",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260106_153404_124_79b3b025_914e7207",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260106_155537_908_a9f62433_6d26efe3",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260106_155537_908_a9f62433_6d26efe3",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260106_155851_715_df0ecdeb_7b4347ef",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260106_170952_179_e0ac0c6d_791fba5e",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260106_170952_179_e0ac0c6d_791fba5e",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260106_172901_590_a9f62433_f7baa0fa",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260107_101232_309_be6c9105_fefb9d10",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260107_101232_309_be6c9105_fefb9d10",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260107_101510_200_e7cfb93b_142300ed",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260107_101510_200_e7cfb93b_142300ed",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260107_111155_131_0154326e_96e0246b",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260107_111155_131_0154326e_96e0246b",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260107_111503_670_2aa6b0ad_e9611a77",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260107_125943_886_1628b966_f951b083",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260107_132943_755_911d75d7_4c944103",
+      "mode": "oracle",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20260107_144751_333_79b3b025_92bfb77e",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260107_144751_333_79b3b025_92bfb77e",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260107_162724_374_13762b97_6a97d001",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260107_162724_374_13762b97_6a97d001",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260107_162939_118_e5bf1251_437648af",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260107_162939_118_e5bf1251_437648af",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20260107_164033_273_a8eea1c0_c0de2fed",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260107_173403_203_64a4ebb9_e8ddb8d7",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260107_174626_202_64a4ebb9_e3e54b1d",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260107_181520_716_64a4ebb9_ec0278c5",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260107_181520_716_64a4ebb9_ec0278c5",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260107_191539_515_911d75d7_3ea7750e",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260107_191539_515_911d75d7_3ea7750e",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260107_193032_599_e0ac0c6d_403469c5",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260107_193032_599_e0ac0c6d_403469c5",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260108_021903_359_0154326e_ed8c1265",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260108_021903_359_0154326e_ed8c1265",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260108_031733_760_e5bf1251_9e81ad1b",
+      "mode": "oracle",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20260108_031733_760_e5bf1251_9e81ad1b",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260108_143038_654_e5bf1251_b9e616b8",
+      "mode": "oracle",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20260108_143038_654_e5bf1251_b9e616b8",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260108_160846_466_8e9e30d7_7e50c8e2",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260108_162420_138_df0ecdeb_96950310",
+      "mode": "oracle",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20260108_203842_162_d8f93f2d_1aa3f29b",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260108_203842_162_d8f93f2d_1aa3f29b",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260109_004703_994_7ebc1127_6f97f3e9",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260109_004703_994_7ebc1127_6f97f3e9",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260109_043327_590_806f1a83_d690097e",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260109_063639_321_8e9e30d7_c31290aa",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260109_063639_321_8e9e30d7_c31290aa",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260109_104953_156_be6c9105_f8ed16bb",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260109_104953_156_be6c9105_f8ed16bb",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260109_145235_208_64a4ebb9_9befb3ae",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260109_145235_208_64a4ebb9_9befb3ae",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260109_162344_706_95fd9f79_85a7972c",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260109_192935_678_e6427839_4c081ddc",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260109_192935_678_e6427839_4c081ddc",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260112_111113_212_060e2c81_99e6099d",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260112_111113_212_060e2c81_99e6099d",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260112_141226_936_7aad91c1_61df8f2b",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260113_031046_703_99ba2325_54f35603",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260113_032200_394_ad5a67e3_5e3873b8",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260113_120745_735_4d9df647_017a9009",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260113_120745_735_4d9df647_017a9009",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260113_125933_225_accab84d_d7ec710e",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260113_125933_225_accab84d_d7ec710e",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260113_141825_482_911d75d7_ecab6320",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260113_141825_482_911d75d7_ecab6320",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260113_183935_893_e6427839_03a04c19",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260113_212050_548_a8eea1c0_73a73ce7",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260113_212050_548_a8eea1c0_73a73ce7",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260114_094327_107_46ca2862_796e7685",
+      "mode": "oracle",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260114_094327_107_46ca2862_796e7685",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260114_164939_471_4d9df647_2aaff95f",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260114_164939_471_4d9df647_2aaff95f",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260114_170216_532_accab84d_9dc7ddd5",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260114_172825_147_1628b966_cc356289",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260114_172825_147_1628b966_cc356289",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260114_173716_566_46ca2862_301e0b47",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260114_214705_137_4d9df647_d451b853",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260115_034527_380_66392a82_a172d90d",
+      "mode": "oracle",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20260115_034527_380_66392a82_a172d90d",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260115_121701_840_1628b966_ff394d2f",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260115_122753_129_1628b966_0c22c9cc",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260115_124602_090_accab84d_91ac1840",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260115_125430_649_fa1836dc_e02d5824",
+      "mode": "oracle",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20260115_125430_649_fa1836dc_e02d5824",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260115_143541_964_fa1836dc_dc6652fd",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260116_064331_915_d8f93f2d_854d09b8",
+      "mode": "oracle",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260116_064331_915_d8f93f2d_854d09b8",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260116_080150_885_1628b966_5a58d8e3",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260116_080150_885_1628b966_5a58d8e3",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260116_085958_358_a8eea1c0_6d7f242a",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260116_085958_358_a8eea1c0_6d7f242a",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260116_122712_166_d4a463c3_196fe24f",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260116_124631_826_d4a463c3_0319223c",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260116_124631_826_d4a463c3_0319223c",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    },
+    {
+      "task_id": "task_20260116_133210_131_806f1a83_4c204063",
+      "mode": "oracle",
+      "kinds": [
+        "partial_read"
+      ]
+    },
+    {
+      "task_id": "task_20260116_133210_131_806f1a83_4c204063",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260116_143750_504_a8eea1c0_7d91efa1",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260116_143750_504_a8eea1c0_7d91efa1",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260116_174925_124_d8f93f2d_9e20df73",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "unknown_commit_create"
+      ]
+    },
+    {
+      "task_id": "task_20260116_224538_330_66392a82_10d0806e",
+      "mode": "oracle",
+      "kinds": [
+        "unknown_commit"
+      ]
+    },
+    {
+      "task_id": "task_20260117_084409_361_4d9df647_9892db8c",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260121_144251_116_38405923_9438dabd",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "truncated_read"
+      ]
+    },
+    {
+      "task_id": "task_20260121_150447_596_1afb323a_0a1e4085",
+      "mode": "oracle",
+      "kinds": [
+        "reply_mixup"
+      ]
+    },
+    {
+      "task_id": "task_20260121_150447_596_1afb323a_0a1e4085",
+      "mode": "plus_5_tools",
+      "kinds": [
+        "transient_unexecuted"
+      ]
+    }
+  ]
+}

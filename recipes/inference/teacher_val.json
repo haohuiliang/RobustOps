@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "interface": "inference",
+  "pipeline": "teacher_fixed_test",
+  "experiment_id": "teacher_val",
+  "description": "Teacher reference on the fixed paired Val without extra teacher guidance, using the Base context budget.",
+  "backend": {
+    "kind": "deepseek_api",
+    "model": "deepseek-flash",
+    "endpoint": "https://api.deepseek.com",
+    "api_key_env": "DEEPSEEK_API_KEY",
+    "local_env_file": ".env.deepseek"
+  },
+  "execution": {
+    "controller": "first_tool_only_plan_preserving_v1",
+    "assistant_content_policy": "preserve_full",
+    "tool_call_policy": "execute_first_only_then_reinfer"
+  },
+  "guidance_variant": "none",
+  "thinking": "disabled",
+  "tokenizer": "models/base/Arctic-MidTool-RL-4B",
+  "output": "runs/teacher_fixed_val",
+  "backend_revision": "20261006-final-contract",
+  "partition": "validation",
+  "selector_policy": "artifacts/val_fault_policy/policy.json",
+  "base_fixed_mechanisms": "artifacts/base_val_fixed_mechanisms.json",
+  "expected_task_modes": 127,
+  "resume": true,
+  "temperature": 0.0,
+  "samples_per_condition": 1,
+  "max_turns": 50,
+  "max_context_tokens": 32768,
+  "max_generation_tokens": 2048,
+  "max_nohit_resamples": 4,
+  "invalid_retries": 4,
+  "concurrency": 4,
+  "mcp_port_offset": 2000
+}

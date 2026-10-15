@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "partition": "test",
+  "selector_policy": "artifacts/test_fault_policy/policy.json",
+  "candidate_budgets": "artifacts/test_fault_policy/candidate_budgets.json",
+  "base_run": "runs/base_fault_assignment_test",
+  "base_model_key": "base",
+  "output": "runs/custom_faults/test.json"
+}

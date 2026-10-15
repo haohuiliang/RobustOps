@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "case_id": "uncertain_create",
+      "task_id": "task_20251117_165528_648_bca89e7d_3e81ece9",
+      "domain": "calendar",
+      "mode": "oracle",
+      "partition": "train",
+      "seed": 20260917,
+      "selection": {
+        "tools": [
+          {
+            "tool": "query_freebusy",
+            "role": "read",
+            "reason": "Pure read used to find the first free day from Nov 14, 2025 by querying busy periods; required for scheduling. Response is a FreeBusy resource with per-calendar busy arrays, not a counted collection with a numeric total, so partial_read is unsupported. It is a read, so transient_unexecuted (write arm) does not apply. It can be truncated, and reply_mixup is plausible because repeated free/busy queries with different time ranges are legitimate history on the same route.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "reply_mixup"
+            ]
+          },
+          {
+            "tool": "create_event",
+            "role": "write",
+            "reason": "Creates the requested kickoff event with Google Meet conference data. It is a write, so transient_unexecuted can apply. The response returns a generated event id and full event object; if the acknowledgement is lost, the created event can be discovered via get_calendar_list only for calendar identity, not event content, and no exposed event-list/get tool exists to verify the event's complete effects. Therefore unknown_commit_create is unsupported. It is not a pure read, so truncated_read, partial_read, ignored_filter, and reply_mixup do not apply.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "transient_unexecuted"
+            ]
+          },
+          {
+            "tool": "insert_acl_rule",
+            "role": "write",
+            "reason": "Adds Carol as a writer on the new calendar. It is a write, so transient_unexecuted can apply. The response returns the ACL rule id and scope/role; if the acknowledgement is lost, no exposed ACL-list/get tool exists to verify the rule, and repeating the exact insert is not a safe replay basis because it may create a duplicate ACL rule. Therefore unknown_commit is unsupported. It is not a pure read, so read-side faults do not apply.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "transient_unexecuted"
+            ]
+          },
+          {
+            "tool": "create_calendar",
+            "role": "write",
+            "reason": "Creates the secondary calendar 'Search Algorithm Beta'. It is a write, so transient_unexecuted can apply. The response returns a generated calendar id; if the acknowledgement is lost, get_calendar_list is an exposed pure read that can discover the created calendar by matching its summary and scope, so unknown_commit_create is supported. It is not a pure read, so read-side faults do not apply.",
+            "recovery_tools": [
+              "get_calendar_list"
+            ],
+            "replay_basis": "",
+            "faults": [
+              "transient_unexecuted",
+              "unknown_commit_create"
+            ]
+          },
+          {
+            "tool": "get_calendar_list",
+            "role": "read",
+            "reason": "Pure read of the user's calendar list, used to discover the newly created calendar and its id. It is a read, so transient_unexecuted does not apply. The response has items and nextPageToken but no numeric total/count field, so partial_read is unsupported. It can be truncated, and reply_mixup is plausible because repeated calendar-list reads with different pagination or filters are legitimate history on the same route.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "reply_mixup"
+            ]
+          }
+        ]
+      },
+      "conditions": [
+        "clean",
+        "fault"
+      ],
+      "initial_state": "seeded_task",
+      "fault": {
+        "kind": "unknown_commit_create",
+        "budget": 1,
+        "binding": "eligible_calls",
+        "point_policy": "earliest_strictly_eligible"
+      }
+    },
+    {
+      "case_id": "incomplete_read",
+      "task_id": "task_20251128_220140_863_df2c536d_4aa7dcfd",
+      "domain": "calendar",
+      "mode": "oracle",
+      "partition": "train",
+      "seed": 20260917,
+      "selection": {
+        "tools": [
+          {
+            "tool": "update_calendar_in_list",
+            "role": "write",
+            "reason": "Partial update of calendar list entry settings; task requires setting the Dev calendar's colorId to 3 (full palette). Existing-resource write with known replacement values.",
+            "recovery_tools": [
+              "get_calendar_list"
+            ],
+            "replay_basis": "",
+            "faults": [
+              "transient_unexecuted",
+              "unknown_commit"
+            ]
+          },
+          {
+            "tool": "get_colors",
+            "role": "read",
+            "reason": "Static color palette lookup; task requires resolving the background color #e1e1e1 to an event color id. Pure read, no arguments.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "reply_mixup"
+            ]
+          },
+          {
+            "tool": "get_calendar_list",
+            "role": "read",
+            "reason": "Lists calendars with colorId/backgroundColor/foregroundColor fields; used to find the Dev calendar id and to verify calendar color settings. Pure collection read.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "partial_read",
+              "reply_mixup"
+            ]
+          },
+          {
+            "tool": "insert_acl_rule",
+            "role": "write",
+            "reason": "Creates an ACL rule granting Carol White reader access to the Dev calendar. Creation of a new child record; identity (rule id) generated by server.",
+            "recovery_tools": [
+              "get_calendar_list"
+            ],
+            "replay_basis": "",
+            "faults": [
+              "transient_unexecuted",
+              "unknown_commit_create"
+            ]
+          },
+          {
+            "tool": "create_event",
+            "role": "write",
+            "reason": "Creates the all-day 'Code Freeze' focusTime event with autoDeclineMode and declineMessage on the Dev calendar. Creation of a new record; generated event id.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "transient_unexecuted",
+              "unknown_commit_create"
+            ]
+          }
+        ]
+      },
+      "conditions": [
+        "clean",
+        "fault"
+      ],
+      "initial_state": "seeded_task",
+      "fault": {
+        "kind": "partial_read",
+        "budget": 1,
+        "binding": "eligible_calls",
+        "point_policy": "earliest_strictly_eligible"
+      }
+    }
+  ]
+}

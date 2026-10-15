@@ -1,0 +1,10 @@
+{
+  "splits": {
+    "train": "recipes/data/fault_selector/train.json",
+    "val": "recipes/data/fault_selector/val.json",
+    "test": "recipes/data/fault_selector/test.json"
+  },
+  "output": "runs/fault_selector/dataset",
+  "staging": "runs/fault_selector/staging",
+  "backup": "runs/fault_selector/previous_dataset"
+}

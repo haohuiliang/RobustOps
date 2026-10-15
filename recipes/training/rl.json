@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "interface": "train",
+  "pipeline": "rl",
+  "experiment_id": "rl",
+  "description": "Train GRPO with configurable reward normalization; resume or fork full checkpoints.",
+  "hardware": {
+    "recorded": {
+      "gpu_model": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "gpu_count": 2,
+      "memory_gib_per_gpu": 96
+    }
+  },
+  "model": {
+    "path": "models/sft"
+  },
+  "training": {
+    "seed": 20260922,
+    "epochs": 1,
+    "steps": 120,
+    "batch_size": 32,
+    "group_size": 4,
+    "learning_rate": 1e-06,
+    "rollout_concurrency_per_worker": 8,
+    "actor_token_batch_per_gpu": 49152,
+    "episode_timeout_seconds": 1800,
+    "no_output_timeout_seconds": 1800,
+    "save_checkpoint": true,
+    "checkpoint_save_contents": [
+      "model",
+      "optimizer",
+      "extra"
+    ],
+    "checkpoint_save_frequency": 10,
+    "checkpoint_max_to_keep": 1,
+    "kl_loss_coef": 0.001,
+    "verifier_graph_dir": "data/verifier_graph",
+    "reward_weights": [
+      1.0,
+      0.3,
+      0.1
+    ],
+    "local_bad_eta": 0.5,
+    "hf_export_steps": [
+      30,
+      100,
+      120
+    ],
+    "fault_point_policy": "dose_window_uniform",
+    "rollout_temperature": 1.0,
+    "zero_pg_replay_delay": 10,
+    "zero_pg_replay_max_zero_groups": 5,
+    "sft_val_every_step": true,
+    "q_temporal_credit": true,
+    "local_read_repeat_from": 3,
+    "terminal_stop_audit": true,
+    "terminal_stop_penalty": true,
+    "reward_normalization": "component",
+    "exclude_all_success_groups": true,
+    "verified_reference_repeats": true,
+    "terminal_stop_advantage_cap": 0.0,
+    "task_sampling": "queue",
+    "fault_strategy": "recipes/enterpriseops/faults/strategy.json",
+    "run_timeout_seconds": 604800,
+    "advantage_estimator": "grpo",
+    "min_host_memory_gib": 0,
+    "ray_num_cpus": null,
+    "ray_object_store_memory_gib": null,
+    "max_context_tokens": 32768,
+    "max_generation_tokens": 2048,
+    "max_turns": 50,
+    "rollout_gpu_memory_utilization": 0.5,
+    "rollout_max_num_batched_tokens": 8192
+  },
+  "output": "runs/rl",
+  "launcher": {
+    "module": "robustops.training.rl_launcher"
+  },
+  "data": {
+    "task_manifest": "data/task_sets/enterpriseops.jsonl",
+    "train_pool": "data/task_sets/recovery_train_pool.json",
+    "fault_selector": "data/fault_selector/train.jsonl",
+    "sft_records": "data/sft/train/records.jsonl",
+    "sft_provenance": "data/sft/train/provenance.jsonl",
+    "sft_fault_exposure": "data/sft/train/fault_exposure.json",
+    "sft_validation": "data/sft/validation/validation.parquet",
+    "validation_recipe": "recipes/support/validation.json",
+    "validation_policy": null
+  }
+}

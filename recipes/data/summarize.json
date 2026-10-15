@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "runs": [
+    {
+      "path": "runs/base_test"
+    },
+    {
+      "path": "runs/sft_test"
+    },
+    {
+      "path": "runs/rl_test"
+    }
+  ],
+  "output": "runs/comparison/summary.json"
+}

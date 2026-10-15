@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "interface": "inference",
+  "pipeline": "case_inference",
+  "mode": "evaluation",
+  "cases": "data/cases/train.json",
+  "tokenizer": "models/base/Arctic-MidTool-RL-4B",
+  "output": "runs/cases/teacher_evaluation",
+  "backend": {
+    "kind": "deepseek_api",
+    "model": "deepseek-flash",
+    "endpoint": "https://api.deepseek.com",
+    "api_key_env": "DEEPSEEK_API_KEY",
+    "local_env_file": ".env.deepseek"
+  },
+  "limits": {
+    "temperature": 0,
+    "max_turns": 50,
+    "max_context_tokens": 32768,
+    "max_generation_tokens": 2048
+  },
+  "teacher": {
+    "guidance_variant": "consistent_narration"
+  },
+  "resume": true,
+  "mcp_port_offset": 4000
+}

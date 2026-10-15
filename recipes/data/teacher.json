@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "pool": "data/task_sets/sft_collection_pool.json",
+  "manifest": "data/task_sets/enterpriseops.jsonl",
+  "selector": "data/fault_selector/train.jsonl",
+  "schema_catalog": "data/tool_schemas.json",
+  "output": "runs/teacher_collection",
+  "export": "runs/teacher_dataset",
+  "template_parquet": "data/sft/train/train.parquet",
+  "validation_data": "data/sft/validation",
+  "teacher": {
+    "pipeline": "recovery_teacher_collection",
+    "partition": "train",
+    "model": "deepseek-flash",
+    "endpoint": "https://api.deepseek.com",
+    "provider": {
+      "base_url": "https://api.deepseek.com",
+      "model": "deepseek-flash",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "local_env_file": ".env.deepseek"
+    },
+    "temperature": 0,
+    "max_tokens": 4096,
+    "concurrency": 4,
+    "max_turns": 50,
+    "max_context_tokens": 32768,
+    "reserved_generation_tokens": 4096,
+    "tokenizer": "models/base/Arctic-MidTool-RL-4B",
+    "guidance_variant": "consistent_narration",
+    "schedule": "recipes/enterpriseops/faults/train.json",
+    "modes": [
+      "oracle",
+      "plus_5_tools"
+    ],
+    "train_faults": [
+      "transient_unexecuted",
+      "partial_read",
+      "truncated_read",
+      "unknown_commit",
+      "unknown_commit_create",
+      "reply_mixup"
+    ],
+    "heldout_faults": [
+      "ignored_filter"
+    ],
+    "retries": 0,
+    "mcp_port_offset": 3000,
+    "mcp_server_concurrency": {
+      "gym-calendar": 2,
+      "gym-email-mcp": 8,
+      "gym-teams-mcp": 2,
+      "sn-csm-server": 8,
+      "sn-hr-internal": 4,
+      "gym-itsm-mcp": 4,
+      "gym-google-drive-mcp": 8
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "interface": "inference",
+  "pipeline": "fixed_checkpoint_test",
+  "experiment_id": "sft_val",
+  "description": "Fixed paired Val for SFT, using Base-fixed faults. Default: one GPU, 32 GiB VRAM, two concurrent trajectories.",
+  "hardware": {
+    "recorded": {
+      "gpu_model": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "gpu_count": 2,
+      "memory_gib_per_gpu": 96
+    },
+    "gpus": 1,
+    "memory_gib_per_gpu": 32
+  },
+  "models": [
+    {
+      "key": "sft",
+      "path": "models/sft",
+      "checkpoint": "global_step_174"
+    }
+  ],
+  "output": "runs/sft_val",
+  "backend_revision": "20261006-final-contract",
+  "partition": "validation",
+  "selector_policy": "artifacts/val_fault_policy/policy.json",
+  "base_fixed_mechanisms": "artifacts/base_val_fixed_mechanisms.json",
+  "expected_task_modes": 127,
+  "resume": true,
+  "temperature": 0.0,
+  "samples_per_condition": 1,
+  "max_nohit_resamples": 4,
+  "invalid_retries": 4,
+  "concurrency_per_gpu": 2
+}

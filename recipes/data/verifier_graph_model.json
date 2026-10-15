@@ -1,0 +1,11 @@
+{
+  "model": "deepseek-flash",
+  "thinking": "enabled",
+  "reasoning_effort": "high",
+  "temperature": null,
+  "max_tokens": 64000,
+  "request_timeout_seconds": 900,
+  "retries": 0,
+  "prompt_source": "prompts/verifier_graph.md",
+  "total_concurrency": 16
+}

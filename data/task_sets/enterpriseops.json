@@ -1,0 +1,138 @@
+{
+  "policy": {
+    "composition_domains": [
+      "hybrid"
+    ],
+    "control_plane_rule": "family_proxy, verifier_tables, and verifier_count are split-audit metadata only and must never be exposed to the model at runtime.",
+    "domains": [
+      "calendar",
+      "csm",
+      "drive",
+      "email",
+      "hr",
+      "itsm",
+      "teams",
+      "hybrid"
+    ],
+    "family_proxy": "domain + physical verifier table set + verifier count",
+    "family_proxy_limit": "The public release has no authoritative task-family/template label; this outcome-schema grouping is an auditable conservative proxy.",
+    "large_family_rule": "A family larger than half the smaller held-out target stays in train to preserve validation/test family diversity.",
+    "mode_rule": "Oracle is the learning mode. Distractor modes are evaluation-only and are paired only when task semantics equal the Oracle row.",
+    "official_revised_supplement_rule": "The two executable official revised-only CSM tasks are train-only and do not acquire fabricated distractor variants. A revised-only task whose official seed is absent is excluded before partitioning.",
+    "ood_rule": "No domain or composition is held out from the main split. Unseen fault families are the primary OOD condition; domain and composition remain reported evaluation slices.",
+    "pairing_normalization": "Verifier order is ignored, exact duplicate verifier objects collapse, and canonical decimal integer expected values compare equal to their integer representation; every other mode-invariant field remains exact.",
+    "ratios": {
+      "test": 0.1,
+      "train": 0.8,
+      "validation": 0.1
+    },
+    "seed": 20260830,
+    "single_domains": [
+      "calendar",
+      "csm",
+      "drive",
+      "email",
+      "hr",
+      "itsm",
+      "teams"
+    ],
+    "source_contract_exclusion_rule": "A fixed-public task whose prompt/verifiers cannot be uniquely reconciled or whose required policy precondition is not observable by the model is excluded from every effective partition and recorded only in source exclusion metadata. Remaining task memberships retain the frozen source allocation without resampling.",
+    "variant_rule": "All mode, fault, state, rollout, SFT, and RL variants inherit the partition of the Oracle base task_id."
+  },
+  "schema_version": 4,
+  "source": {
+    "base_mode": "oracle",
+    "dataset": "ServiceNow-AI/EnterpriseOps-Gym",
+    "effective_oracle_tasks": 648,
+    "excluded_fixed_public_tasks": 3,
+    "excluded_task_records": [
+      {
+        "domain": "csm",
+        "reason": "CSM request claims Sheri while the authenticated Jose principal is hidden from model messages and no selected tool exposes the current principal; the policy decision is therefore not model-observable",
+        "task_id": "task_20251127_070938_325_b393a327_a40b1f4e"
+      },
+      {
+        "domain": "drive",
+        "reason": "Drive prompt targets Technical Spec while every verifier targets Marketing Presentation; neither side can be uniquely repaired",
+        "task_id": "task_20251204_115902_743_13762b97_19892db1"
+      },
+      {
+        "domain": "drive",
+        "reason": "Drive prompt requests Family Photo.jpg (893KB), but all three verifiers target Company Policies and Compliance Review document content; the task and verifier describe different outcomes",
+        "task_id": "task_20260107_180857_873_ae7b45e2_47771a8c"
+      }
+    ],
+    "official_revised_commit": "724dd34c09fa2bb6bdb76f8b8d5975350d648732",
+    "official_revised_excluded_tasks": 1,
+    "official_revised_train_supplement_tasks": 2,
+    "public_oracle_tasks": 649,
+    "revision": "c8e538eae8a6205294f0a86675fefdc1fac408f6"
+  },
+  "split_id": "enterpriseops",
+  "summary": {
+    "families_by_partition": {
+      "test": 41,
+      "train": 486,
+      "validation": 38
+    },
+    "runnable_tasks_by_mode": {
+      "oracle": 648,
+      "plus_10_tools": 634,
+      "plus_15_tools": 634,
+      "plus_5_tools": 634
+    },
+    "semantically_paired_tasks_by_mode": {
+      "oracle": 648,
+      "plus_10_tools": 634,
+      "plus_15_tools": 634,
+      "plus_5_tools": 634
+    },
+    "tasks_by_domain_and_partition": {
+      "calendar": {
+        "test": 6,
+        "train": 49,
+        "validation": 6
+      },
+      "csm": {
+        "test": 11,
+        "train": 83,
+        "validation": 10
+      },
+      "drive": {
+        "test": 7,
+        "train": 49,
+        "validation": 6
+      },
+      "email": {
+        "test": 6,
+        "train": 54,
+        "validation": 7
+      },
+      "hr": {
+        "test": 10,
+        "train": 82,
+        "validation": 10
+      },
+      "hybrid": {
+        "test": 9,
+        "train": 70,
+        "validation": 9
+      },
+      "itsm": {
+        "test": 11,
+        "train": 82,
+        "validation": 10
+      },
+      "teams": {
+        "test": 6,
+        "train": 49,
+        "validation": 6
+      }
+    },
+    "tasks_by_partition": {
+      "test": 66,
+      "train": 518,
+      "validation": 64
+    }
+  }
+}

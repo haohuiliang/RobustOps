@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "interface": "inference",
+  "pipeline": "fault_assignment_evaluation",
+  "partition": "test",
+  "temperature": 0,
+  "model_path": "models/base/Arctic-MidTool-RL-4B",
+  "model_name": "Arctic-MidTool-RL-4B",
+  "selector_policy": "artifacts/test_fault_policy/policy.json",
+  "schedule": "recipes/enterpriseops/faults/test.json",
+  "output": "runs/base_fault_assignment_test",
+  "expected_task_modes": 130,
+  "hardware": {
+    "gpus": 1,
+    "memory_gib_per_gpu": 32
+  },
+  "clean_first": true
+}

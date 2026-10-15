@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "selector_policy": "artifacts/val_fault_policy/policy.json",
+  "schedule": "recipes/enterpriseops/faults/val.json",
+  "expected_task_modes": 127,
+  "description": "Frozen validation task metadata required by the RL data loader; not an adopted training-task source."
+}

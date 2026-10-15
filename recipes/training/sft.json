@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "interface": "train",
+  "pipeline": "sft",
+  "experiment_id": "sft",
+  "description": "Accepted 692-trajectory recovery SFT; retain all three epochs and select epoch 2 (global_step_174).",
+  "hardware": {
+    "recorded": {
+      "gpu_model": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "gpu_count": 2,
+      "memory_gib_per_gpu": 96
+    }
+  },
+  "model": {
+    "path": "models/base/Arctic-MidTool-RL-4B",
+    "revision": "38b5e742fd20023058cd2cb207358dd033556773"
+  },
+  "data": {
+    "train_data_env": "ROBUSTOPS_SFT_TRAIN_DATA",
+    "validation_data_env": "ROBUSTOPS_SFT_VALIDATION_DATA",
+    "train_parquet": "data/sft/train/train.parquet",
+    "validation_parquet": "data/sft/validation/validation.parquet",
+    "dataset_class": "src/robustops/training/decision_sft_dataset.py",
+    "dataset_class_name": "DecisionSFTDataset",
+    "messages_key": "messages_json",
+    "tools_key": "tools_json",
+    "enable_thinking_default": false,
+    "pad_to_multiple": 8,
+    "sampler_shuffle": true,
+    "expected_train_records": 692,
+    "expected_validation_records": 15
+  },
+  "training": {
+    "method": "full_parameter_fsdp_bf16",
+    "trainer_module": "robustops.training.decision_sft_trainer",
+    "engine": "fsdp",
+    "dtype": "bfloat16",
+    "attention": "flash_attention_2",
+    "use_remove_padding": true,
+    "gradient_checkpointing": true,
+    "use_torch_compile": false,
+    "global_batch_size": 8,
+    "micro_batch_size_per_gpu": 1,
+    "use_dynamic_batch_size": true,
+    "pytorch_cuda_alloc_conf": "expandable_segments:True",
+    "max_length": 32768,
+    "max_token_len_per_gpu": 32768,
+    "truncation": "error",
+    "pad_mode": "no_padding",
+    "num_workers": 2,
+    "learning_rate": 3e-06,
+    "epochs": 3,
+    "lr_warmup_steps_ratio": 0.08,
+    "lr_scheduler_type": "cosine",
+    "min_lr_ratio": 0.1,
+    "weight_decay": 0.01,
+    "optimizer_betas": [
+      0.9,
+      0.95
+    ],
+    "clip_grad": 1.0,
+    "seed": 20260917,
+    "allow_partial_epoch": false,
+    "total_training_steps": 261
+  },
+  "evaluation": {
+    "kind": "teacher_forced_selective_event_weighted_loss",
+    "frequency": 22,
+    "interpretation": "numerical_health_only_not_task_success",
+    "records": 15,
+    "reduction": "mean_over_all_real_records_no_dropped_tail"
+  },
+  "checkpoint": {
+    "policy": "each_epoch_huggingface_model",
+    "output_root": "runs/sft",
+    "directory_name": "checkpoints",
+    "save_frequency": "after_each_epoch",
+    "save_contents": [
+      "hf_model"
+    ],
+    "max_to_keep": 3,
+    "resume_mode": "disable"
+  },
+  "logging": {
+    "backends": [
+      "console",
+      "tensorboard"
+    ]
+  },
+  "run_id_prefix": "sft",
+  "project_name": "robustops"
+}

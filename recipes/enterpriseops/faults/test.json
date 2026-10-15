@@ -1,0 +1,4 @@
+{
+  "strategy": "recipes/enterpriseops/faults/strategy.json",
+  "candidate_budgets": "artifacts/test_fault_policy/candidate_budgets.json"
+}

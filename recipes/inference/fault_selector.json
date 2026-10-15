@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "interface": "inference",
+  "pipeline": "fault_dataset_selection",
+  "selector_config": "recipes/data/fault_selector/all.json"
+}

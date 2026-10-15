@@ -1,0 +1,6513 @@
+{
+  "sn-csm-server::search_cases": {
+    "shape": {
+      "array_of": {
+        "case_id": "number",
+        "number": "string",
+        "account_id": "number",
+        "contact_id": "number",
+        "product_id": "number",
+        "installed_product_id": "null",
+        "channel": "string",
+        "priority": "string",
+        "state": "string",
+        "short_description": "string",
+        "escalation": "number",
+        "escalation_reason": "null",
+        "reopen_count": "number",
+        "sys_created_on": "string",
+        "sys_updated_on": "string",
+        "closed_on": "null",
+        "assignment_group_id": "number",
+        "assigned_to": "null"
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/oracle/runs/all_domains_csm/attempts.jsonl",
+      "line": 2,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "sn-csm-server::update_case": {
+    "shape": {
+      "case_id": "number",
+      "number": "string",
+      "account_id": "number",
+      "contact_id": "number",
+      "product_id": "number",
+      "installed_product_id": "null",
+      "channel": "string",
+      "priority": "string",
+      "state": "string",
+      "short_description": "string",
+      "assignment_group_id": "number",
+      "assigned_to": "null",
+      "escalation": "number",
+      "escalation_reason": "string",
+      "reopen_count": "number",
+      "sys_created_on": "string",
+      "sys_updated_on": "string",
+      "closed_on": "null"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/oracle/runs/all_domains_csm/attempts.jsonl",
+      "line": 2,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-calendar::get_calendar_list": {
+    "shape": {
+      "kind": "string",
+      "etag": "string",
+      "nextPageToken": "null",
+      "nextSyncToken": "string",
+      "items": {
+        "array_of": {
+          "kind": "string",
+          "etag": "string",
+          "id": "string",
+          "summary": "string",
+          "description": "string",
+          "location": "string",
+          "timeZone": "string",
+          "summaryOverride": "null",
+          "colorId": "null",
+          "backgroundColor": "null",
+          "foregroundColor": "null",
+          "hidden": "boolean",
+          "selected": "boolean",
+          "accessRole": "string",
+          "defaultReminders": "null",
+          "notificationSettings": "null",
+          "primary": "boolean",
+          "deleted": "boolean",
+          "conferenceProperties": {
+            "allowedConferenceSolutionTypes": {
+              "array_of": "string"
+            }
+          }
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_33/tool_audit.json",
+      "call_index": 12
+    }
+  },
+  "gym-calendar::list_events": {
+    "shape": {
+      "kind": "string",
+      "etag": "string",
+      "summary": "string",
+      "description": "string",
+      "updated": "string",
+      "timeZone": "string",
+      "accessRole": "string",
+      "defaultReminders": {
+        "array_of": "unobserved_empty"
+      },
+      "nextPageToken": "null",
+      "nextSyncToken": "null",
+      "items": {
+        "array_of": {
+          "kind": "string",
+          "etag": "string",
+          "id": "string",
+          "status": "string",
+          "htmlLink": "string",
+          "created": "string",
+          "updated": "string",
+          "summary": "string",
+          "description": "string",
+          "location": "string",
+          "colorId": "string",
+          "creator": {
+            "id": "string",
+            "email": "string",
+            "displayName": "string",
+            "self": "boolean"
+          },
+          "organizer": {
+            "id": "string",
+            "email": "string",
+            "displayName": "string",
+            "self": "boolean"
+          },
+          "start": {
+            "dateTime": "string",
+            "date": "null",
+            "timeZone": "string"
+          },
+          "end": {
+            "dateTime": "string",
+            "date": "null",
+            "timeZone": "string"
+          },
+          "endTimeUnspecified": "boolean",
+          "recurrence": {
+            "array_of": "unobserved_empty"
+          },
+          "recurringEventId": "string",
+          "originalStartTime": {
+            "dateTime": "string",
+            "date": "null",
+            "timeZone": "string"
+          },
+          "transparency": "null",
+          "visibility": "string",
+          "iCalUID": "string",
+          "sequence": "number",
+          "attendees": {
+            "array_of": {
+              "id": "string",
+              "email": "string",
+              "displayName": "string",
+              "self": "boolean",
+              "organizer": "boolean",
+              "responseStatus": "string",
+              "comment": "string",
+              "additionalGuests": "number",
+              "optional": "boolean",
+              "resource": "boolean"
+            }
+          },
+          "attendeesOmitted": "boolean",
+          "extendedProperties": {
+            "private": {
+              "departmentBudget": "string",
+              "projectCode": "string"
+            },
+            "shared": {
+              "meetingType": "string",
+              "priority": "string"
+            }
+          },
+          "hangoutLink": "null",
+          "conferenceData": {
+            "conferenceSolution": {
+              "iconUri": "null",
+              "key": {
+                "type": "string"
+              },
+              "name": "null"
+            },
+            "createRequest": {
+              "conferenceSolutionKey": "null",
+              "requestId": "string",
+              "status": {
+                "statusCode": "string"
+              }
+            },
+            "entryPoints": {
+              "array_of": {
+                "accessCode": "null",
+                "entryPointType": "string",
+                "label": "null",
+                "meetingCode": "null",
+                "passcode": "null",
+                "password": "null",
+                "pin": "null",
+                "uri": "string"
+              }
+            },
+            "notes": "null",
+            "signature": "null"
+          },
+          "guestsCanInviteOthers": "boolean",
+          "guestsCanModify": "boolean",
+          "guestsCanSeeOtherGuests": "boolean",
+          "privateCopy": "null",
+          "locked": "null",
+          "reminders": {
+            "overrides": {
+              "array_of": {
+                "method": "string",
+                "minutes": "number"
+              }
+            },
+            "useDefault": "boolean"
+          },
+          "source": {
+            "url": "string",
+            "title": "string"
+          },
+          "attachments": {
+            "array_of": {
+              "fileUrl": "string",
+              "title": "string"
+            }
+          },
+          "eventType": "string",
+          "birthdayProperties": "null",
+          "focusTimeProperties": "null",
+          "outOfOfficeProperties": "null",
+          "workingLocationProperties": "null"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_409/tool_audit.json",
+      "call_index": 2
+    }
+  },
+  "gym-calendar::patch_event": {
+    "shape": {
+      "kind": "string",
+      "etag": "string",
+      "id": "string",
+      "status": "string",
+      "htmlLink": "string",
+      "created": "string",
+      "updated": "string",
+      "summary": "string",
+      "description": "string",
+      "location": "string",
+      "colorId": "string",
+      "creator": {
+        "id": "string",
+        "email": "string",
+        "displayName": "string",
+        "self": "boolean"
+      },
+      "organizer": {
+        "id": "string",
+        "email": "string",
+        "displayName": "string",
+        "self": "boolean"
+      },
+      "start": {
+        "dateTime": "string",
+        "date": "null",
+        "timeZone": "string"
+      },
+      "end": {
+        "dateTime": "string",
+        "date": "null",
+        "timeZone": "string"
+      },
+      "endTimeUnspecified": "boolean",
+      "recurrence": {
+        "array_of": "unobserved_empty"
+      },
+      "recurringEventId": "string",
+      "originalStartTime": {
+        "dateTime": "string",
+        "date": "null",
+        "timeZone": "string"
+      },
+      "transparency": "null",
+      "visibility": "string",
+      "iCalUID": "string",
+      "sequence": "number",
+      "attendees": {
+        "array_of": {
+          "id": "string",
+          "email": "string",
+          "displayName": "string",
+          "self": "boolean",
+          "organizer": "boolean",
+          "responseStatus": "string",
+          "comment": "string",
+          "additionalGuests": "number",
+          "optional": "boolean",
+          "resource": "boolean"
+        }
+      },
+      "attendeesOmitted": "boolean",
+      "extendedProperties": {
+        "private": {
+          "departmentBudget": "string",
+          "projectCode": "string"
+        },
+        "shared": {
+          "meetingType": "string",
+          "priority": "string"
+        }
+      },
+      "hangoutLink": "null",
+      "conferenceData": {
+        "conferenceSolution": {
+          "iconUri": "null",
+          "key": {
+            "type": "string"
+          },
+          "name": "null"
+        },
+        "createRequest": {
+          "conferenceSolutionKey": "null",
+          "requestId": "string",
+          "status": {
+            "statusCode": "string"
+          }
+        },
+        "entryPoints": {
+          "array_of": {
+            "accessCode": "null",
+            "entryPointType": "string",
+            "label": "null",
+            "meetingCode": "null",
+            "passcode": "null",
+            "password": "null",
+            "pin": "null",
+            "uri": "string"
+          }
+        },
+        "notes": "null",
+        "signature": "null"
+      },
+      "guestsCanInviteOthers": "boolean",
+      "guestsCanModify": "boolean",
+      "guestsCanSeeOtherGuests": "boolean",
+      "privateCopy": "null",
+      "locked": "null",
+      "reminders": {
+        "overrides": {
+          "array_of": {
+            "method": "string",
+            "minutes": "number"
+          }
+        },
+        "useDefault": "boolean"
+      },
+      "source": {
+        "url": "string",
+        "title": "string"
+      },
+      "attachments": {
+        "array_of": {
+          "fileUrl": "string",
+          "title": "string"
+        }
+      },
+      "eventType": "string",
+      "birthdayProperties": "null",
+      "focusTimeProperties": "null",
+      "outOfOfficeProperties": "null",
+      "workingLocationProperties": "null"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_409/tool_audit.json",
+      "call_index": 5
+    }
+  },
+  "gym-calendar::create_calendar": {
+    "shape": {
+      "kind": "string",
+      "etag": "string",
+      "id": "string",
+      "summary": "string",
+      "description": "string",
+      "location": "null",
+      "timeZone": "string",
+      "conferenceProperties": {
+        "allowedConferenceSolutionTypes": "null"
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_calendar/attempts.jsonl",
+      "line": 1,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-calendar::insert_acl_rule": {
+    "shape": {
+      "kind": "string",
+      "etag": "string",
+      "id": "string",
+      "scope": {
+        "type": "string",
+        "value": "string"
+      },
+      "role": "string"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/validation/plus_5_tools/runs/all_domains_calendar/attempts.jsonl",
+      "line": 6,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-calendar::move_event": {
+    "shape": {
+      "kind": "string",
+      "etag": "string",
+      "id": "string",
+      "status": "string",
+      "htmlLink": "string",
+      "created": "string",
+      "updated": "string",
+      "summary": "string",
+      "description": "string",
+      "location": "string",
+      "colorId": "string",
+      "creator": {
+        "id": "string",
+        "email": "string",
+        "displayName": "string",
+        "self": "boolean"
+      },
+      "organizer": {
+        "id": "string",
+        "email": "string",
+        "displayName": "string",
+        "self": "boolean"
+      },
+      "start": {
+        "dateTime": "string",
+        "date": "null",
+        "timeZone": "string"
+      },
+      "end": {
+        "dateTime": "string",
+        "date": "null",
+        "timeZone": "string"
+      },
+      "endTimeUnspecified": "boolean",
+      "recurrence": {
+        "array_of": "unobserved_empty"
+      },
+      "recurringEventId": "string",
+      "originalStartTime": {
+        "dateTime": "string",
+        "date": "null",
+        "timeZone": "string"
+      },
+      "transparency": "null",
+      "visibility": "string",
+      "iCalUID": "string",
+      "sequence": "number",
+      "attendees": {
+        "array_of": {
+          "id": "string",
+          "email": "string",
+          "displayName": "string",
+          "self": "boolean",
+          "organizer": "boolean",
+          "responseStatus": "string",
+          "comment": "string",
+          "additionalGuests": "number",
+          "optional": "boolean",
+          "resource": "boolean"
+        }
+      },
+      "attendeesOmitted": "boolean",
+      "extendedProperties": {
+        "private": {
+          "departmentBudget": "string",
+          "projectCode": "string"
+        },
+        "shared": {
+          "meetingType": "string",
+          "priority": "string"
+        }
+      },
+      "hangoutLink": "null",
+      "conferenceData": {
+        "conferenceSolution": {
+          "iconUri": "null",
+          "key": {
+            "type": "string"
+          },
+          "name": "null"
+        },
+        "createRequest": {
+          "conferenceSolutionKey": "null",
+          "requestId": "string",
+          "status": {
+            "statusCode": "string"
+          }
+        },
+        "entryPoints": {
+          "array_of": {
+            "accessCode": "null",
+            "entryPointType": "string",
+            "label": "null",
+            "meetingCode": "null",
+            "passcode": "null",
+            "password": "null",
+            "pin": "null",
+            "uri": "string"
+          }
+        },
+        "notes": "null",
+        "signature": "null"
+      },
+      "guestsCanInviteOthers": "boolean",
+      "guestsCanModify": "boolean",
+      "guestsCanSeeOtherGuests": "boolean",
+      "privateCopy": "null",
+      "locked": "null",
+      "reminders": {
+        "overrides": {
+          "array_of": {
+            "method": "string",
+            "minutes": "number"
+          }
+        },
+        "useDefault": "boolean"
+      },
+      "source": {
+        "url": "string",
+        "title": "string"
+      },
+      "attachments": {
+        "array_of": {
+          "fileUrl": "string",
+          "title": "string"
+        }
+      },
+      "eventType": "string",
+      "birthdayProperties": "null",
+      "focusTimeProperties": "null",
+      "outOfOfficeProperties": "null",
+      "workingLocationProperties": "null"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_409/tool_audit.json",
+      "call_index": 6
+    }
+  },
+  "gym-google-drive-mcp::list_files": {
+    "shape": {
+      "files": {
+        "array_of": "unobserved_empty"
+      },
+      "kind": "string",
+      "nextPageToken": "null",
+      "incompleteSearch": "boolean"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/validation/plus_5_tools/runs/all_domains_hybrid/attempts.jsonl",
+      "line": 2,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-google-drive-mcp::list_comments": {
+    "shape": {
+      "success": "boolean",
+      "data": {
+        "kind": "string",
+        "comments": {
+          "array_of": {
+            "id": "string",
+            "kind": "string",
+            "createdTime": "string",
+            "modifiedTime": "string",
+            "resolved": "boolean",
+            "anchor": "string",
+            "author": {
+              "displayName": "string",
+              "kind": "string",
+              "me": "boolean",
+              "permissionId": "string",
+              "emailAddress": "string",
+              "photoLink": "string"
+            },
+            "deleted": "boolean",
+            "htmlContent": "string",
+            "content": "string",
+            "quotedFileContent": {
+              "mimeType": "string",
+              "value": "string"
+            },
+            "replies": {
+              "array_of": {
+                "id": "string",
+                "kind": "string",
+                "createdTime": "string",
+                "modifiedTime": "string",
+                "author": "object",
+                "htmlContent": "string",
+                "content": "string",
+                "deleted": "boolean",
+                "action": "null"
+              }
+            },
+            "mentionedEmailAddresses": "null",
+            "assigneeEmailAddress": "null"
+          }
+        },
+        "nextPageToken": "null"
+      },
+      "status": "string",
+      "message": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_57/tool_audit.json",
+      "call_index": 3
+    }
+  },
+  "gym-google-drive-mcp::list_permission": {
+    "shape": {
+      "success": "boolean",
+      "data": {
+        "kind": "string",
+        "permissions": {
+          "array_of": "unobserved_empty"
+        }
+      },
+      "status": "string",
+      "message": "string"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_drive/attempts.jsonl",
+      "line": 7,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-google-drive-mcp::create_permission": {
+    "shape": {
+      "success": "boolean",
+      "status_code": "number",
+      "data": {
+        "kind": "string",
+        "id": "string",
+        "type": "string",
+        "role": "string",
+        "allowFileDiscovery": "boolean",
+        "permissionDetails": {
+          "array_of": "unobserved_empty"
+        },
+        "emailAddress": "string",
+        "displayName": "string",
+        "deleted": "boolean",
+        "pendingOwner": "boolean",
+        "view": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_drive/attempts.jsonl",
+      "line": 7,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-google-drive-mcp::create_replies": {
+    "shape": {
+      "success": "boolean",
+      "data": {
+        "id": "string",
+        "kind": "string",
+        "createdTime": "string",
+        "modifiedTime": "string",
+        "author": {
+          "displayName": "string",
+          "kind": "string",
+          "me": "boolean",
+          "photoLink": "string"
+        },
+        "deleted": "boolean",
+        "htmlContent": "string",
+        "content": "string",
+        "mentionedEmailAddresses": {
+          "array_of": "unobserved_empty"
+        },
+        "assigneeEmailAddress": "null"
+      },
+      "status": "string",
+      "message": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_57/tool_audit.json",
+      "call_index": 8
+    }
+  },
+  "gym-google-drive-mcp::list_drives": {
+    "shape": {
+      "success": "boolean",
+      "data": {
+        "kind": "string",
+        "drives": {
+          "array_of": {
+            "kind": "string",
+            "id": "string",
+            "name": "string",
+            "colorRgb": "null",
+            "themeId": "null",
+            "backgroundImageLink": "null",
+            "hidden": "boolean",
+            "createdTime": "string",
+            "capabilities": {
+              "canAddChildren": "boolean",
+              "canComment": "boolean",
+              "canCopy": "boolean",
+              "canDeleteDrive": "boolean",
+              "canDownload": "boolean",
+              "canEdit": "boolean",
+              "canListChildren": "boolean",
+              "canManageMembers": "boolean",
+              "canReadRevisions": "boolean",
+              "canRename": "boolean",
+              "canRenameDrive": "boolean",
+              "canChangeDriveBackground": "boolean",
+              "canShare": "boolean",
+              "canChangeCopyRequiresWriterPermissionRestriction": "boolean",
+              "canChangeDomainUsersOnlyRestriction": "boolean",
+              "canChangeDriveMembersOnlyRestriction": "boolean",
+              "canChangeSharingFoldersRequiresOrganizerPermissionRestriction": "boolean",
+              "canResetDriveRestrictions": "boolean",
+              "canDeleteChildren": "boolean",
+              "canTrashChildren": "boolean",
+              "canChangeDownloadRestriction": "boolean"
+            },
+            "restrictions": {
+              "copyRequiresWriterPermission": "boolean",
+              "domainUsersOnly": "boolean",
+              "driveMembersOnly": "boolean",
+              "adminManagedRestrictions": "boolean",
+              "sharingFoldersRequiresOrganizerPermission": "boolean",
+              "downloadRestriction": {
+                "restrictedForReaders": "boolean",
+                "restrictedForWriters": "boolean"
+              }
+            }
+          }
+        },
+        "nextPageToken": "null"
+      },
+      "status": "string",
+      "message": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_54/tool_audit.json",
+      "call_index": 6
+    }
+  },
+  "gym-google-drive-mcp::create_file": {
+    "shape": {
+      "success": "boolean",
+      "data": {
+        "exportLinks": "null",
+        "parents": {
+          "array_of": "string"
+        },
+        "owners": "null",
+        "permissions": "null",
+        "spaces": "null",
+        "properties": "null",
+        "appProperties": "null",
+        "permissionIds": "null",
+        "contentRestrictions": "null",
+        "kind": "string",
+        "driveId": "string",
+        "fileExtension": "null",
+        "copyRequiresWriterPermission": "boolean",
+        "md5Checksum": "null",
+        "contentHints": "null",
+        "writersCanShare": "boolean",
+        "viewedByMe": "boolean",
+        "mimeType": "string",
+        "thumbnailLink": "null",
+        "iconLink": "null",
+        "shared": "boolean",
+        "lastModifyingUser": "null",
+        "headRevisionId": "null",
+        "sharingUser": "null",
+        "webViewLink": "null",
+        "webContentLink": "null",
+        "size": "string",
+        "viewersCanCopyContent": "null",
+        "hasThumbnail": "null",
+        "folderColorRgb": "null",
+        "id": "string",
+        "name": "string",
+        "description": "null",
+        "starred": "null",
+        "trashed": "boolean",
+        "explicitlyTrashed": "boolean",
+        "createdTime": "string",
+        "modifiedTime": "string",
+        "modifiedByMeTime": "null",
+        "viewedByMeTime": "null",
+        "sharedWithMeTime": "null",
+        "quotaBytesUsed": "string",
+        "version": "string",
+        "originalFilename": "null",
+        "ownedByMe": "boolean",
+        "fullFileExtension": "null",
+        "isAppAuthorized": "null",
+        "teamDriveId": "null",
+        "capabilities": "null",
+        "hasAugmentedPermissions": "null",
+        "trashingUser": "null",
+        "thumbnailVersion": "null",
+        "trashedTime": "null",
+        "modifiedByMe": "boolean",
+        "imageMediaMetadata": "null",
+        "videoMediaMetadata": "null",
+        "shortcutDetails": "null",
+        "resourceKey": "null",
+        "linkShareMetadata": "null",
+        "labelInfo": "null",
+        "sha1Checksum": "null",
+        "sha256Checksum": "null",
+        "inheritedPermissionsDisabled": "null",
+        "downloadRestrictions": {
+          "restrictedForReaders": "boolean",
+          "restrictedForWriters": "boolean"
+        }
+      },
+      "status": "string",
+      "message": "string"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_drive/attempts.jsonl",
+      "line": 7,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-google-drive-mcp::create_comments": {
+    "shape": {
+      "success": "boolean",
+      "status_code": "number",
+      "data": {
+        "id": "string",
+        "content": "string",
+        "author": {
+          "kind": "string",
+          "me": "boolean",
+          "displayName": "string",
+          "photoLink": "string"
+        },
+        "createdTime": "string",
+        "modifiedTime": "string",
+        "resolved": "boolean",
+        "deleted": "boolean",
+        "anchor": "null",
+        "htmlContent": "string",
+        "quotedFileContent": "null",
+        "kind": "string",
+        "replies": {
+          "array_of": "unobserved_empty"
+        },
+        "mentionedEmailAddresses": {
+          "array_of": "unobserved_empty"
+        },
+        "assigneeEmailAddress": "null"
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_drive/attempts.jsonl",
+      "line": 7,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "sn-hr-internal::create_new_hr_service": {
+    "shape": {
+      "success": "boolean",
+      "message": "string",
+      "hr_service": {
+        "hr_service_id": "number",
+        "service_name": "string",
+        "fulfillment_type": "string",
+        "active": "boolean",
+        "org_id": "number",
+        "topic_detail": {
+          "topic_detail_id": "number",
+          "name": "string",
+          "active": "boolean",
+          "topic_category": {
+            "topic_category_id": "number",
+            "name": "string",
+            "coe_type": "string",
+            "active": "boolean"
+          }
+        },
+        "service_template": "null",
+        "hr_criteria": "null"
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/validation/oracle/runs/all_domains_hr/attempts.jsonl",
+      "line": 10,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "sn-hr-internal::create_new_hr_case": {
+    "shape": {
+      "hr_case_id": "number",
+      "number": "string",
+      "status": "string",
+      "priority": "string",
+      "source": "null",
+      "short_description": "string",
+      "worknotes": "null",
+      "skills": "null",
+      "coe_type": "string",
+      "request_status": "null",
+      "account_number": "string",
+      "account_type": "null",
+      "org_id": "number",
+      "created_at": "string",
+      "updated_at": "string",
+      "hr_service": "null",
+      "opened_for": {
+        "hr_profile_id": "number",
+        "number": "string",
+        "user_id": "number",
+        "user_name": "string",
+        "personal_email": "string",
+        "position": "string"
+      },
+      "opened_by": {
+        "hr_profile_id": "number",
+        "number": "string",
+        "user_id": "number",
+        "user_name": "string",
+        "personal_email": "string",
+        "position": "string"
+      },
+      "assigned_to": "null",
+      "assignment_group": "null",
+      "approval_criteria": "null",
+      "approver": "null"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/validation/oracle/runs/all_domains_hybrid/attempts.jsonl",
+      "line": 7,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "sn-hr-internal::update_hr_case": {
+    "shape": {
+      "case": {
+        "hr_case_id": "number",
+        "number": "string",
+        "status": "string",
+        "priority": "string",
+        "source": "null",
+        "short_description": "string",
+        "worknotes": "string",
+        "skills": "null",
+        "coe_type": "string",
+        "request_status": "null",
+        "account_number": "string",
+        "account_type": "null",
+        "org_id": "number",
+        "created_at": "string",
+        "updated_at": "string",
+        "hr_service": "null",
+        "opened_for": {
+          "hr_profile_id": "number",
+          "number": "string",
+          "user_id": "number",
+          "user_name": "string",
+          "personal_email": "string",
+          "position": "string"
+        },
+        "opened_by": {
+          "hr_profile_id": "number",
+          "number": "string",
+          "user_id": "number",
+          "user_name": "string",
+          "personal_email": "string",
+          "position": "string"
+        },
+        "assigned_to": "null",
+        "assignment_group": "null",
+        "approval_criteria": "null",
+        "approver": "null"
+      },
+      "changes_made": {
+        "array_of": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/validation/oracle/runs/all_domains_hybrid/attempts.jsonl",
+      "line": 7,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "sn-hr-internal::update_hr_profile": {
+    "shape": {
+      "success": "boolean",
+      "message": "string",
+      "changes_made": {
+        "array_of": "string"
+      },
+      "hr_profile": {
+        "hr_profile_id": "number",
+        "number": "string",
+        "gender": "string",
+        "user_id": "number",
+        "personal_email": "string",
+        "marital_status": "string",
+        "type": "string",
+        "dob": "string",
+        "nationality": "string",
+        "employment_start_date": "string",
+        "employment_end_date": "null",
+        "manager": "null",
+        "location_type": "string",
+        "national_tax_id": "string",
+        "position": "string",
+        "org_id": "number",
+        "created_at": "string",
+        "updated_at": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_48/tool_audit.json",
+      "call_index": 9
+    }
+  },
+  "gym-itsm-mcp::list_incidents": {
+    "shape": {
+      "array_of": {
+        "incident_id": "string",
+        "number": "string",
+        "caller_id": "string",
+        "service": "string",
+        "service_offering": "string",
+        "configuration_item": "string",
+        "assigned_to": "string",
+        "assignment_group": "string",
+        "resolved_by": "string",
+        "problem": "null",
+        "change_request": "null",
+        "caused_by_change": "null",
+        "incident_template": "string",
+        "parent_incident": "null",
+        "channel": "string",
+        "contact_type": "string",
+        "status": "string",
+        "category": "string",
+        "short_description": "string",
+        "description": "string",
+        "worknotes": "string",
+        "resolution_notes": "string",
+        "close_notes": "string",
+        "impact": "string",
+        "urgency": "string",
+        "priority": "string",
+        "resolution_code": "string",
+        "on_hold_reason": "null",
+        "resolved": "string",
+        "created_at": "string",
+        "updated_at": "string",
+        "org_id": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_45/tool_audit.json",
+      "call_index": 2
+    }
+  },
+  "gym-itsm-mcp::retrieve_knowledge_articles": {
+    "shape": {
+      "knowledges": {
+        "array_of": {
+          "knowledge_id": "string",
+          "kb_number": "string",
+          "title": "string",
+          "body": "string",
+          "state": "string",
+          "visibility": "string",
+          "owner_id": "string",
+          "created_on": "string",
+          "updated_on": "string"
+        }
+      },
+      "total_count": "number"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_45/tool_audit.json",
+      "call_index": 3
+    }
+  },
+  "gym-itsm-mcp::send_notification": {
+    "shape": {
+      "incident_id": "string",
+      "email": "string",
+      "type": "string",
+      "status": "string",
+      "subject": "string",
+      "message": "string",
+      "notification_id": "string",
+      "org_id": "string",
+      "created_on": "string",
+      "updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_45/tool_audit.json",
+      "call_index": 7
+    }
+  },
+  "sn-csm-server::find_account": {
+    "shape": {
+      "account_id": "number",
+      "name": "string",
+      "account_type": "string",
+      "email_domain": "string",
+      "active": "number"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/oracle/runs/all_domains_csm/attempts.jsonl",
+      "line": 2,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "sn-csm-server::find_contracts": {
+    "shape": {
+      "array_of": {
+        "contract_id": "number",
+        "account_id": "number",
+        "contract_type": "string",
+        "status": "string",
+        "contract_price": "number",
+        "start_date": "string",
+        "end_date": "string",
+        "sys_created_on": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_42/tool_audit.json",
+      "call_index": 2
+    }
+  },
+  "sn-csm-server::find_contacts": {
+    "shape": {
+      "array_of": {
+        "contact_id": "number",
+        "account_id": "number",
+        "portal_user_id": "number",
+        "active": "number",
+        "is_primary": "number",
+        "sys_created_on": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/oracle/runs/all_domains_csm/attempts.jsonl",
+      "line": 2,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "sn-csm-server::list_users": {
+    "shape": {
+      "array_of": {
+        "user_id": "number",
+        "first_name": "string",
+        "last_name": "string",
+        "email": "string",
+        "phone": "string",
+        "role": "string",
+        "location_id": "number",
+        "active": "number",
+        "sys_created_on": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/oracle/runs/all_domains_csm/attempts.jsonl",
+      "line": 2,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "sn-csm-server::find_location": {
+    "shape": {
+      "location_id": "number",
+      "name": "string",
+      "city": "string",
+      "country": "string",
+      "active": "number"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_42/tool_audit.json",
+      "call_index": 6
+    }
+  },
+  "sn-csm-server::update_contract": {
+    "shape": {
+      "contract_id": "number",
+      "account_id": "number",
+      "contract_type": "string",
+      "status": "string",
+      "contract_price": "number",
+      "start_date": "string",
+      "end_date": "string",
+      "sys_created_on": "string",
+      "sys_updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_42/tool_audit.json",
+      "call_index": 7
+    }
+  },
+  "gym-teams-mcp::list_teams": {
+    "shape": {
+      "@odata.context": "string",
+      "value": {
+        "array_of": {
+          "id": "string"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_teams/attempts.jsonl",
+      "line": 3,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-teams-mcp::list_users": {
+    "shape": {
+      "@odata.context": "string",
+      "value": {
+        "array_of": {
+          "@odata.context": "string",
+          "id": "string",
+          "displayName": "string"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/oracle/runs/all_domains_teams/attempts.jsonl",
+      "line": 5,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-teams-mcp::list_channels": {
+    "shape": {
+      "@odata.context": "string",
+      "@odata.count": "number",
+      "value": {
+        "array_of": {
+          "@odata.id": "string",
+          "id": "string",
+          "displayName": "string",
+          "description": "string"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_teams/attempts.jsonl",
+      "line": 1,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-teams-mcp::add_team_member": {
+    "shape": {
+      "_odata_type": "string",
+      "id": "string",
+      "roles": {
+        "array_of": "string"
+      },
+      "displayName": "string",
+      "visibleHistoryStartDateTime": "null",
+      "userId": "string",
+      "email": "string",
+      "tenantId": "null"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/validation/oracle/runs/all_domains_teams/attempts.jsonl",
+      "line": 3,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-teams-mcp::add_tabs_to_channels": {
+    "shape": {
+      "@odata.context": "string",
+      "id": "string",
+      "displayName": "string",
+      "teamsApp_odata_bind": "string",
+      "configuration": {
+        "contentUrl": "string",
+        "websiteUrl": "string",
+        "removeUrl": "string",
+        "entityId": "string",
+        "configuration": {
+          "guidebookVersion": "string"
+        }
+      },
+      "teamsApp": {
+        "id": "string",
+        "displayName": "string",
+        "distributionMethod": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_teams/attempts.jsonl",
+      "line": 1,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-teams-mcp::send_channel_message": {
+    "shape": {
+      "@odata.context": "string",
+      "id": "string",
+      "replyToId": "null",
+      "etag": "string",
+      "messageType": "string",
+      "createdDateTime": "string",
+      "lastModifiedDateTime": "string",
+      "lastEditedDateTime": "null",
+      "deletedDateTime": "null",
+      "subject": "null",
+      "summary": "null",
+      "chatId": "null",
+      "importance": "string",
+      "locale": "string",
+      "webUrl": "string",
+      "policyViolation": "null",
+      "eventDetail": "null",
+      "from": {
+        "application": "null",
+        "device": "null",
+        "user": {
+          "id": "string",
+          "displayName": "string",
+          "userIdentityType": "string"
+        }
+      },
+      "body": {
+        "contentType": "string",
+        "content": "string"
+      },
+      "channelIdentity": {
+        "teamId": "string",
+        "channelId": "string"
+      },
+      "attachments": {
+        "array_of": "unobserved_empty"
+      },
+      "mentions": {
+        "array_of": "unobserved_empty"
+      },
+      "reactions": {
+        "array_of": "unobserved_empty"
+      },
+      "messageHistory": {
+        "array_of": "unobserved_empty"
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_teams/attempts.jsonl",
+      "line": 3,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-calendar::get_event": {
+    "shape": {
+      "kind": "string",
+      "etag": "string",
+      "id": "string",
+      "status": "string",
+      "htmlLink": "string",
+      "created": "string",
+      "updated": "string",
+      "summary": "string",
+      "description": "string",
+      "location": "string",
+      "colorId": "string",
+      "creator": {
+        "id": "string",
+        "email": "string",
+        "displayName": "string",
+        "self": "boolean"
+      },
+      "organizer": {
+        "id": "string",
+        "email": "string",
+        "displayName": "string",
+        "self": "boolean"
+      },
+      "start": {
+        "dateTime": "string",
+        "date": "null",
+        "timeZone": "string"
+      },
+      "end": {
+        "dateTime": "string",
+        "date": "null",
+        "timeZone": "string"
+      },
+      "endTimeUnspecified": "boolean",
+      "recurrence": {
+        "array_of": "string"
+      },
+      "recurringEventId": "string",
+      "originalStartTime": {
+        "dateTime": "string",
+        "date": "null",
+        "timeZone": "string"
+      },
+      "transparency": "null",
+      "visibility": "string",
+      "iCalUID": "string",
+      "sequence": "number",
+      "attendees": {
+        "array_of": {
+          "id": "string",
+          "email": "string",
+          "displayName": "string",
+          "self": "boolean",
+          "organizer": "boolean",
+          "responseStatus": "string",
+          "comment": "null",
+          "additionalGuests": "number",
+          "optional": "boolean",
+          "resource": "boolean"
+        }
+      },
+      "attendeesOmitted": "boolean",
+      "extendedProperties": {
+        "private": {
+          "taskType": "string",
+          "estimatedComplexity": "string"
+        }
+      },
+      "hangoutLink": "null",
+      "conferenceData": "null",
+      "guestsCanInviteOthers": "boolean",
+      "guestsCanModify": "boolean",
+      "guestsCanSeeOtherGuests": "boolean",
+      "privateCopy": "null",
+      "locked": "null",
+      "reminders": {
+        "overrides": {
+          "array_of": {
+            "method": "string",
+            "minutes": "number"
+          }
+        },
+        "useDefault": "boolean"
+      },
+      "source": "null",
+      "attachments": {
+        "array_of": "unobserved_empty"
+      },
+      "eventType": "string",
+      "birthdayProperties": "null",
+      "focusTimeProperties": {
+        "autoDeclineMode": "string",
+        "chatStatus": "string",
+        "declineMessage": "string"
+      },
+      "outOfOfficeProperties": "null",
+      "workingLocationProperties": "null"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_35/tool_audit.json",
+      "call_index": 5
+    }
+  },
+  "gym-calendar::update_event": {
+    "shape": {
+      "kind": "string",
+      "etag": "string",
+      "id": "string",
+      "status": "string",
+      "htmlLink": "string",
+      "created": "string",
+      "updated": "string",
+      "summary": "string",
+      "description": "string",
+      "location": "string",
+      "colorId": "string",
+      "creator": {
+        "id": "string",
+        "email": "string",
+        "displayName": "string",
+        "self": "boolean"
+      },
+      "organizer": {
+        "id": "string",
+        "email": "string",
+        "displayName": "string",
+        "self": "boolean"
+      },
+      "start": {
+        "dateTime": "string",
+        "date": "null",
+        "timeZone": "string"
+      },
+      "end": {
+        "dateTime": "string",
+        "date": "null",
+        "timeZone": "string"
+      },
+      "endTimeUnspecified": "boolean",
+      "recurrence": {
+        "array_of": "string"
+      },
+      "recurringEventId": "string",
+      "originalStartTime": {
+        "dateTime": "string",
+        "date": "null",
+        "timeZone": "string"
+      },
+      "transparency": "null",
+      "visibility": "string",
+      "iCalUID": "string",
+      "sequence": "number",
+      "attendees": {
+        "array_of": {
+          "id": "string",
+          "email": "string",
+          "displayName": "string",
+          "self": "boolean",
+          "organizer": "boolean",
+          "responseStatus": "string",
+          "comment": "null",
+          "additionalGuests": "number",
+          "optional": "boolean",
+          "resource": "boolean"
+        }
+      },
+      "attendeesOmitted": "boolean",
+      "extendedProperties": {
+        "private": {
+          "taskType": "string",
+          "estimatedComplexity": "string"
+        }
+      },
+      "hangoutLink": "null",
+      "conferenceData": "null",
+      "guestsCanInviteOthers": "boolean",
+      "guestsCanModify": "boolean",
+      "guestsCanSeeOtherGuests": "boolean",
+      "privateCopy": "null",
+      "locked": "null",
+      "reminders": {
+        "overrides": {
+          "array_of": {
+            "method": "string",
+            "minutes": "number"
+          }
+        },
+        "useDefault": "boolean"
+      },
+      "source": "null",
+      "attachments": {
+        "array_of": "unobserved_empty"
+      },
+      "eventType": "string",
+      "birthdayProperties": "null",
+      "focusTimeProperties": {
+        "autoDeclineMode": "string",
+        "chatStatus": "string",
+        "declineMessage": "string"
+      },
+      "outOfOfficeProperties": "null",
+      "workingLocationProperties": "null"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_36/tool_audit.json",
+      "call_index": 5
+    }
+  },
+  "gym-google-drive-mcp::copy_files": {
+    "shape": {
+      "success": "boolean",
+      "data": {
+        "success": "boolean",
+        "file": {
+          "id": "string",
+          "name": "string",
+          "mimeType": "string",
+          "size": "string",
+          "md5Checksum": "string",
+          "createdTime": "string",
+          "modifiedTime": "string",
+          "viewedByMeTime": "null",
+          "trashedTime": "null",
+          "starred": "boolean",
+          "trashed": "boolean",
+          "properties": {
+            "archive_status": "string",
+            "archive_date": "string"
+          },
+          "shortcutTargetId": "null",
+          "shortcutTargetMimeType": "null",
+          "kind": "string",
+          "version": "string",
+          "ownedByMe": "boolean",
+          "modifiedByMe": "boolean",
+          "viewedByMe": "boolean",
+          "shared": "boolean",
+          "copyRequiresWriterPermission": "boolean",
+          "writersCanShare": "boolean",
+          "hasThumbnail": "boolean",
+          "iconLink": "string",
+          "webViewLink": "string",
+          "webContentLink": "string",
+          "owners": {
+            "array_of": {
+              "kind": "string",
+              "displayName": "string",
+              "photoLink": "string",
+              "me": "boolean",
+              "permissionId": "string",
+              "emailAddress": "string"
+            }
+          }
+        },
+        "message": "string"
+      },
+      "status": "string",
+      "message": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_33/tool_audit.json",
+      "call_index": 3
+    }
+  },
+  "gym-google-drive-mcp::update_permission": {
+    "shape": {
+      "success": "boolean",
+      "data": {
+        "kind": "string",
+        "id": "string",
+        "type": "string",
+        "role": "string",
+        "allowFileDiscovery": "boolean",
+        "permissionDetails": {
+          "array_of": "unobserved_empty"
+        },
+        "emailAddress": "string",
+        "displayName": "string",
+        "photoLink": "string",
+        "deleted": "boolean",
+        "view": "string"
+      },
+      "status": "string",
+      "message": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_33/tool_audit.json",
+      "call_index": 5
+    }
+  },
+  "gym-google-drive-mcp::update_files": {
+    "shape": {
+      "success": "boolean",
+      "data": {
+        "id": "string",
+        "name": "string",
+        "mimeType": "string",
+        "description": "string",
+        "fileExtension": "null",
+        "fullFileExtension": "null",
+        "originalFilename": "null",
+        "size": "string",
+        "md5Checksum": "null",
+        "sha1Checksum": "null",
+        "sha256Checksum": "null",
+        "createdTime": "string",
+        "modifiedTime": "string",
+        "modifiedByMeTime": "null",
+        "viewedByMeTime": "null",
+        "sharedWithMeTime": "null",
+        "trashedTime": "null",
+        "starred": "boolean",
+        "trashed": "boolean",
+        "explicitlyTrashed": "boolean",
+        "viewedByMe": "boolean",
+        "modifiedByMe": "boolean",
+        "ownedByMe": "boolean",
+        "shared": "boolean",
+        "copyRequiresWriterPermission": "boolean",
+        "writersCanShare": "boolean",
+        "hasThumbnail": "boolean",
+        "thumbnailVersion": "null",
+        "thumbnailLink": "null",
+        "iconLink": "string",
+        "webViewLink": "string",
+        "webContentLink": "string",
+        "folderColorRgb": "null",
+        "contentRestricted": "boolean",
+        "contentRestrictionReason": "null",
+        "contentRestrictionTime": "null",
+        "ownerRestricted": "boolean",
+        "systemRestricted": "boolean",
+        "downloadRestrictedForReaders": "boolean",
+        "downloadRestrictedForWriters": "boolean",
+        "resourceKey": "null",
+        "securityUpdateEligible": "boolean",
+        "securityUpdateEnabled": "boolean",
+        "inheritedPermissionsDisabled": "boolean",
+        "hasAugmentedPermissions": "boolean",
+        "version": "string",
+        "headRevisionId": "null",
+        "quotaBytesUsed": "string",
+        "imageMediaMetadata": "null",
+        "videoMediaMetadata": "null",
+        "properties": "null",
+        "appProperties": "null",
+        "shortcutTargetId": "null",
+        "shortcutTargetMimeType": "null",
+        "shortcutTargetResourceKey": "null",
+        "kind": "string",
+        "owners": {
+          "array_of": {
+            "kind": "string",
+            "displayName": "string",
+            "photoLink": "string",
+            "me": "boolean",
+            "permissionId": "string",
+            "emailAddress": "string"
+          }
+        },
+        "lastModifyingUser": {
+          "kind": "string",
+          "displayName": "string",
+          "photoLink": "string",
+          "me": "boolean",
+          "permissionId": "string",
+          "emailAddress": "string"
+        },
+        "driveId": "string",
+        "sharingUser": "null",
+        "trashingUser": "null",
+        "parents": {
+          "array_of": "string"
+        },
+        "permissions": "null",
+        "labelInfo": "null",
+        "exportLinks": "null",
+        "spaces": "null",
+        "permissionIds": "null",
+        "contentRestrictions": "null",
+        "contentHints": "null",
+        "viewersCanCopyContent": "null",
+        "isAppAuthorized": "null",
+        "teamDriveId": "null",
+        "capabilities": "null",
+        "linkShareMetadata": "null",
+        "shortcutDetails": "null",
+        "downloadRestrictions": "null"
+      },
+      "status": "string",
+      "message": "string"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/validation/plus_5_tools/runs/all_domains_hybrid/attempts.jsonl",
+      "line": 2,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "sn-csm-server::retrieve_installed_products": {
+    "shape": {
+      "array_of": {
+        "installed_product_id": "number",
+        "account_id": "number",
+        "product_id": "number",
+        "location_id": "null",
+        "serial_number": "string",
+        "status": "string",
+        "warranty_end": "string",
+        "sys_created_on": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_30/tool_audit.json",
+      "call_index": 2
+    }
+  },
+  "gym-calendar::get_calendar_from_list": {
+    "shape": {
+      "kind": "string",
+      "etag": "string",
+      "id": "string",
+      "summary": "string",
+      "description": "string",
+      "location": "string",
+      "timeZone": "string",
+      "summaryOverride": "null",
+      "colorId": "null",
+      "backgroundColor": "null",
+      "foregroundColor": "null",
+      "hidden": "boolean",
+      "selected": "boolean",
+      "accessRole": "string",
+      "defaultReminders": "null",
+      "notificationSettings": "null",
+      "primary": "boolean",
+      "deleted": "boolean",
+      "conferenceProperties": {
+        "allowedConferenceSolutionTypes": {
+          "array_of": "string"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/ds_recovery_merged_controls/cell_02/tool_audit.json",
+      "call_index": 17
+    }
+  },
+  "gym-calendar::create_event": {
+    "shape": {
+      "kind": "string",
+      "etag": "string",
+      "id": "string",
+      "status": "string",
+      "htmlLink": "string",
+      "created": "string",
+      "updated": "string",
+      "summary": "string",
+      "description": "string",
+      "location": "string",
+      "colorId": "null",
+      "creator": {
+        "id": "string",
+        "email": "string",
+        "displayName": "string",
+        "self": "boolean"
+      },
+      "organizer": {
+        "id": "string",
+        "email": "string",
+        "displayName": "string",
+        "self": "boolean"
+      },
+      "start": {
+        "dateTime": "string",
+        "date": "null",
+        "timeZone": "string"
+      },
+      "end": {
+        "dateTime": "string",
+        "date": "null",
+        "timeZone": "string"
+      },
+      "endTimeUnspecified": "boolean",
+      "recurrence": {
+        "array_of": "unobserved_empty"
+      },
+      "recurringEventId": "null",
+      "originalStartTime": {
+        "dateTime": "string",
+        "date": "null",
+        "timeZone": "string"
+      },
+      "transparency": "string",
+      "visibility": "string",
+      "iCalUID": "string",
+      "sequence": "number",
+      "attendees": {
+        "array_of": {
+          "id": "string",
+          "email": "string",
+          "displayName": "string",
+          "self": "boolean",
+          "organizer": "boolean",
+          "responseStatus": "string",
+          "comment": "null",
+          "additionalGuests": "number",
+          "optional": "boolean",
+          "resource": "boolean"
+        }
+      },
+      "attendeesOmitted": "boolean",
+      "extendedProperties": "null",
+      "hangoutLink": "null",
+      "conferenceData": "null",
+      "guestsCanInviteOthers": "boolean",
+      "guestsCanModify": "boolean",
+      "guestsCanSeeOtherGuests": "boolean",
+      "privateCopy": "boolean",
+      "locked": "boolean",
+      "reminders": {
+        "overrides": {
+          "array_of": "unobserved_empty"
+        },
+        "useDefault": "boolean"
+      },
+      "source": "null",
+      "attachments": {
+        "array_of": "unobserved_empty"
+      },
+      "eventType": "string",
+      "birthdayProperties": "null",
+      "focusTimeProperties": "null",
+      "outOfOfficeProperties": "null",
+      "workingLocationProperties": "null"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_calendar/attempts.jsonl",
+      "line": 1,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "sn-hr-internal::get_user_using_name": {
+    "shape": {
+      "success": "boolean",
+      "user": {
+        "user_id": "number",
+        "first_name": "string",
+        "last_name": "string",
+        "email": "string",
+        "phone": "string",
+        "role": "string",
+        "active": "boolean",
+        "org_id": "number",
+        "created_at": "string",
+        "updated_at": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_24/tool_audit.json",
+      "call_index": 1
+    }
+  },
+  "sn-hr-internal::get_hr_service_by_name": {
+    "shape": {
+      "success": "boolean",
+      "hr_service": {
+        "hr_service_id": "number",
+        "service_name": "string",
+        "fulfillment_type": "string",
+        "active": "boolean",
+        "org_id": "number",
+        "topic_detail": {
+          "topic_detail_id": "number",
+          "name": "string",
+          "active": "boolean",
+          "topic_category": {
+            "topic_category_id": "number",
+            "name": "string",
+            "coe_type": "string",
+            "active": "boolean"
+          }
+        },
+        "service_template": "null",
+        "hr_criteria": "null"
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_hybrid/attempts.jsonl",
+      "line": 8,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "sn-hr-internal::find_group_by_name": {
+    "shape": {
+      "success": "boolean",
+      "user_group": {
+        "group_id": "number",
+        "name": "string",
+        "type": "string",
+        "active": "boolean",
+        "org_id": "number",
+        "created_at": "string",
+        "updated_at": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_24/tool_audit.json",
+      "call_index": 4
+    }
+  },
+  "gym-itsm-mcp::get_user_using_name": {
+    "shape": {
+      "user_id": "string",
+      "user_name": "string",
+      "first_name": "string",
+      "last_name": "string",
+      "email": "string",
+      "phone": "string",
+      "role": "string",
+      "active": "boolean",
+      "org_id": "string",
+      "location_id": "string",
+      "created_on": "string",
+      "updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_21/tool_audit.json",
+      "call_index": 3
+    }
+  },
+  "gym-itsm-mcp::list_user_groups": {
+    "shape": {
+      "user_groups": {
+        "array_of": {
+          "group_id": "string",
+          "name": "string",
+          "type": "string",
+          "active": "boolean",
+          "email": "string",
+          "description": "string",
+          "manager_id": "string",
+          "org_id": "string",
+          "created_on": "string",
+          "updated_on": "string"
+        }
+      },
+      "total_count": "number"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_21/tool_audit.json",
+      "call_index": 4
+    }
+  },
+  "gym-itsm-mcp::get_user": {
+    "shape": {
+      "user_id": "string",
+      "user_name": "string",
+      "first_name": "string",
+      "last_name": "string",
+      "email": "string",
+      "phone": "string",
+      "role": "string",
+      "active": "boolean",
+      "org_id": "string",
+      "location_id": "null",
+      "created_on": "string",
+      "updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_21/tool_audit.json",
+      "call_index": 5
+    }
+  },
+  "gym-itsm-mcp::update_incident": {
+    "shape": {
+      "incident_id": "string",
+      "number": "string",
+      "service": "null",
+      "service_offering": "null",
+      "configuration_item": "null",
+      "caller_id": "string",
+      "channel": "null",
+      "status": "string",
+      "category": "string",
+      "short_description": "string",
+      "description": "string",
+      "impact": "string",
+      "urgency": "string",
+      "priority": "string",
+      "assigned_to": "null",
+      "assignment_group": "null",
+      "worknotes": "string",
+      "resolution_notes": "null",
+      "close_notes": "null",
+      "resolution_code": "null",
+      "on_hold_reason": "null",
+      "parent_incident": "null",
+      "problem": "null",
+      "change_request": "null",
+      "caused_by_change": "null",
+      "resolved_by": "null",
+      "incident_template": "null",
+      "resolved": "null",
+      "created_at": "string",
+      "updated_at": "string"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/validation/plus_5_tools/runs/all_domains_hybrid/attempts.jsonl",
+      "line": 2,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "sn-csm-server::find_user": {
+    "shape": {
+      "user_id": "number",
+      "first_name": "string",
+      "last_name": "string",
+      "email": "string",
+      "role": "string",
+      "location_id": "number",
+      "active": "number"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_18/tool_audit.json",
+      "call_index": 1
+    }
+  },
+  "sn-csm-server::update_user_details": {
+    "shape": {
+      "user_id": "number",
+      "first_name": "string",
+      "last_name": "string",
+      "email": "string",
+      "phone": "string",
+      "role": "string",
+      "location_id": "number",
+      "active": "number",
+      "sys_created_on": "string",
+      "sys_updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_18/tool_audit.json",
+      "call_index": 4
+    }
+  },
+  "sn-csm-server::find_user_group": {
+    "shape": {},
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_18/tool_audit.json",
+      "call_index": 9
+    }
+  },
+  "sn-csm-server::add_new_user": {
+    "shape": {
+      "user_id": "number",
+      "first_name": "string",
+      "last_name": "string",
+      "email": "string",
+      "phone": "null",
+      "role": "string",
+      "location_id": "number",
+      "active": "number",
+      "sys_created_on": "string",
+      "sys_updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_18/tool_audit.json",
+      "call_index": 11
+    }
+  },
+  "sn-csm-server::add_new_group_member": {
+    "shape": {
+      "member_id": "number",
+      "group_id": "number",
+      "user_id": "number",
+      "sys_created_on": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_18/tool_audit.json",
+      "call_index": 12
+    }
+  },
+  "sn-csm-server::find_product": {
+    "shape": {
+      "product_id": "number",
+      "name": "string",
+      "category": "string",
+      "lifecycle_state": "string"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/oracle/runs/all_domains_csm/attempts.jsonl",
+      "line": 2,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "sn-csm-server::create_knowledge": {
+    "shape": {
+      "knowledge_id": "number",
+      "kb_number": "string",
+      "title": "string",
+      "body": "string",
+      "state": "string",
+      "visibility": "string",
+      "product_id": "number",
+      "owner_id": "number",
+      "sys_created_on": "string",
+      "sys_updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_18/tool_audit.json",
+      "call_index": 16
+    }
+  },
+  "gym-teams-mcp::create_channel": {
+    "shape": {
+      "@odata.context": "string",
+      "@odata.type": "string",
+      "id": "string",
+      "displayName": "string",
+      "description": "string",
+      "membershipType": "string",
+      "isFavoriteByDefault": "boolean",
+      "tenantId": "string",
+      "teamId": "string",
+      "isArchived": "boolean",
+      "createdDateTime": "string"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_teams/attempts.jsonl",
+      "line": 3,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-calendar::add_calendar_to_list": {
+    "shape": {
+      "kind": "string",
+      "etag": "string",
+      "id": "string",
+      "summary": "string",
+      "description": "string",
+      "location": "string",
+      "timeZone": "string",
+      "summaryOverride": "null",
+      "colorId": "string",
+      "backgroundColor": "string",
+      "foregroundColor": "string",
+      "hidden": "boolean",
+      "selected": "boolean",
+      "accessRole": "string",
+      "defaultReminders": "null",
+      "notificationSettings": "null",
+      "primary": "boolean",
+      "deleted": "boolean",
+      "conferenceProperties": {
+        "allowedConferenceSolutionTypes": {
+          "array_of": "unobserved_empty"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_calendar/attempts.jsonl",
+      "line": 1,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-calendar::list_acl_rules": {
+    "shape": {
+      "kind": "string",
+      "etag": "string",
+      "items": {
+        "array_of": {
+          "id": "string",
+          "calendar_id": "string",
+          "user_id": "string",
+          "role": "string",
+          "etag": "string",
+          "scope": {
+            "type": "string",
+            "value": "string"
+          }
+        }
+      },
+      "nextPageToken": "null",
+      "nextSyncToken": "string"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/validation/plus_5_tools/runs/all_domains_calendar/attempts.jsonl",
+      "line": 6,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-google-drive-mcp::delete_permission": {
+    "shape": {
+      "success": "boolean",
+      "status": "string",
+      "message": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_09/tool_audit.json",
+      "call_index": 4
+    }
+  },
+  "gym-email-mcp::list_send_as_aliases": {
+    "shape": {
+      "sendAs": {
+        "array_of": {
+          "sendAsEmail": "string",
+          "displayName": "string",
+          "replyToAddress": "null",
+          "signature": "string",
+          "isPrimary": "boolean",
+          "isDefault": "boolean",
+          "treatAsAlias": "boolean",
+          "verificationStatus": "string"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_03/tool_audit.json",
+      "call_index": 1
+    }
+  },
+  "gym-email-mcp::patch_send_as_alias": {
+    "shape": {
+      "sendAsEmail": "string",
+      "displayName": "string",
+      "replyToAddress": "string",
+      "signature": "string",
+      "isPrimary": "boolean",
+      "isDefault": "boolean",
+      "treatAsAlias": "boolean",
+      "verificationStatus": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_03/tool_audit.json",
+      "call_index": 2
+    }
+  },
+  "gym-email-mcp::verify_send_as_alias": {
+    "shape": {},
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_03/tool_audit.json",
+      "call_index": 5
+    }
+  },
+  "gym-email-mcp::delete_send_as_alias": {
+    "shape": {},
+    "provenance": {
+      "source": "runs/recovery_teacher_validation/cell_03/tool_audit.json",
+      "call_index": 6
+    }
+  },
+  "sn-hr-internal::list_users": {
+    "shape": {
+      "success": "boolean",
+      "total_count": "number",
+      "returned_count": "number",
+      "limit": "number",
+      "offset": "number",
+      "users": {
+        "array_of": {
+          "user_id": "number",
+          "first_name": "string",
+          "last_name": "string",
+          "email": "string",
+          "phone": "string",
+          "role": "string",
+          "active": "boolean",
+          "org_id": "number",
+          "created_at": "string",
+          "updated_at": "string"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/ds_fault_difficult/cell_13/tool_audit.json",
+      "call_index": 2
+    }
+  },
+  "sn-hr-internal::add_new_user": {
+    "shape": {
+      "success": "boolean",
+      "message": "string",
+      "user": {
+        "user_id": "number",
+        "first_name": "string",
+        "last_name": "string",
+        "email": "string",
+        "phone": "string",
+        "role": "string",
+        "active": "boolean",
+        "org_id": "number",
+        "created_at": "string",
+        "updated_at": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/ds_fault_difficult/cell_13/tool_audit.json",
+      "call_index": 9
+    }
+  },
+  "sn-hr-internal::onboard_new_hr_profile": {
+    "shape": {
+      "success": "boolean",
+      "message": "string",
+      "hr_profile": {
+        "hr_profile_id": "number",
+        "number": "string",
+        "gender": "null",
+        "user_id": "number",
+        "personal_email": "string",
+        "marital_status": "null",
+        "type": "null",
+        "dob": "null",
+        "nationality": "null",
+        "employment_start_date": "string",
+        "employment_end_date": "null",
+        "manager": "null",
+        "location_type": "null",
+        "national_tax_id": "string",
+        "position": "string",
+        "org_id": "number",
+        "created_at": "string",
+        "updated_at": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/ds_fault_difficult/cell_13/tool_audit.json",
+      "call_index": 10
+    }
+  },
+  "sn-hr-internal::list_user_skills": {
+    "shape": {
+      "success": "boolean",
+      "user_skills": {
+        "array_of": {
+          "user_skill_id": "number",
+          "skill": "number",
+          "skill_name": "string",
+          "user": "number",
+          "user_email": "string",
+          "user_first_name": "string",
+          "user_last_name": "string",
+          "org_id": "number",
+          "created_at": "string",
+          "updated_at": "string"
+        }
+      },
+      "count": "number",
+      "limit": "number"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_92/tool_audit.json",
+      "call_index": 3
+    }
+  },
+  "sn-hr-internal::list_group_members": {
+    "shape": {
+      "success": "boolean",
+      "group_id": "number",
+      "count": "number",
+      "user_group_memberships": {
+        "array_of": {
+          "member_id": "number",
+          "group_id": "number",
+          "user_id": "number",
+          "org_id": "number"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_92/tool_audit.json",
+      "call_index": 6
+    }
+  },
+  "sn-hr-internal::add_new_group_member": {
+    "shape": {
+      "success": "boolean",
+      "message": "string",
+      "user_group_membership": {
+        "member_id": "number",
+        "group_id": "number",
+        "user_id": "number",
+        "org_id": "number"
+      }
+    },
+    "provenance": {
+      "source": "runs/ds_fault_difficult/cell_13/tool_audit.json",
+      "call_index": 13
+    }
+  },
+  "sn-hr-internal::create_new_service_template": {
+    "shape": {
+      "success": "boolean",
+      "message": "string",
+      "service_template": {
+        "service_template_id": "number",
+        "name": "string",
+        "change_request_values": {
+          "short_description": "string",
+          "category": "string",
+          "xml_payload": "string"
+        },
+        "active": "boolean",
+        "coe_type": "string",
+        "created_at": "string",
+        "updated_at": "string",
+        "org_id": "number"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_99/tool_audit.json",
+      "call_index": 8
+    }
+  },
+  "sn-hr-internal::register_hr_criteria": {
+    "shape": {
+      "success": "boolean",
+      "message": "string",
+      "hr_criteria": {
+        "hr_criteria_id": "number",
+        "name": "string",
+        "type": "string",
+        "active": "boolean",
+        "user_group": "number",
+        "users": {
+          "array_of": "number"
+        },
+        "org_id": "number",
+        "created_at": "string",
+        "updated_at": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_401/tool_audit.json",
+      "call_index": 6
+    }
+  },
+  "sn-hr-internal::delete_hr_service": {
+    "shape": {
+      "success": "boolean",
+      "message": "string",
+      "deleted_service": {
+        "hr_service_id": "number",
+        "service_name": "string",
+        "fulfillment_type": "string",
+        "active": "boolean",
+        "org_id": "number",
+        "topic_detail": {
+          "topic_detail_id": "number",
+          "name": "string",
+          "active": "boolean",
+          "topic_category": {
+            "topic_category_id": "number",
+            "name": "string",
+            "coe_type": "string",
+            "active": "boolean"
+          }
+        },
+        "service_template": {
+          "service_template_id": "number",
+          "name": "string",
+          "change_request_values": {
+            "short_description": "string",
+            "category": "string"
+          },
+          "coe_type": "string",
+          "active": "boolean"
+        },
+        "hr_criteria": {
+          "hr_criteria_id": "number",
+          "name": "string",
+          "type": "string",
+          "user_group": "number",
+          "users": {
+            "array_of": "number"
+          },
+          "active": "boolean"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_401/tool_audit.json",
+      "call_index": 12
+    }
+  },
+  "gym-itsm-mcp::find_locations": {
+    "shape": {
+      "locations": {
+        "array_of": {
+          "location_id": "string",
+          "name": "string",
+          "plot_no": "string",
+          "street": "string",
+          "city": "string",
+          "state": "string",
+          "country": "string",
+          "active": "boolean",
+          "org_id": "string",
+          "created_on": "string",
+          "updated_on": "string"
+        }
+      },
+      "total_count": "number"
+    },
+    "provenance": {
+      "source": "runs/ds_fault_difficult/cell_11/tool_audit.json",
+      "call_index": 2
+    }
+  },
+  "gym-itsm-mcp::find_configuration_items": {
+    "shape": {
+      "configuration_items": {
+        "array_of": {
+          "configuration_item_id": "string",
+          "name": "string",
+          "serial_number": "string",
+          "owner_id": "string",
+          "location_id": "string",
+          "org_id": "string",
+          "status": "string",
+          "cost": "number",
+          "created_on": "string",
+          "updated_on": "string"
+        }
+      },
+      "total_count": "number"
+    },
+    "provenance": {
+      "source": "runs/ds_fault_difficult/cell_11/tool_audit.json",
+      "call_index": 4
+    }
+  },
+  "gym-itsm-mcp::find_configuration_item_by_serial_number": {
+    "shape": {
+      "configuration_item_id": "string",
+      "name": "string",
+      "serial_number": "string",
+      "owner_id": "string",
+      "location_id": "string",
+      "org_id": "string",
+      "status": "string",
+      "cost": "number",
+      "created_on": "string",
+      "updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/oracle/runs/all_domains_itsm/attempts.jsonl",
+      "line": 3,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-itsm-mcp::update_configuration_item": {
+    "shape": {
+      "configuration_item_id": "string",
+      "name": "string",
+      "serial_number": "string",
+      "owner_id": "string",
+      "location_id": "string",
+      "status": "string",
+      "cost": "number",
+      "created_on": "string",
+      "updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/oracle/runs/all_domains_itsm/attempts.jsonl",
+      "line": 3,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-email-mcp::get_user_profile": {
+    "shape": {
+      "emailAddress": "string",
+      "messagesTotal": "number",
+      "threadsTotal": "number",
+      "historyId": "string"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_hybrid/attempts.jsonl",
+      "line": 8,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-email-mcp::list_labels": {
+    "shape": {
+      "labels": {
+        "array_of": {
+          "id": "string",
+          "name": "string",
+          "messageListVisibility": "string",
+          "labelListVisibility": "string",
+          "type": "string",
+          "messagesTotal": "number",
+          "messagesUnread": "number",
+          "threadsTotal": "number",
+          "threadsUnread": "number"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/oracle/runs/all_domains_email/attempts.jsonl",
+      "line": 1,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-email-mcp::create_label": {
+    "shape": {
+      "id": "string",
+      "name": "string",
+      "messageListVisibility": "string",
+      "labelListVisibility": "string",
+      "type": "string",
+      "messagesTotal": "number",
+      "messagesUnread": "number",
+      "threadsTotal": "number",
+      "threadsUnread": "number"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/oracle/runs/all_domains_email/attempts.jsonl",
+      "line": 1,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-email-mcp::create_filter": {
+    "shape": {
+      "id": "string",
+      "criteria": {
+        "from": "string",
+        "to": "string",
+        "subject": "string",
+        "query": "string",
+        "negatedQuery": "string",
+        "hasAttachment": "boolean",
+        "excludeChats": "boolean",
+        "size": "number",
+        "sizeComparison": "string"
+      },
+      "action": {
+        "addLabelIds": {
+          "array_of": "string"
+        },
+        "removeLabelIds": {
+          "array_of": "string"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/oracle/runs/all_domains_email/attempts.jsonl",
+      "line": 1,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-email-mcp::list_messages": {
+    "shape": {
+      "messages": {
+        "array_of": {
+          "id": "string",
+          "threadId": "string",
+          "labelIds": {
+            "array_of": "string"
+          },
+          "snippet": "string",
+          "historyId": "string",
+          "internalDate": "string",
+          "sizeEstimate": "number",
+          "payload": {
+            "partId": "string",
+            "mimeType": "string",
+            "filename": "string",
+            "headers": {
+              "array_of": {
+                "name": "string",
+                "value": "string"
+              }
+            },
+            "body": {
+              "size": "number",
+              "data": "string",
+              "attachmentId": "null"
+            }
+          }
+        }
+      },
+      "resultSizeEstimate": "number"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_hybrid/attempts.jsonl",
+      "line": 8,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "sn-csm-server::find_user_by_email": {
+    "shape": {
+      "user_id": "number",
+      "first_name": "string",
+      "last_name": "string",
+      "email": "string",
+      "role": "string",
+      "location_id": "number",
+      "active": "number"
+    },
+    "provenance": {
+      "source": "runs/ds_fault_difficult/cell_09/tool_audit.json",
+      "call_index": 3
+    }
+  },
+  "sn-csm-server::check_user_membership": {
+    "shape": {
+      "exists": "boolean",
+      "member_id": "number"
+    },
+    "provenance": {
+      "source": "runs/ds_fault_difficult/cell_09/tool_audit.json",
+      "call_index": 4
+    }
+  },
+  "sn-csm-server::assign_case_to_user": {
+    "shape": {
+      "assignment_status": "string",
+      "assigned_to": "number",
+      "assigned_at": "string"
+    },
+    "provenance": {
+      "source": "runs/ds_fault_difficult/cell_09/tool_audit.json",
+      "call_index": 5
+    }
+  },
+  "sn-csm-server::retrieve_knowledge": {
+    "shape": {
+      "array_of": {
+        "knowledge_id": "number",
+        "kb_number": "string",
+        "title": "string",
+        "state": "string",
+        "visibility": "string",
+        "product_id": "number",
+        "owner_id": "number",
+        "sys_created_on": "string",
+        "body": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/ds_fault_difficult/cell_09/tool_audit.json",
+      "call_index": 7
+    }
+  },
+  "sn-csm-server::link_case_knowledge": {
+    "shape": {
+      "case_kb_id": "number",
+      "case_id": "number",
+      "knowledge_id": "number",
+      "used_as": "string"
+    },
+    "provenance": {
+      "source": "runs/ds_fault_difficult/cell_09/tool_audit.json",
+      "call_index": 8
+    }
+  },
+  "gym-teams-mcp::list_team_members": {
+    "shape": {
+      "@odata.count": "number",
+      "value": {
+        "array_of": {
+          "id": "string",
+          "roles": {
+            "array_of": "string"
+          },
+          "displayName": "string",
+          "userId": "string",
+          "email": "string"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/ds_fault_difficult/cell_08/tool_audit.json",
+      "call_index": 3
+    }
+  },
+  "gym-teams-mcp::list_teams_apps": {
+    "shape": {
+      "@odata.context": "string",
+      "value": {
+        "array_of": {
+          "id": "string",
+          "displayName": "string"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_teams/attempts.jsonl",
+      "line": 1,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-teams-mcp::create_virtual_event_webinar": {
+    "shape": {
+      "@odata.type": "string",
+      "id": "string",
+      "status": "string",
+      "displayName": "string",
+      "description": {
+        "contentType": "string",
+        "content": "string"
+      },
+      "startDateTime": {
+        "dateTime": "string",
+        "timeZone": "string"
+      },
+      "endDateTime": {
+        "dateTime": "string",
+        "timeZone": "string"
+      },
+      "audience": "string",
+      "createdBy": {
+        "application": "null",
+        "device": "null",
+        "user": {
+          "@odata.type": "string",
+          "id": "string",
+          "displayName": "string",
+          "tenantId": "string"
+        }
+      },
+      "coOrganizers": {
+        "array_of": {
+          "id": "string",
+          "tenantId": "string",
+          "displayName": "string"
+        }
+      },
+      "settings": {
+        "isAttendeeEmailNotificationEnabled": "boolean"
+      },
+      "externalEventInformation": {
+        "array_of": "unobserved_empty"
+      }
+    },
+    "provenance": {
+      "source": "runs/ds_fault_difficult/cell_08/tool_audit.json",
+      "call_index": 16
+    }
+  },
+  "sn-hr-internal::list_skills": {
+    "shape": {
+      "success": "boolean",
+      "skills": {
+        "array_of": {
+          "skill_id": "number",
+          "name": "string",
+          "active": "boolean",
+          "org_id": "number",
+          "created_at": "string",
+          "updated_at": "string"
+        }
+      },
+      "count": "number",
+      "limit": "number"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_92/tool_audit.json",
+      "call_index": 2
+    }
+  },
+  "sn-hr-internal::add_new_skill_to_user": {
+    "shape": {
+      "success": "boolean",
+      "message": "string",
+      "user_skill": {
+        "user_skill_id": "number",
+        "skill": "number",
+        "skill_name": "string",
+        "user": "number",
+        "user_email": "string",
+        "user_first_name": "string",
+        "user_last_name": "string",
+        "org_id": "number",
+        "created_at": "string",
+        "updated_at": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_92/tool_audit.json",
+      "call_index": 9
+    }
+  },
+  "sn-hr-internal::remove_group_membership": {
+    "shape": {
+      "success": "boolean",
+      "message": "string",
+      "removed_membership": {
+        "member_id": "number",
+        "group_id": "number",
+        "user_id": "number",
+        "org_id": "number"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_92/tool_audit.json",
+      "call_index": 10
+    }
+  },
+  "sn-hr-internal::update_user_details": {
+    "shape": {
+      "success": "boolean",
+      "message": "string",
+      "changes_made": {
+        "array_of": "string"
+      },
+      "user": {
+        "user_id": "number",
+        "first_name": "string",
+        "last_name": "string",
+        "email": "string",
+        "phone": "string",
+        "role": "string",
+        "active": "boolean",
+        "org_id": "number",
+        "created_at": "string",
+        "updated_at": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_92/tool_audit.json",
+      "call_index": 12
+    }
+  },
+  "sn-hr-internal::send_notification": {
+    "shape": {
+      "success": "boolean",
+      "notification": {
+        "notification_id": "number",
+        "hr_case_id": "number",
+        "email": "string",
+        "type": "string",
+        "status": "string",
+        "org_id": "number",
+        "created_at": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_92/tool_audit.json",
+      "call_index": 15
+    }
+  },
+  "gym-itsm-mcp::link_knowledge_to_incident": {
+    "shape": {
+      "incident_kb_id": "string",
+      "incident_id": "string",
+      "knowledge_id": "string",
+      "used_as": "string",
+      "created_on": "string",
+      "updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/ds_fault_difficult/cell_05/tool_audit.json",
+      "call_index": 4
+    }
+  },
+  "sn-hr-internal::get_users_hr_profile": {
+    "shape": {
+      "success": "boolean",
+      "hr_profile": {
+        "hr_profile_id": "number",
+        "number": "string",
+        "gender": "string",
+        "user_id": "number",
+        "personal_email": "string",
+        "marital_status": "string",
+        "type": "string",
+        "dob": "string",
+        "nationality": "string",
+        "employment_start_date": "string",
+        "employment_end_date": "null",
+        "manager": "number",
+        "location_type": "string",
+        "national_tax_id": "string",
+        "position": "string",
+        "org_id": "number",
+        "created_at": "string",
+        "updated_at": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/validation/oracle/runs/all_domains_hybrid/attempts.jsonl",
+      "line": 7,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-itsm-mcp::find_incident_by_number": {
+    "shape": {
+      "incident_id": "string",
+      "number": "string",
+      "caller_id": "string",
+      "service": "string",
+      "service_offering": "string",
+      "configuration_item": "string",
+      "assigned_to": "string",
+      "assignment_group": "string",
+      "resolved_by": "null",
+      "problem": "null",
+      "change_request": "null",
+      "caused_by_change": "null",
+      "incident_template": "null",
+      "parent_incident": "null",
+      "channel": "string",
+      "contact_type": "string",
+      "status": "string",
+      "category": "string",
+      "short_description": "string",
+      "description": "string",
+      "worknotes": "string",
+      "resolution_notes": "null",
+      "close_notes": "null",
+      "impact": "string",
+      "urgency": "string",
+      "priority": "string",
+      "resolution_code": "null",
+      "on_hold_reason": "null",
+      "resolved": "null",
+      "created_at": "string",
+      "updated_at": "string",
+      "org_id": "string"
+    },
+    "provenance": {
+      "source": "runs/ds_fault_difficult/cell_01/tool_audit.json",
+      "call_index": 1
+    }
+  },
+  "gym-itsm-mcp::find_group_by_name": {
+    "shape": {
+      "group_id": "string",
+      "name": "string",
+      "type": "string",
+      "active": "boolean",
+      "email": "string",
+      "description": "string",
+      "manager_id": "string",
+      "org_id": "string",
+      "created_on": "string",
+      "updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_88/tool_audit.json",
+      "call_index": 5
+    }
+  },
+  "gym-itsm-mcp::create_incident": {
+    "shape": {
+      "incident_id": "string",
+      "number": "string",
+      "service": "null",
+      "service_offering": "null",
+      "configuration_item": "string",
+      "caller_id": "string",
+      "channel": "string",
+      "status": "string",
+      "category": "string",
+      "short_description": "string",
+      "description": "string",
+      "impact": "string",
+      "urgency": "string",
+      "priority": "string",
+      "assigned_to": "string",
+      "assignment_group": "null",
+      "worknotes": "null",
+      "resolution_notes": "null",
+      "close_notes": "null",
+      "resolution_code": "null",
+      "on_hold_reason": "null",
+      "parent_incident": "null",
+      "problem": "null",
+      "change_request": "null",
+      "caused_by_change": "null",
+      "resolved_by": "null",
+      "incident_template": "null",
+      "resolved": "null",
+      "created_at": "string",
+      "updated_at": "string"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/oracle/runs/all_domains_itsm/attempts.jsonl",
+      "line": 3,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-email-mcp::list_drafts": {
+    "shape": {
+      "drafts": {
+        "array_of": {
+          "id": "string",
+          "message": {
+            "id": "string",
+            "threadId": "string"
+          }
+        }
+      },
+      "resultSizeEstimate": "number"
+    },
+    "provenance": {
+      "source": "runs/ds_fault_coverage/cell_22/tool_audit.json",
+      "call_index": 2
+    }
+  },
+  "gym-email-mcp::get_send_as_alias": {
+    "shape": {
+      "sendAsEmail": "string",
+      "displayName": "string",
+      "replyToAddress": "string",
+      "signature": "string",
+      "isPrimary": "boolean",
+      "isDefault": "boolean",
+      "treatAsAlias": "boolean",
+      "verificationStatus": "string"
+    },
+    "provenance": {
+      "source": "runs/ds_fault_coverage/cell_20/tool_audit.json",
+      "call_index": 2
+    }
+  },
+  "gym-email-mcp::update_send_as_alias": {
+    "shape": {
+      "sendAsEmail": "string",
+      "displayName": "string",
+      "replyToAddress": "string",
+      "signature": "string",
+      "isPrimary": "boolean",
+      "isDefault": "boolean",
+      "treatAsAlias": "boolean",
+      "verificationStatus": "string",
+      "smtpMsa": {
+        "host": "string",
+        "port": "number",
+        "securityMode": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/ds_fault_coverage/cell_20/tool_audit.json",
+      "call_index": 3
+    }
+  },
+  "sn-csm-server::find_contact_by_portal_user": {
+    "shape": {
+      "contact_id": "number",
+      "account_id": "number",
+      "portal_user_id": "number",
+      "active": "number"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_78/tool_audit.json",
+      "call_index": 2
+    }
+  },
+  "sn-csm-server::list_user_groups": {
+    "shape": {
+      "array_of": {
+        "group_id": "number",
+        "name": "string",
+        "type": "string",
+        "active": "number",
+        "sys_created_on": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_78/tool_audit.json",
+      "call_index": 4
+    }
+  },
+  "sn-csm-server::list_group_members": {
+    "shape": {
+      "array_of": {
+        "member_id": "number",
+        "group_id": "number",
+        "user_id": "number",
+        "sys_created_on": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_78/tool_audit.json",
+      "call_index": 5
+    }
+  },
+  "sn-csm-server::find_entitlements": {
+    "shape": {
+      "array_of": {
+        "entitlement_id": "number",
+        "account_id": "number",
+        "product_id": "number",
+        "contract_id": "number",
+        "support_level": "string",
+        "coverage_hours": "string",
+        "max_cases_per_month": "number",
+        "active": "number",
+        "sys_created_on": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_78/tool_audit.json",
+      "call_index": 17
+    }
+  },
+  "sn-csm-server::find_case_slas": {
+    "shape": {
+      "array_of": {
+        "case_sla_id": "number",
+        "case_id": "number",
+        "sla_def_id": "number",
+        "stage": "string",
+        "start_time": "string",
+        "breach_time": "string",
+        "has_breached": "number",
+        "completed_time": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_78/tool_audit.json",
+      "call_index": 21
+    }
+  },
+  "sn-csm-server::send_notification": {
+    "shape": {
+      "notification_id": "number",
+      "case_id": "number",
+      "knowledge_id": "null",
+      "email": "string",
+      "type": "string",
+      "status": "string",
+      "sys_created_on": "string"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/oracle/runs/all_domains_csm/attempts.jsonl",
+      "line": 2,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-calendar::get_calendar": {
+    "shape": {
+      "kind": "string",
+      "etag": "string",
+      "id": "string",
+      "summary": "string",
+      "description": "string",
+      "location": "string",
+      "timeZone": "string",
+      "conferenceProperties": {
+        "allowedConferenceSolutionTypes": {
+          "array_of": "string"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round1/cell_34/tool_audit.json",
+      "call_index": 16
+    }
+  },
+  "gym-google-drive-mcp::get_files": {
+    "shape": {
+      "success": "boolean",
+      "data": {
+        "kind": "string",
+        "id": "string",
+        "name": "string",
+        "mimeType": "string",
+        "description": "string",
+        "size": "string",
+        "quotaBytesUsed": "string",
+        "createdTime": "string",
+        "modifiedTime": "string",
+        "starred": "boolean",
+        "trashed": "boolean",
+        "explicitlyTrashed": "boolean",
+        "shared": "boolean",
+        "ownedByMe": "boolean",
+        "viewedByMe": "boolean",
+        "modifiedByMe": "boolean",
+        "writersCanShare": "boolean",
+        "version": "string",
+        "webViewLink": "string",
+        "webContentLink": "string",
+        "iconLink": "string",
+        "driveId": "string",
+        "parents": {
+          "array_of": "string"
+        },
+        "owners": {
+          "array_of": {
+            "kind": "string",
+            "displayName": "string",
+            "emailAddress": "string",
+            "photoLink": "string",
+            "me": "boolean",
+            "permissionId": "string"
+          }
+        },
+        "lastModifyingUser": {
+          "kind": "string",
+          "displayName": "string",
+          "emailAddress": "string",
+          "photoLink": "string",
+          "me": "boolean",
+          "permissionId": "string"
+        },
+        "capabilities": {
+          "canComment": "boolean",
+          "canCopy": "boolean",
+          "canReadRevisions": "boolean",
+          "canDownload": "boolean",
+          "canEdit": "boolean",
+          "canModifyContent": "boolean",
+          "canRename": "boolean",
+          "canMoveItemWithinDrive": "boolean",
+          "canMoveItemOutOfDrive": "boolean",
+          "canShare": "boolean",
+          "canTrash": "boolean",
+          "canUntrash": "boolean",
+          "canModifyContentRestriction": "boolean",
+          "canAddMyDriveParent": "boolean",
+          "canRemoveMyDriveParent": "boolean",
+          "canDelete": "boolean",
+          "canModifyOwnerContentRestriction": "boolean",
+          "canModifyEditorContentRestriction": "boolean",
+          "canModifyViewerContentRestriction": "boolean",
+          "canChangeCopyRequiresWriterPermission": "boolean",
+          "canChangeViewersCanCopyContent": "boolean",
+          "canAcceptOwnership": "boolean",
+          "canMoveItemIntoTeamDrive": "boolean",
+          "canMoveTeamDriveItem": "boolean",
+          "canMoveItemOutOfTeamDrive": "boolean",
+          "canChangeRestrictedDownload": "boolean"
+        }
+      },
+      "status": "string",
+      "message": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_284/tool_audit.json",
+      "call_index": 9
+    }
+  },
+  "sn-csm-server::find_case_knowledge_linkages": {
+    "shape": {
+      "array_of": {
+        "case_kb_id": "number",
+        "case_id": "number",
+        "knowledge_id": "number",
+        "used_as": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_72/tool_audit.json",
+      "call_index": 6
+    }
+  },
+  "gym-email-mcp::delete_draft": {
+    "shape": {},
+    "provenance": {
+      "source": "runs/ds_fault_coverage/cell_09/tool_audit.json",
+      "call_index": 4
+    }
+  },
+  "sn-csm-server::register_new_interaction": {
+    "shape": {
+      "interaction_id": "number",
+      "channel": "string",
+      "account_id": "number",
+      "contact_id": "number",
+      "case_id": "number",
+      "interacted_user": "null",
+      "status": "string",
+      "started_at": "string",
+      "ended_at": "null",
+      "sys_created_on": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_62/tool_audit.json",
+      "call_index": 16
+    }
+  },
+  "sn-csm-server::find_interactions": {
+    "shape": {
+      "array_of": {
+        "interaction_id": "number",
+        "channel": "string",
+        "account_id": "number",
+        "contact_id": "number",
+        "case_id": "number",
+        "interacted_user": "number",
+        "status": "string",
+        "started_at": "string",
+        "ended_at": "null",
+        "sys_created_on": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_61/tool_audit.json",
+      "call_index": 8
+    }
+  },
+  "sn-csm-server::get_cases_assigned_to": {
+    "shape": {
+      "array_of": {
+        "case_id": "number",
+        "number": "string",
+        "account_id": "number",
+        "contact_id": "number",
+        "product_id": "number",
+        "installed_product_id": "null",
+        "channel": "string",
+        "priority": "string",
+        "state": "string",
+        "short_description": "string",
+        "assignment_group_id": "number",
+        "assigned_to": "number",
+        "sys_created_on": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_59/tool_audit.json",
+      "call_index": 3
+    }
+  },
+  "sn-csm-server::find_locations": {
+    "shape": {
+      "array_of": {
+        "location_id": "number",
+        "name": "string",
+        "plot_no": "null",
+        "street": "null",
+        "city": "string",
+        "country": "string",
+        "active": "number",
+        "sys_created_on": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_56/tool_audit.json",
+      "call_index": 4
+    }
+  },
+  "gym-email-mcp::send_message": {
+    "shape": {
+      "id": "string",
+      "threadId": "string",
+      "labelIds": {
+        "array_of": "string"
+      },
+      "snippet": "string",
+      "historyId": "string",
+      "internalDate": "string",
+      "sizeEstimate": "number",
+      "payload": {
+        "partId": "string",
+        "mimeType": "string",
+        "filename": "string",
+        "headers": {
+          "array_of": {
+            "name": "string",
+            "value": "string"
+          }
+        },
+        "body": {
+          "size": "number",
+          "data": "string",
+          "attachmentId": "string"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round1/cell_290/tool_audit.json",
+      "call_index": 14
+    }
+  },
+  "gym-email-mcp::get_message": {
+    "shape": {
+      "id": "string",
+      "threadId": "string",
+      "labelIds": {
+        "array_of": "string"
+      },
+      "snippet": "string",
+      "historyId": "string",
+      "internalDate": "string",
+      "sizeEstimate": "number",
+      "payload": {
+        "partId": "string",
+        "mimeType": "string",
+        "filename": "string",
+        "headers": {
+          "array_of": {
+            "name": "string",
+            "value": "string"
+          }
+        },
+        "body": {
+          "size": "number",
+          "data": "string",
+          "attachmentId": "null"
+        },
+        "parts": {
+          "array_of": {
+            "partId": "string",
+            "mimeType": "string",
+            "filename": "string",
+            "headers": {
+              "array_of": "unobserved_empty"
+            },
+            "body": {
+              "size": "number",
+              "data": "string",
+              "attachmentId": "string"
+            }
+          }
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_393/tool_audit.json",
+      "call_index": 3
+    }
+  },
+  "gym-email-mcp::get_draft": {
+    "shape": {
+      "id": "string",
+      "message": {
+        "id": "string",
+        "threadId": "string",
+        "labelIds": {
+          "array_of": "string"
+        },
+        "snippet": "string",
+        "historyId": "string",
+        "internalDate": "string",
+        "sizeEstimate": "number",
+        "payload": {
+          "partId": "string",
+          "mimeType": "string",
+          "filename": "string",
+          "headers": {
+            "array_of": {
+              "name": "string",
+              "value": "string"
+            }
+          },
+          "body": {
+            "size": "number",
+            "data": "string",
+            "attachmentId": "null"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/ds_fault_constraints/cell_08/tool_audit.json",
+      "call_index": 4
+    }
+  },
+  "gym-email-mcp::modify_message": {
+    "shape": {
+      "id": "string",
+      "threadId": "string",
+      "labelIds": {
+        "array_of": "unobserved_empty"
+      },
+      "snippet": "string",
+      "historyId": "string",
+      "internalDate": "string",
+      "sizeEstimate": "number",
+      "payload": {
+        "partId": "string",
+        "mimeType": "string",
+        "filename": "string",
+        "headers": {
+          "array_of": {
+            "name": "string",
+            "value": "string"
+          }
+        },
+        "body": {
+          "size": "number",
+          "data": "string",
+          "attachmentId": "null"
+        },
+        "parts": {
+          "array_of": {
+            "partId": "string",
+            "mimeType": "string",
+            "filename": "string",
+            "headers": {
+              "array_of": "unobserved_empty"
+            },
+            "body": {
+              "size": "number",
+              "data": "string",
+              "attachmentId": "string"
+            }
+          }
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_361/tool_audit.json",
+      "call_index": 4
+    }
+  },
+  "gym-calendar::get_colors": {
+    "shape": {
+      "kind": "string",
+      "updated": "string",
+      "calendar": {
+        "1": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "2": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "3": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "4": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "5": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "6": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "7": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "8": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "9": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "10": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "11": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "12": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "13": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "14": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "15": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "16": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "17": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "18": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "19": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "20": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "21": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "22": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "23": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "24": {
+          "background": "string",
+          "foreground": "string"
+        }
+      },
+      "event": {
+        "1": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "2": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "3": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "4": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "5": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "6": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "7": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "8": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "9": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "10": {
+          "background": "string",
+          "foreground": "string"
+        },
+        "11": {
+          "background": "string",
+          "foreground": "string"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_409/tool_audit.json",
+      "call_index": 4
+    }
+  },
+  "gym-calendar::patch_calendar": {
+    "shape": {
+      "kind": "string",
+      "etag": "string",
+      "id": "string",
+      "summary": "string",
+      "description": "string",
+      "location": "string",
+      "timeZone": "string",
+      "conferenceProperties": {
+        "allowedConferenceSolutionTypes": "null"
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/oracle/runs/all_domains_calendar/attempts.jsonl",
+      "line": 2,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-calendar::update_calendar": {
+    "shape": {
+      "kind": "string",
+      "etag": "string",
+      "id": "string",
+      "summary": "string",
+      "description": "string",
+      "location": "string",
+      "timeZone": "string",
+      "conferenceProperties": {
+        "allowedConferenceSolutionTypes": "null"
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_calendar/attempts.jsonl",
+      "line": 1,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "sn-csm-server::find_products": {
+    "shape": {
+      "array_of": {
+        "product_id": "number",
+        "name": "string",
+        "category": "string",
+        "lifecycle_state": "string",
+        "product_price": "number",
+        "sys_created_on": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_405/tool_audit.json",
+      "call_index": 4
+    }
+  },
+  "sn-csm-server::add_new_user_group": {
+    "shape": {
+      "group_id": "number",
+      "name": "string",
+      "type": "string",
+      "active": "number",
+      "sys_created_on": "string",
+      "sys_updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_403/tool_audit.json",
+      "call_index": 7
+    }
+  },
+  "sn-csm-server::remove_group_membership": {
+    "shape": {
+      "deleted": "number"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_402/tool_audit.json",
+      "call_index": 10
+    }
+  },
+  "sn-csm-server::create_new_case": {
+    "shape": {
+      "case_id": "number",
+      "number": "string",
+      "account_id": "number",
+      "contact_id": "number",
+      "product_id": "null",
+      "installed_product_id": "null",
+      "channel": "string",
+      "priority": "string",
+      "state": "string",
+      "short_description": "string",
+      "assignment_group_id": "null",
+      "assigned_to": "null",
+      "escalation": "number",
+      "escalation_reason": "null",
+      "reopen_count": "number",
+      "sys_created_on": "string",
+      "sys_updated_on": "string",
+      "closed_on": "null"
+    },
+    "provenance": {
+      "source": "runs/ds_fault_constraints/cell_06/tool_audit.json",
+      "call_index": 7
+    }
+  },
+  "sn-hr-internal::get_user_using_email": {
+    "shape": {
+      "success": "boolean",
+      "user": {
+        "user_id": "number",
+        "first_name": "string",
+        "last_name": "string",
+        "email": "string",
+        "phone": "string",
+        "role": "string",
+        "active": "boolean",
+        "org_id": "number",
+        "created_at": "string",
+        "updated_at": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/validation/oracle/runs/all_domains_hybrid/attempts.jsonl",
+      "line": 7,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "sn-hr-internal::add_new_assignment_rule": {
+    "shape": {
+      "success": "boolean",
+      "message": "string",
+      "assignment_rule": {
+        "assignment_rule_id": "number",
+        "name": "string",
+        "based_on_skills": {
+          "array_of": "number"
+        },
+        "based_on_country": "null",
+        "based_on_priority": "string",
+        "active": "boolean",
+        "user_group": "null",
+        "users": {
+          "array_of": "number"
+        },
+        "org_id": "number"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_181/tool_audit.json",
+      "call_index": 10
+    }
+  },
+  "sn-hr-internal::list_hr_cases": {
+    "shape": {
+      "total_count": "number",
+      "returned_count": "number",
+      "hr_cases": {
+        "array_of": {
+          "hr_case_id": "number",
+          "number": "string",
+          "status": "string",
+          "priority": "string",
+          "source": "string",
+          "short_description": "string",
+          "worknotes": "string",
+          "skills": {
+            "array_of": "number"
+          },
+          "coe_type": "string",
+          "request_status": "null",
+          "account_number": "string",
+          "account_type": "string",
+          "org_id": "number",
+          "created_at": "string",
+          "updated_at": "string",
+          "hr_service": {
+            "hr_service_id": "number",
+            "service_name": "string",
+            "fulfillment_type": "string",
+            "active": "boolean"
+          },
+          "opened_for": {
+            "hr_profile_id": "number",
+            "number": "string",
+            "user_id": "number",
+            "user_name": "string",
+            "personal_email": "string",
+            "position": "string"
+          },
+          "opened_by": {
+            "hr_profile_id": "number",
+            "number": "string",
+            "user_id": "number",
+            "user_name": "string",
+            "personal_email": "string",
+            "position": "string"
+          },
+          "assigned_to": {
+            "user_id": "number",
+            "first_name": "string",
+            "last_name": "string",
+            "email": "string",
+            "role": "string"
+          },
+          "assignment_group": {
+            "group_id": "number",
+            "name": "string",
+            "type": "string",
+            "active": "boolean"
+          },
+          "approval_criteria": "null",
+          "approver": "null"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_321/tool_audit.json",
+      "call_index": 10
+    }
+  },
+  "sn-hr-internal::list_hr_case_tasks": {
+    "shape": {
+      "total_count": "number",
+      "hr_case_tasks": {
+        "array_of": {
+          "hr_case_task_id": "number",
+          "number": "string",
+          "status": "string",
+          "short_description": "string",
+          "task_type": "string",
+          "external_url": "string",
+          "worknotes": "string",
+          "active": "boolean",
+          "org_id": "number",
+          "created_at": "string",
+          "updated_at": "string",
+          "assigned_to": "null",
+          "assignment_group": {
+            "group_id": "number",
+            "name": "string",
+            "type": "string",
+            "active": "boolean"
+          },
+          "hr_service": "null",
+          "parent_case": {
+            "hr_case_id": "number",
+            "number": "string",
+            "status": "string",
+            "short_description": "string"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_397/tool_audit.json",
+      "call_index": 9
+    }
+  },
+  "sn-hr-internal::create_hr_case_task": {
+    "shape": {
+      "hr_case_task_id": "number",
+      "number": "string",
+      "status": "string",
+      "short_description": "string",
+      "task_type": "string",
+      "external_url": "null",
+      "worknotes": "null",
+      "active": "boolean",
+      "org_id": "number",
+      "created_at": "string",
+      "updated_at": "string",
+      "assigned_to": "null",
+      "assignment_group": {
+        "group_id": "number",
+        "name": "string",
+        "type": "string",
+        "active": "boolean"
+      },
+      "hr_service": "null",
+      "parent_case": "null"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_397/tool_audit.json",
+      "call_index": 10
+    }
+  },
+  "sn-hr-internal::create_checklist": {
+    "shape": {
+      "success": "boolean",
+      "message": "string",
+      "checklist": {
+        "checklist_id": "number",
+        "checklist_item_description": "string",
+        "checked": "boolean",
+        "case_task_id": "number",
+        "org_id": "number"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_397/tool_audit.json",
+      "call_index": 11
+    }
+  },
+  "sn-hr-internal::add_new_user_group": {
+    "shape": {
+      "success": "boolean",
+      "message": "string",
+      "user_group": {
+        "group_id": "number",
+        "name": "string",
+        "type": "string",
+        "active": "boolean",
+        "org_id": "number",
+        "created_at": "string",
+        "updated_at": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_395/tool_audit.json",
+      "call_index": 4
+    }
+  },
+  "sn-hr-internal::add_new_skill": {
+    "shape": {
+      "success": "boolean",
+      "message": "string",
+      "skill": {
+        "skill_id": "number",
+        "name": "string",
+        "active": "boolean",
+        "org_id": "number",
+        "created_at": "string",
+        "updated_at": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_395/tool_audit.json",
+      "call_index": 5
+    }
+  },
+  "sn-hr-internal::find_hr_case_by_number": {
+    "shape": {
+      "hr_case": {
+        "hr_case_id": "number",
+        "number": "string",
+        "status": "string",
+        "priority": "string",
+        "source": "string",
+        "short_description": "string",
+        "worknotes": "string",
+        "skills": "null",
+        "coe_type": "string",
+        "request_status": "null",
+        "account_number": "string",
+        "account_type": "string",
+        "org_id": "number",
+        "created_at": "string",
+        "updated_at": "string",
+        "hr_service": {
+          "hr_service_id": "number",
+          "service_name": "string",
+          "fulfillment_type": "string",
+          "active": "boolean"
+        },
+        "opened_for": {
+          "hr_profile_id": "number",
+          "number": "string",
+          "user_id": "number",
+          "user_name": "string",
+          "personal_email": "string",
+          "position": "string"
+        },
+        "opened_by": {
+          "hr_profile_id": "number",
+          "number": "string",
+          "user_id": "number",
+          "user_name": "string",
+          "personal_email": "string",
+          "position": "string"
+        },
+        "assigned_to": {
+          "user_id": "number",
+          "first_name": "string",
+          "last_name": "string",
+          "email": "string",
+          "role": "string"
+        },
+        "assignment_group": {
+          "group_id": "number",
+          "name": "string",
+          "type": "string",
+          "active": "boolean"
+        },
+        "approval_criteria": "null",
+        "approver": "null"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_395/tool_audit.json",
+      "call_index": 8
+    }
+  },
+  "gym-itsm-mcp::update_user_details": {
+    "shape": {
+      "user_name": "string",
+      "first_name": "string",
+      "last_name": "string",
+      "email": "string",
+      "phone": "string",
+      "role": "string",
+      "active": "boolean",
+      "location_id": "null",
+      "user_id": "string",
+      "created_on": "string",
+      "updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/validation/oracle/runs/all_domains_hybrid/attempts.jsonl",
+      "line": 3,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-itsm-mcp::list_users": {
+    "shape": {
+      "users": {
+        "array_of": {
+          "user_id": "string",
+          "user_name": "string",
+          "first_name": "string",
+          "last_name": "string",
+          "email": "string",
+          "phone": "string",
+          "role": "string",
+          "active": "boolean",
+          "org_id": "string",
+          "location_id": "string",
+          "created_on": "string",
+          "updated_on": "string"
+        }
+      },
+      "total_count": "number"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/oracle/runs/all_domains_itsm/attempts.jsonl",
+      "line": 3,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-email-mcp::list_filters": {
+    "shape": {
+      "array_of": {
+        "id": "string",
+        "criteria": {
+          "from": "string",
+          "hasAttachment": "boolean"
+        },
+        "action": {
+          "addLabelIds": {
+            "array_of": "string"
+          },
+          "removeLabelIds": {
+            "array_of": "string"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/oracle/runs/all_domains_email/attempts.jsonl",
+      "line": 1,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "sn-hr-internal::list_user_groups": {
+    "shape": {
+      "success": "boolean",
+      "count": "number",
+      "user_groups": {
+        "array_of": {
+          "group_id": "number",
+          "name": "string",
+          "type": "string",
+          "active": "boolean",
+          "org_id": "number",
+          "created_at": "string",
+          "updated_at": "string"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_379/tool_audit.json",
+      "call_index": 5
+    }
+  },
+  "sn-hr-internal::find_hr_services": {
+    "shape": {
+      "success": "boolean",
+      "count": "number",
+      "hr_services": {
+        "array_of": {
+          "hr_service_id": "number",
+          "service_name": "string",
+          "fulfillment_type": "string",
+          "active": "boolean",
+          "org_id": "number",
+          "topic_detail": {
+            "topic_detail_id": "number",
+            "name": "string",
+            "active": "boolean",
+            "topic_category": {
+              "topic_category_id": "number",
+              "name": "string",
+              "coe_type": "string",
+              "active": "boolean"
+            }
+          },
+          "service_template": "null",
+          "hr_criteria": "null"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_379/tool_audit.json",
+      "call_index": 12
+    }
+  },
+  "sn-hr-internal::update_hr_service": {
+    "shape": {
+      "success": "boolean",
+      "message": "string",
+      "changes_made": {
+        "array_of": "string"
+      },
+      "hr_service": {
+        "hr_service_id": "number",
+        "service_name": "string",
+        "fulfillment_type": "string",
+        "active": "boolean",
+        "org_id": "number",
+        "topic_detail": {
+          "topic_detail_id": "number",
+          "name": "string",
+          "active": "boolean",
+          "topic_category": {
+            "topic_category_id": "number",
+            "name": "string",
+            "coe_type": "string",
+            "active": "boolean"
+          }
+        },
+        "service_template": "null",
+        "hr_criteria": {
+          "hr_criteria_id": "number",
+          "name": "string",
+          "type": "string",
+          "user_group": "number",
+          "users": "null",
+          "active": "boolean"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_379/tool_audit.json",
+      "call_index": 13
+    }
+  },
+  "gym-itsm-mcp::create_change": {
+    "shape": {
+      "change_id": "string",
+      "number": "string",
+      "requested_by": "string",
+      "short_description": "string",
+      "service": "string",
+      "service_offering": "null",
+      "configuration_item": "null",
+      "status": "string",
+      "category": "string",
+      "description": "null",
+      "implementation_plan": "null",
+      "testing_plan": "null",
+      "cab_required": "boolean",
+      "impact": "string",
+      "risk": "string",
+      "priority": "string",
+      "assigned_to": "null",
+      "assignment_group": "null",
+      "close_code": "null",
+      "close_notes": "null",
+      "created_on": "string",
+      "updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_377/tool_audit.json",
+      "call_index": 3
+    }
+  },
+  "gym-email-mcp::create_send_as_alias": {
+    "shape": {
+      "sendAsEmail": "string",
+      "displayName": "string",
+      "replyToAddress": "string",
+      "signature": "string",
+      "isPrimary": "boolean",
+      "isDefault": "boolean",
+      "treatAsAlias": "boolean",
+      "verificationStatus": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_377/tool_audit.json",
+      "call_index": 5
+    }
+  },
+  "gym-itsm-mcp::list_child_incidents": {
+    "shape": {
+      "array_of": {
+        "child_incident_mapping_id": "string",
+        "parent_incident": "string",
+        "child_incident": "string",
+        "created_at": "string",
+        "updated_at": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_371/tool_audit.json",
+      "call_index": 3
+    }
+  },
+  "gym-email-mcp::update_vacation_settings": {
+    "shape": {
+      "enableAutoReply": "boolean",
+      "responseSubject": "string",
+      "responseBodyPlainText": "string",
+      "responseBodyHtml": "string",
+      "restrictToContacts": "boolean",
+      "restrictToDomain": "boolean",
+      "startTime": "string",
+      "endTime": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_369/tool_audit.json",
+      "call_index": 9
+    }
+  },
+  "gym-itsm-mcp::find_services": {
+    "shape": {
+      "services": {
+        "array_of": {
+          "name": "string",
+          "owned_by": "string",
+          "used_for": "string",
+          "status": "string",
+          "service_classification": "string",
+          "business_criticality": "string",
+          "service_id": "string",
+          "created_on": "string",
+          "updated_on": "string"
+        }
+      },
+      "total_count": "number"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_366/tool_audit.json",
+      "call_index": 2
+    }
+  },
+  "sn-hr-internal::update_checklist": {
+    "shape": {
+      "success": "boolean",
+      "message": "string",
+      "changes_made": {
+        "array_of": "string"
+      },
+      "checklist": {
+        "checklist_id": "number",
+        "checklist_item_description": "string",
+        "checked": "boolean",
+        "case_task_id": "number",
+        "org_id": "number"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_364/tool_audit.json",
+      "call_index": 14
+    }
+  },
+  "sn-hr-internal::retrieve_knowledge_articles": {
+    "shape": {
+      "success": "boolean",
+      "count": "number",
+      "knowledge_articles": {
+        "array_of": {
+          "knowledge_id": "number",
+          "kb_number": "string",
+          "title": "string",
+          "body": "string",
+          "state": "string",
+          "visibility": "string",
+          "owner_id": "number",
+          "org_id": "number",
+          "created_at": "string",
+          "updated_at": "string"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_364/tool_audit.json",
+      "call_index": 19
+    }
+  },
+  "sn-hr-internal::update_hr_case_task": {
+    "shape": {
+      "hr_case_task_id": "number",
+      "number": "string",
+      "status": "string",
+      "short_description": "string",
+      "task_type": "string",
+      "external_url": "null",
+      "worknotes": "null",
+      "active": "boolean",
+      "org_id": "number",
+      "created_at": "string",
+      "updated_at": "string",
+      "assigned_to": {
+        "user_id": "number",
+        "first_name": "string",
+        "last_name": "string",
+        "email": "string",
+        "role": "string"
+      },
+      "assignment_group": {
+        "group_id": "number",
+        "name": "string",
+        "type": "string",
+        "active": "boolean"
+      },
+      "hr_service": {
+        "hr_service_id": "number",
+        "service_name": "string",
+        "fulfillment_type": "string",
+        "active": "boolean"
+      },
+      "parent_case": {
+        "hr_case_id": "number",
+        "number": "string",
+        "status": "string",
+        "short_description": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_364/tool_audit.json",
+      "call_index": 21
+    }
+  },
+  "sn-hr-internal::create_knowledge_article": {
+    "shape": {
+      "success": "boolean",
+      "knowledge_article": {
+        "knowledge_id": "number",
+        "kb_number": "string",
+        "title": "string",
+        "body": "string",
+        "state": "string",
+        "visibility": "string",
+        "owner_id": "null",
+        "org_id": "number",
+        "created_at": "string",
+        "updated_at": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_359/tool_audit.json",
+      "call_index": 6
+    }
+  },
+  "sn-hr-internal::list_surveys": {
+    "shape": {
+      "success": "boolean",
+      "count": "number",
+      "surveys": {
+        "array_of": {
+          "survey_id": "number",
+          "question_1": "string",
+          "question_2": "string",
+          "question_3": "string",
+          "question_4": "string",
+          "question_5": "string",
+          "org_id": "number",
+          "questions": {
+            "array_of": "string"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_351/tool_audit.json",
+      "call_index": 9
+    }
+  },
+  "sn-hr-internal::create_survey_instance": {
+    "shape": {
+      "success": "boolean",
+      "message": "string",
+      "survey_instance": {
+        "survey_instance_id": "number",
+        "survey_id": "number",
+        "case_task_id": "number",
+        "assigned_to": "number",
+        "org_id": "number",
+        "answer_1": "null",
+        "answer_2": "null",
+        "answer_3": "null",
+        "answer_4": "null",
+        "answer_5": "null"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_351/tool_audit.json",
+      "call_index": 10
+    }
+  },
+  "gym-itsm-mcp::create_knowledge_article": {
+    "shape": {
+      "knowledge_id": "string",
+      "kb_number": "string",
+      "title": "string",
+      "body": "string",
+      "state": "string",
+      "visibility": "string",
+      "owner_id": "string",
+      "created_on": "string",
+      "updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_349/tool_audit.json",
+      "call_index": 5
+    }
+  },
+  "gym-itsm-mcp::get_incident_template_by_name": {
+    "shape": {
+      "incident_template_id": "string",
+      "name": "string",
+      "change_request_values": {
+        "caller_id": "string",
+        "short_description": "string",
+        "channel": "string",
+        "category": "string",
+        "impact": "string",
+        "urgency": "string",
+        "priority": "string",
+        "service": "string",
+        "service_offering": "string"
+      },
+      "active": "boolean",
+      "org_id": "string",
+      "created_at": "string",
+      "updated_at": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_333/tool_audit.json",
+      "call_index": 4
+    }
+  },
+  "gym-calendar::clear_calendar": {
+    "shape": "number",
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_33/tool_audit.json",
+      "call_index": 8
+    }
+  },
+  "sn-hr-internal::get_service_templates": {
+    "shape": {
+      "success": "boolean",
+      "service_templates": {
+        "array_of": "unobserved_empty"
+      },
+      "count": "number",
+      "limit": "number"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_327/tool_audit.json",
+      "call_index": 6
+    }
+  },
+  "gym-teams-mcp::get_user": {
+    "shape": {
+      "@odata.context": "string",
+      "id": "string",
+      "userPrincipalName": "string",
+      "displayName": "string",
+      "givenName": "string",
+      "surname": "string",
+      "jobTitle": "string",
+      "mail": "string",
+      "mailNickname": "string",
+      "accountEnabled": "boolean",
+      "department": "null",
+      "companyName": "null",
+      "usageLocation": "null",
+      "city": "null",
+      "state": "null",
+      "country": "null",
+      "streetAddress": "null",
+      "postalCode": "null",
+      "businessPhones": {
+        "array_of": "string"
+      },
+      "mobilePhone": "string",
+      "officeLocation": "string",
+      "preferredLanguage": "string",
+      "employeeId": "string",
+      "employeeType": "string",
+      "userType": "string",
+      "employeeHireDate": "string",
+      "otherMails": {
+        "array_of": "string"
+      },
+      "onPremisesSyncEnabled": "boolean",
+      "aboutMe": "string",
+      "birthday": "string",
+      "interests": {
+        "array_of": "string"
+      },
+      "skills": {
+        "array_of": "string"
+      },
+      "mySite": "string",
+      "preferredName": "string",
+      "faxNumber": "null",
+      "ageGroup": "string",
+      "lastPasswordChangeDateTime": "null",
+      "isResourceAccount": "boolean",
+      "pastProjects": {
+        "array_of": "string"
+      },
+      "responsibilities": {
+        "array_of": "string"
+      },
+      "schools": {
+        "array_of": "string"
+      },
+      "employeeOrgData": {
+        "costCenter": "string",
+        "division": "string"
+      },
+      "identities": "null",
+      "passwordPolicies": "null",
+      "orgId": "string",
+      "createdDateTime": "string",
+      "lastModifiedDateTime": "string",
+      "softDeleted": "boolean"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_263/tool_audit.json",
+      "call_index": 3
+    }
+  },
+  "gym-teams-mcp::create_call": {
+    "shape": {
+      "id": "string",
+      "state": "string",
+      "direction": "string",
+      "callbackUri": "string",
+      "callChainId": "string",
+      "source": "null",
+      "targets": {
+        "array_of": {
+          "@odata.type": "string",
+          "identity": {
+            "@odata.type": "string",
+            "user": {
+              "@odata.type": "string",
+              "id": "string",
+              "displayName": "string",
+              "identityProvider": "null",
+              "tenantId": "null"
+            },
+            "phone": "null",
+            "application": "null"
+          },
+          "replacesCallId": "null",
+          "participantId": "null",
+          "hidden": "null",
+          "removeFromDefaultAudioRoutingGroup": "null"
+        }
+      },
+      "requestedModalities": {
+        "array_of": "string"
+      },
+      "activeModalities": {
+        "array_of": "unobserved_empty"
+      },
+      "mediaConfig": {
+        "_odata_type": "string",
+        "@odata.type": "string"
+      },
+      "chatInfo": "null",
+      "meetingInfo": "null",
+      "myParticipantId": "string",
+      "subject": "string",
+      "callOptions": "null",
+      "callRoutes": {
+        "array_of": "unobserved_empty"
+      },
+      "resultInfo": "null",
+      "mediaState": "null",
+      "toneInfo": "null",
+      "transcription": "null",
+      "answeredBy": "null",
+      "ringingTimeoutInSeconds": "null",
+      "tenantId": "null",
+      "terminationReason": "null",
+      "meetingCapability": "null",
+      "routingPolicies": {
+        "array_of": "unobserved_empty"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_307/tool_audit.json",
+      "call_index": 6
+    }
+  },
+  "gym-teams-mcp::create_virtual_event_townhall": {
+    "shape": {
+      "@odata.type": "string",
+      "id": "string",
+      "status": "string",
+      "displayName": "string",
+      "description": {
+        "contentType": "string",
+        "content": "string"
+      },
+      "startDateTime": {
+        "dateTime": "string",
+        "timeZone": "string"
+      },
+      "endDateTime": {
+        "dateTime": "string",
+        "timeZone": "string"
+      },
+      "audience": "string",
+      "isInviteOnly": "boolean",
+      "invitedAttendees": {
+        "array_of": {
+          "@odata.type": "string",
+          "id": "string",
+          "displayName": "string",
+          "tenantId": "string"
+        }
+      },
+      "createdBy": {
+        "application": "null",
+        "device": "null",
+        "user": {
+          "@odata.type": "string",
+          "id": "string",
+          "displayName": "string",
+          "tenantId": "string"
+        }
+      },
+      "coOrganizers": {
+        "array_of": {
+          "id": "string",
+          "tenantId": "string",
+          "displayName": "string"
+        }
+      },
+      "settings": {
+        "isAttendeeEmailNotificationEnabled": "boolean"
+      },
+      "externalEventInformation": {
+        "array_of": "unobserved_empty"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round1/cell_03/tool_audit.json",
+      "call_index": 6
+    }
+  },
+  "gym-teams-mcp::create_chat": {
+    "shape": {
+      "@odata.context": "string",
+      "id": "string",
+      "topic": "string",
+      "createdDateTime": "string",
+      "lastUpdatedDateTime": "string",
+      "chatType": "string",
+      "webUrl": "string",
+      "tenantId": "string",
+      "onlineMeetingInfo": "null",
+      "viewpoint": {
+        "isHidden": "boolean",
+        "lastMessageReadDateTime": "null"
+      },
+      "isHiddenForAllMembers": "boolean"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_301/tool_audit.json",
+      "call_index": 11
+    }
+  },
+  "gym-teams-mcp::create_teamwork_tag": {
+    "shape": {
+      "displayName": "string",
+      "description": "null",
+      "tagType": "string",
+      "teamId": "string",
+      "id": "string",
+      "memberCount": "number",
+      "members": {
+        "array_of": {
+          "userId": "string",
+          "displayName": "string"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_301/tool_audit.json",
+      "call_index": 12
+    }
+  },
+  "gym-teams-mcp::send_chat_message": {
+    "shape": {
+      "@odata.context": "string",
+      "id": "string",
+      "replyToId": "null",
+      "etag": "string",
+      "messageType": "string",
+      "createdDateTime": "string",
+      "lastModifiedDateTime": "string",
+      "lastEditedDateTime": "null",
+      "deletedDateTime": "null",
+      "subject": "null",
+      "summary": "null",
+      "chatId": "string",
+      "importance": "string",
+      "locale": "string",
+      "webUrl": "null",
+      "channelIdentity": "null",
+      "policyViolation": "null",
+      "eventDetail": "null",
+      "from": {
+        "application": "null",
+        "device": "null",
+        "user": {
+          "id": "string",
+          "displayName": "string",
+          "userIdentityType": "string"
+        }
+      },
+      "body": {
+        "contentType": "string",
+        "content": "string"
+      },
+      "attachments": {
+        "array_of": "unobserved_empty"
+      },
+      "mentions": {
+        "array_of": "unobserved_empty"
+      },
+      "reactions": {
+        "array_of": "unobserved_empty"
+      },
+      "messageHistory": {
+        "array_of": "unobserved_empty"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_301/tool_audit.json",
+      "call_index": 13
+    }
+  },
+  "gym-teams-mcp::update_user": {
+    "shape": {
+      "@odata.context": "string",
+      "id": "string",
+      "userPrincipalName": "string",
+      "displayName": "string",
+      "accountEnabled": "boolean",
+      "givenName": "string",
+      "surname": "string",
+      "jobTitle": "string",
+      "mail": "string",
+      "mailNickname": "string",
+      "businessPhones": {
+        "array_of": "string"
+      },
+      "mobilePhone": "string",
+      "officeLocation": "string",
+      "preferredLanguage": "string",
+      "department": "null",
+      "companyName": "null",
+      "usageLocation": "null",
+      "city": "null",
+      "state": "null",
+      "country": "null",
+      "streetAddress": "null",
+      "postalCode": "null",
+      "employeeId": "string",
+      "employeeType": "string",
+      "userType": "string",
+      "employeeHireDate": "string",
+      "otherMails": {
+        "array_of": "string"
+      },
+      "onPremisesSyncEnabled": "boolean",
+      "identities": "null",
+      "passwordPolicies": "null",
+      "aboutMe": "string",
+      "birthday": "string",
+      "interests": {
+        "array_of": "string"
+      },
+      "skills": {
+        "array_of": "string"
+      },
+      "mySite": "string",
+      "preferredName": "string",
+      "faxNumber": "null",
+      "ageGroup": "string",
+      "lastPasswordChangeDateTime": "null",
+      "isResourceAccount": "boolean",
+      "pastProjects": {
+        "array_of": "string"
+      },
+      "responsibilities": {
+        "array_of": "string"
+      },
+      "schools": {
+        "array_of": "string"
+      },
+      "employeeOrgData": {
+        "costCenter": "string",
+        "division": "string"
+      },
+      "orgId": "string",
+      "createdDateTime": "string",
+      "lastModifiedDateTime": "string",
+      "softDeleted": "boolean"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_299/tool_audit.json",
+      "call_index": 5
+    }
+  },
+  "gym-google-drive-mcp::get_comments": {
+    "shape": {
+      "success": "boolean",
+      "comment": {
+        "id": "string",
+        "kind": "string",
+        "createdTime": "string",
+        "modifiedTime": "string",
+        "resolved": "boolean",
+        "anchor": "string",
+        "author": {
+          "displayName": "string",
+          "kind": "string",
+          "me": "boolean",
+          "permissionId": "null",
+          "emailAddress": "null",
+          "photoLink": "null"
+        },
+        "deleted": "boolean",
+        "htmlContent": "string",
+        "content": "string",
+        "quotedFileContent": {
+          "mimeType": "string",
+          "value": "string"
+        },
+        "replies": {
+          "array_of": {
+            "id": "string",
+            "kind": "string",
+            "createdTime": "string",
+            "modifiedTime": "string",
+            "author": {
+              "displayName": "string",
+              "kind": "string",
+              "me": "boolean",
+              "permissionId": "null",
+              "emailAddress": "null",
+              "photoLink": "string"
+            },
+            "htmlContent": "string",
+            "content": "string",
+            "deleted": "boolean",
+            "action": "null"
+          }
+        },
+        "mentionedEmailAddresses": {
+          "array_of": "unobserved_empty"
+        },
+        "assigneeEmailAddress": "null"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_293/tool_audit.json",
+      "call_index": 6
+    }
+  },
+  "gym-email-mcp::get_vacation_settings": {
+    "shape": {
+      "enableAutoReply": "boolean",
+      "responseSubject": "string",
+      "responseBodyPlainText": "string",
+      "responseBodyHtml": "string",
+      "restrictToContacts": "boolean",
+      "restrictToDomain": "boolean",
+      "startTime": "string",
+      "endTime": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_291/tool_audit.json",
+      "call_index": 1
+    }
+  },
+  "gym-google-drive-mcp::get_about": {
+    "shape": {
+      "success": "boolean",
+      "data": {
+        "kind": "string",
+        "user": {
+          "kind": "string",
+          "displayName": "string",
+          "photoLink": "string",
+          "me": "boolean",
+          "permissionId": "string",
+          "emailAddress": "string"
+        },
+        "storageQuota": {
+          "usage": "string",
+          "usageInDrive": "string",
+          "usageInDriveTrash": "string"
+        },
+        "maxImportSizes": {
+          "application/vnd.google-apps.document": "string",
+          "application/vnd.google-apps.spreadsheet": "string",
+          "application/vnd.google-apps.presentation": "string"
+        },
+        "maxUploadSize": "string",
+        "canCreateTeamDrives": "boolean",
+        "canCreateDrives": "boolean",
+        "driveThemes": {
+          "array_of": {
+            "id": "string",
+            "backgroundImageLink": "string",
+            "colorRgb": "string"
+          }
+        }
+      },
+      "status": "string",
+      "message": "string"
+    },
+    "provenance": {
+      "source": "runs/ds_recovery_merged20/cell_10/tool_audit.json",
+      "call_index": 4
+    }
+  },
+  "sn-csm-server::find_sla_definitions": {
+    "shape": {
+      "array_of": {
+        "sla_def_id": "number",
+        "name": "string",
+        "metric": "string",
+        "target_mins": "number",
+        "pause_on_pending": "number",
+        "applies_to_priority": "string",
+        "active": "number",
+        "sys_created_on": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_275/tool_audit.json",
+      "call_index": 19
+    }
+  },
+  "sn-csm-server::link_new_case_sla": {
+    "shape": {
+      "case_sla_id": "number",
+      "case_id": "number",
+      "sla_def_id": "number",
+      "stage": "string",
+      "start_time": "string",
+      "breach_time": "null",
+      "has_breached": "number",
+      "completed_time": "null"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_275/tool_audit.json",
+      "call_index": 20
+    }
+  },
+  "gym-teams-mcp::update_team": {
+    "shape": {
+      "id": "string",
+      "internalId": "string",
+      "tenantId": "string",
+      "displayName": "string",
+      "description": "string",
+      "visibility": "string",
+      "specialization": "string",
+      "classification": "string",
+      "memberSettings": {
+        "allowCreateUpdateChannels": "boolean",
+        "allowCreatePrivateChannels": "boolean",
+        "allowDeleteChannels": "boolean",
+        "allowAddRemoveApps": "boolean",
+        "allowCreateUpdateRemoveTabs": "boolean",
+        "allowCreateUpdateRemoveConnectors": "boolean"
+      },
+      "guestSettings": {
+        "allowCreateUpdateChannels": "boolean",
+        "allowDeleteChannels": "boolean"
+      },
+      "messagingSettings": {
+        "allowUserEditMessages": "boolean",
+        "allowUserDeleteMessages": "boolean",
+        "allowOwnerDeleteMessages": "boolean",
+        "allowTeamMentions": "boolean",
+        "allowChannelMentions": "boolean"
+      },
+      "funSettings": {
+        "allowGiphy": "boolean",
+        "giphyContentRating": "string",
+        "allowStickersAndMemes": "boolean",
+        "allowCustomMemes": "boolean"
+      },
+      "classSettings": "null",
+      "isArchived": "boolean",
+      "createdDateTime": "string",
+      "summary": "null",
+      "webUrl": "string",
+      "members": "null",
+      "channels": "null",
+      "installedApps": "null",
+      "incomingChannels": "null"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_263/tool_audit.json",
+      "call_index": 4
+    }
+  },
+  "gym-teams-mcp::update_team_member": {
+    "shape": {
+      "_odata_type": "string",
+      "id": "string",
+      "roles": {
+        "array_of": "string"
+      },
+      "displayName": "string",
+      "visibleHistoryStartDateTime": "string",
+      "userId": "string",
+      "email": "string",
+      "tenantId": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_263/tool_audit.json",
+      "call_index": 6
+    }
+  },
+  "gym-calendar::patch_acl_rule": {
+    "shape": {
+      "kind": "string",
+      "etag": "string",
+      "id": "string",
+      "scope": {
+        "type": "string",
+        "value": "string"
+      },
+      "role": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_251/tool_audit.json",
+      "call_index": 9
+    }
+  },
+  "sn-csm-server::find_product_by_id": {
+    "shape": {
+      "product_id": "number",
+      "name": "string",
+      "category": "string",
+      "lifecycle_state": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_239/tool_audit.json",
+      "call_index": 5
+    }
+  },
+  "gym-teams-mcp::create_user": {
+    "shape": {
+      "@odata.context": "string",
+      "id": "string",
+      "userPrincipalName": "string",
+      "displayName": "string",
+      "accountEnabled": "boolean",
+      "givenName": "null",
+      "surname": "null",
+      "jobTitle": "null",
+      "mail": "string",
+      "mailNickname": "string",
+      "businessPhones": "null",
+      "mobilePhone": "null",
+      "officeLocation": "null",
+      "preferredLanguage": "null",
+      "department": "null",
+      "companyName": "null",
+      "usageLocation": "null",
+      "city": "null",
+      "state": "null",
+      "country": "null",
+      "streetAddress": "null",
+      "postalCode": "null",
+      "employeeId": "null",
+      "employeeType": "null",
+      "userType": "string",
+      "employeeHireDate": "null",
+      "otherMails": "null",
+      "onPremisesSyncEnabled": "null",
+      "identities": "null",
+      "passwordPolicies": "null",
+      "aboutMe": "null",
+      "birthday": "null",
+      "interests": "null",
+      "skills": "null",
+      "mySite": "null",
+      "preferredName": "null",
+      "faxNumber": "null",
+      "ageGroup": "null",
+      "lastPasswordChangeDateTime": "null",
+      "isResourceAccount": "boolean",
+      "pastProjects": "null",
+      "responsibilities": "null",
+      "schools": "null",
+      "employeeOrgData": "null",
+      "orgId": "string",
+      "createdDateTime": "string",
+      "lastModifiedDateTime": "string",
+      "softDeleted": "boolean"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_22/tool_audit.json",
+      "call_index": 6
+    }
+  },
+  "gym-calendar::get_user_by_email": {
+    "shape": {
+      "id": "string",
+      "email": "string",
+      "name": "string",
+      "given_name": "string",
+      "family_name": "string",
+      "picture": "null",
+      "locale": "null",
+      "timezone": "string",
+      "is_active": "boolean",
+      "is_verified": "boolean",
+      "provider": "null",
+      "created_at": "string",
+      "updated_at": "string",
+      "last_login_at": "null"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_211/tool_audit.json",
+      "call_index": 1
+    }
+  },
+  "gym-teams-mcp::create_teamwork_tag_member": {
+    "shape": {
+      "@odata.type": "string",
+      "id": "string",
+      "displayName": "string",
+      "tenantId": "string",
+      "userId": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_21/tool_audit.json",
+      "call_index": 9
+    }
+  },
+  "sn-csm-server::register_new_installed_product": {
+    "shape": {
+      "installed_product_id": "number",
+      "account_id": "number",
+      "product_id": "number",
+      "location_id": "number",
+      "serial_number": "string",
+      "status": "string",
+      "warranty_end": "string",
+      "sys_created_on": "string",
+      "sys_updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_202/tool_audit.json",
+      "call_index": 8
+    }
+  },
+  "sn-csm-server::create_contact": {
+    "shape": {
+      "contact_id": "number",
+      "account_id": "number",
+      "portal_user_id": "number",
+      "active": "number",
+      "is_primary": "number",
+      "sys_created_on": "string",
+      "sys_updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_201/tool_audit.json",
+      "call_index": 5
+    }
+  },
+  "sn-csm-server::enlist_new_contract": {
+    "shape": {
+      "contract_id": "number",
+      "account_id": "number",
+      "contract_type": "string",
+      "status": "string",
+      "contract_price": "number",
+      "start_date": "string",
+      "end_date": "string",
+      "sys_created_on": "string",
+      "sys_updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_201/tool_audit.json",
+      "call_index": 7
+    }
+  },
+  "sn-csm-server::add_new_entitlement": {
+    "shape": {
+      "entitlement_id": "number",
+      "account_id": "number",
+      "product_id": "number",
+      "contract_id": "number",
+      "support_level": "string",
+      "coverage_hours": "string",
+      "max_cases_per_month": "number",
+      "active": "number",
+      "sys_created_on": "string",
+      "sys_updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_201/tool_audit.json",
+      "call_index": 8
+    }
+  },
+  "sn-csm-server::update_installed_product_details": {
+    "shape": {
+      "installed_product_id": "number",
+      "account_id": "number",
+      "product_id": "number",
+      "location_id": "number",
+      "serial_number": "string",
+      "status": "string",
+      "warranty_end": "string",
+      "sys_created_on": "string",
+      "sys_updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_187/tool_audit.json",
+      "call_index": 10
+    }
+  },
+  "gym-teams-mcp::add_channel_member": {
+    "shape": {
+      "id": "number",
+      "roles": {
+        "array_of": "string"
+      },
+      "displayName": "string",
+      "email": "string",
+      "userId": "string",
+      "tenantId": "string",
+      "visibleHistoryStartDateTime": "string"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_teams/attempts.jsonl",
+      "line": 3,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "sn-hr-internal::get_cases_assigned_to": {
+    "shape": {
+      "total_count": "number",
+      "cases": {
+        "array_of": {
+          "hr_case_id": "number",
+          "number": "string",
+          "status": "string",
+          "priority": "string",
+          "source": "string",
+          "short_description": "string",
+          "worknotes": "string",
+          "skills": "null",
+          "coe_type": "string",
+          "request_status": "null",
+          "account_number": "string",
+          "account_type": "string",
+          "org_id": "number",
+          "created_at": "string",
+          "updated_at": "string",
+          "hr_service": {
+            "hr_service_id": "number",
+            "service_name": "string",
+            "fulfillment_type": "string",
+            "active": "boolean"
+          },
+          "opened_for": {
+            "hr_profile_id": "number",
+            "number": "string",
+            "user_id": "number",
+            "user_name": "string",
+            "personal_email": "string",
+            "position": "string"
+          },
+          "opened_by": {
+            "hr_profile_id": "number",
+            "number": "string",
+            "user_id": "number",
+            "user_name": "string",
+            "personal_email": "string",
+            "position": "string"
+          },
+          "assigned_to": {
+            "user_id": "number",
+            "first_name": "string",
+            "last_name": "string",
+            "email": "string",
+            "role": "string"
+          },
+          "assignment_group": {
+            "group_id": "number",
+            "name": "string",
+            "type": "string",
+            "active": "boolean"
+          },
+          "approval_criteria": "null",
+          "approver": "null"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_166/tool_audit.json",
+      "call_index": 8
+    }
+  },
+  "sn-hr-internal::get_hr_profile_by_id": {
+    "shape": {
+      "success": "boolean",
+      "hr_profile": {
+        "hr_profile_id": "number",
+        "number": "string",
+        "gender": "string",
+        "user_id": "number",
+        "personal_email": "string",
+        "marital_status": "string",
+        "type": "string",
+        "dob": "string",
+        "nationality": "string",
+        "employment_start_date": "string",
+        "employment_end_date": "null",
+        "manager": "null",
+        "location_type": "string",
+        "national_tax_id": "string",
+        "position": "string",
+        "org_id": "number",
+        "created_at": "string",
+        "updated_at": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_166/tool_audit.json",
+      "call_index": 9
+    }
+  },
+  "gym-itsm-mcp::get_incidents_assigned_to": {
+    "shape": {
+      "array_of": {
+        "incident_id": "string",
+        "number": "string",
+        "caller_id": "string",
+        "service": "string",
+        "service_offering": "string",
+        "configuration_item": "string",
+        "assigned_to": "string",
+        "assignment_group": "string",
+        "resolved_by": "string",
+        "problem": "null",
+        "change_request": "null",
+        "caused_by_change": "null",
+        "incident_template": "null",
+        "parent_incident": "null",
+        "channel": "string",
+        "contact_type": "string",
+        "status": "string",
+        "category": "string",
+        "short_description": "string",
+        "description": "string",
+        "worknotes": "string",
+        "resolution_notes": "string",
+        "close_notes": "string",
+        "impact": "string",
+        "urgency": "string",
+        "priority": "string",
+        "resolution_code": "string",
+        "on_hold_reason": "null",
+        "resolved": "string",
+        "created_at": "string",
+        "updated_at": "string",
+        "org_id": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_136/tool_audit.json",
+      "call_index": 3
+    }
+  },
+  "gym-itsm-mcp::update_user_group": {
+    "shape": {
+      "name": "string",
+      "type": "string",
+      "active": "boolean",
+      "email": "string",
+      "description": "string",
+      "manager_id": "string",
+      "group_id": "string",
+      "created_on": "string",
+      "updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_135/tool_audit.json",
+      "call_index": 5
+    }
+  },
+  "gym-itsm-mcp::add_new_user": {
+    "shape": {
+      "user_name": "string",
+      "first_name": "string",
+      "last_name": "string",
+      "email": "string",
+      "phone": "string",
+      "role": "string",
+      "active": "boolean",
+      "location_id": "null",
+      "user_id": "string",
+      "created_on": "string",
+      "updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/ds_recovery_merged_controls/cell_08/tool_audit.json",
+      "call_index": 1
+    }
+  },
+  "gym-itsm-mcp::add_new_group_member": {
+    "shape": {
+      "member_id": "string",
+      "group_id": "string",
+      "user_id": "string",
+      "created_on": "string",
+      "updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/ds_recovery_merged_controls/cell_08/tool_audit.json",
+      "call_index": 3
+    }
+  },
+  "gym-email-mcp::list_forwarding_addresses": {
+    "shape": {
+      "forwardingAddresses": {
+        "array_of": {
+          "forwardingEmail": "string",
+          "verificationStatus": "string"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/ds_recovery_narration20/cell_14/tool_audit.json",
+      "call_index": 3
+    }
+  },
+  "sn-csm-server::find_installed_product_by_serial": {
+    "shape": {
+      "installed_product_id": "number",
+      "account_id": "number",
+      "product_id": "number",
+      "location_id": "number",
+      "serial_number": "string",
+      "status": "string",
+      "warranty_end": "string"
+    },
+    "provenance": {
+      "source": "runs/ds_recovery_narration20/cell_13/tool_audit.json",
+      "call_index": 1
+    }
+  },
+  "gym-email-mcp::get_auto_forwarding": {
+    "shape": {
+      "enabled": "boolean",
+      "emailAddress": "string",
+      "disposition": "string"
+    },
+    "provenance": {
+      "source": "runs/ds_recovery_narration20/cell_19/tool_audit.json",
+      "call_index": 2
+    }
+  },
+  "gym-itsm-mcp::get_user_using_email": {
+    "shape": {
+      "user_id": "string",
+      "user_name": "string",
+      "first_name": "string",
+      "last_name": "string",
+      "email": "string",
+      "phone": "string",
+      "role": "string",
+      "active": "boolean",
+      "org_id": "string",
+      "location_id": "string",
+      "created_on": "string",
+      "updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/validation/plus_5_tools/runs/all_domains_hybrid/attempts.jsonl",
+      "line": 2,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-itsm-mcp::map_change_request": {
+    "shape": {
+      "change_request_mapping_id": "string",
+      "change_id": "string",
+      "incident_id": "string",
+      "problem_id": "string",
+      "org_id": "string",
+      "created_at": "string",
+      "updated_at": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_128/tool_audit.json",
+      "call_index": 7
+    }
+  },
+  "gym-google-drive-mcp::delete_files": {
+    "shape": {
+      "success": "boolean",
+      "data": {},
+      "status": "string",
+      "message": "string"
+    },
+    "provenance": {
+      "source": "runs/ds_recovery_narration20/cell_12/tool_audit.json",
+      "call_index": 9
+    }
+  },
+  "gym-email-mcp::update_draft": {
+    "shape": {
+      "id": "string",
+      "message": {
+        "id": "string",
+        "threadId": "string",
+        "labelIds": {
+          "array_of": "string"
+        },
+        "snippet": "string",
+        "historyId": "string",
+        "internalDate": "string",
+        "sizeEstimate": "number",
+        "payload": {
+          "partId": "string",
+          "mimeType": "string",
+          "filename": "string",
+          "headers": {
+            "array_of": {
+              "name": "string",
+              "value": "string"
+            }
+          },
+          "body": {
+            "size": "number",
+            "data": "string",
+            "attachmentId": "string"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round2/cell_114/tool_audit.json",
+      "call_index": 12
+    }
+  },
+  "gym-email-mcp::list_threads": {
+    "shape": {
+      "threads": {
+        "array_of": {
+          "id": "string",
+          "snippet": "string",
+          "historyId": "string",
+          "messages": {
+            "array_of": {
+              "id": "string",
+              "threadId": "string",
+              "labelIds": {
+                "array_of": "string"
+              },
+              "snippet": "string",
+              "historyId": "string",
+              "internalDate": "string",
+              "sizeEstimate": "number",
+              "payload": {
+                "partId": "string",
+                "mimeType": "string",
+                "filename": "string",
+                "headers": {
+                  "array_of": "object"
+                },
+                "body": "object"
+              }
+            }
+          }
+        }
+      },
+      "resultSizeEstimate": "number"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/oracle/runs/all_domains_email/attempts.jsonl",
+      "line": 1,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-itsm-mcp::add_new_user_group": {
+    "shape": {
+      "name": "string",
+      "type": "string",
+      "active": "boolean",
+      "email": "null",
+      "description": "null",
+      "manager_id": "string",
+      "group_id": "string",
+      "created_on": "string",
+      "updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/ds_recovery_narration20/cell_07/tool_audit.json",
+      "call_index": 3
+    }
+  },
+  "gym-itsm-mcp::list_group_members": {
+    "shape": {
+      "group_members": {
+        "array_of": {
+          "member_id": "string",
+          "group_id": "string",
+          "user_id": "string",
+          "org_id": "string",
+          "created_on": "string",
+          "updated_on": "string"
+        }
+      },
+      "total_count": "number"
+    },
+    "provenance": {
+      "source": "runs/ds_recovery_narration20/cell_15/tool_audit.json",
+      "call_index": 2
+    }
+  },
+  "gym-itsm-mcp::remove_group_membership": {
+    "shape": {
+      "message": "string"
+    },
+    "provenance": {
+      "source": "runs/ds_recovery_narration20/cell_15/tool_audit.json",
+      "call_index": 12
+    }
+  },
+  "gym-teams-mcp::list_tabs_in_channel": {
+    "shape": {
+      "@odata.context": "string",
+      "@odata.count": "number",
+      "value": {
+        "array_of": {
+          "id": "string",
+          "displayName": "string",
+          "teamsApp_odata_bind": "string"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round1/cell_16/tool_audit.json",
+      "call_index": 8
+    }
+  },
+  "gym-calendar::update_calendar_in_list": {
+    "shape": {
+      "kind": "string",
+      "etag": "string",
+      "id": "string",
+      "summary": "string",
+      "description": "string",
+      "location": "null",
+      "timeZone": "string",
+      "summaryOverride": "null",
+      "colorId": "string",
+      "backgroundColor": "string",
+      "foregroundColor": "string",
+      "hidden": "boolean",
+      "selected": "boolean",
+      "accessRole": "string",
+      "defaultReminders": "null",
+      "notificationSettings": "null",
+      "primary": "boolean",
+      "deleted": "boolean",
+      "conferenceProperties": {
+        "allowedConferenceSolutionTypes": {
+          "array_of": "unobserved_empty"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/ds_recovery_action_gates/cell_10/tool_audit.json",
+      "call_index": 5
+    }
+  },
+  "gym-email-mcp::get_filter": {
+    "shape": {
+      "id": "string",
+      "criteria": {
+        "from": "string",
+        "to": "string",
+        "subject": "string",
+        "query": "string",
+        "negatedQuery": "string",
+        "hasAttachment": "boolean",
+        "excludeChats": "boolean",
+        "size": "number",
+        "sizeComparison": "string"
+      },
+      "action": {
+        "addLabelIds": {
+          "array_of": "string"
+        },
+        "removeLabelIds": {
+          "array_of": "string"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/ds_recovery_fault_expansion/faults/cell_23/tool_audit.json",
+      "call_index": 12
+    }
+  },
+  "gym-email-mcp::batch_modify_messages": {
+    "shape": {},
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/validation/plus_5_tools/runs/all_domains_email/attempts.jsonl",
+      "line": 3,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "sn-csm-server::create_new_account": {
+    "shape": {
+      "account_id": "number",
+      "name": "string",
+      "account_type": "string",
+      "email_domain": "string",
+      "active": "number",
+      "sys_created_on": "string",
+      "sys_updated_on": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_repeat_fault_probe/teacher/single/cell_06/tool_audit.json",
+      "call_index": 4
+    }
+  },
+  "gym-google-drive-mcp::create_drive": {
+    "shape": {
+      "success": "boolean",
+      "data": {
+        "kind": "string",
+        "id": "string",
+        "name": "string",
+        "colorRgb": "null",
+        "themeId": "null",
+        "backgroundImageLink": "null",
+        "hidden": "boolean",
+        "createdTime": "string",
+        "capabilities": {
+          "canAddChildren": "boolean",
+          "canComment": "boolean",
+          "canCopy": "boolean",
+          "canDeleteDrive": "boolean",
+          "canDownload": "boolean",
+          "canEdit": "boolean",
+          "canListChildren": "boolean",
+          "canManageMembers": "boolean",
+          "canReadRevisions": "boolean",
+          "canRename": "boolean",
+          "canRenameDrive": "boolean",
+          "canChangeDriveBackground": "boolean",
+          "canShare": "boolean",
+          "canChangeCopyRequiresWriterPermissionRestriction": "boolean",
+          "canChangeDomainUsersOnlyRestriction": "boolean",
+          "canChangeDriveMembersOnlyRestriction": "boolean",
+          "canChangeSharingFoldersRequiresOrganizerPermissionRestriction": "boolean",
+          "canResetDriveRestrictions": "boolean",
+          "canDeleteChildren": "boolean",
+          "canTrashChildren": "boolean",
+          "canChangeDownloadRestriction": "boolean"
+        },
+        "restrictions": {
+          "copyRequiresWriterPermission": "boolean",
+          "domainUsersOnly": "boolean",
+          "driveMembersOnly": "boolean",
+          "adminManagedRestrictions": "boolean",
+          "sharingFoldersRequiresOrganizerPermission": "boolean",
+          "downloadRestriction": {
+            "restrictedForReaders": "boolean",
+            "restrictedForWriters": "boolean"
+          }
+        }
+      },
+      "status": "string",
+      "message": "string"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/validation/plus_5_tools/runs/all_domains_hybrid/attempts.jsonl",
+      "line": 2,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-email-mcp::delete_filter": {
+    "shape": {
+      "message": "string",
+      "id": "string",
+      "user_id": "string"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/oracle/runs/all_domains_email/attempts.jsonl",
+      "line": 1,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-email-mcp::modify_thread": {
+    "shape": {
+      "id": "string",
+      "snippet": "string",
+      "historyId": "string",
+      "messages": {
+        "array_of": {
+          "id": "string",
+          "threadId": "string",
+          "labelIds": {
+            "array_of": "string"
+          },
+          "snippet": "string",
+          "historyId": "string",
+          "internalDate": "string",
+          "sizeEstimate": "number",
+          "payload": {
+            "partId": "string",
+            "mimeType": "string",
+            "filename": "string",
+            "headers": {
+              "array_of": {
+                "name": "string",
+                "value": "string"
+              }
+            },
+            "body": {
+              "size": "number",
+              "data": "string",
+              "attachmentId": "null"
+            }
+          }
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/oracle/runs/all_domains_email/attempts.jsonl",
+      "line": 1,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-calendar::watch_events": {
+    "shape": {
+      "kind": "string",
+      "id": "string",
+      "resourceId": "string",
+      "resourceUri": "string",
+      "token": "null",
+      "expiration": "string"
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round1/cell_207/tool_audit.json",
+      "call_index": 11
+    }
+  },
+  "sn-hr-internal::get_user": {
+    "shape": {
+      "success": "boolean",
+      "user": {
+        "user_id": "number",
+        "first_name": "string",
+        "last_name": "string",
+        "email": "string",
+        "phone": "string",
+        "role": "string",
+        "active": "boolean",
+        "org_id": "number",
+        "created_at": "string",
+        "updated_at": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round1/cell_391/tool_audit.json",
+      "call_index": 3
+    }
+  },
+  "gym-email-mcp::get_thread": {
+    "shape": {
+      "id": "string",
+      "snippet": "string",
+      "historyId": "string",
+      "messages": {
+        "array_of": {
+          "id": "string",
+          "threadId": "string",
+          "labelIds": {
+            "array_of": "string"
+          },
+          "snippet": "string",
+          "historyId": "string",
+          "internalDate": "string",
+          "sizeEstimate": "number",
+          "payload": {
+            "partId": "string",
+            "mimeType": "string",
+            "filename": "string",
+            "headers": {
+              "array_of": {
+                "name": "string",
+                "value": "string"
+              }
+            },
+            "body": {
+              "size": "number",
+              "data": "string",
+              "attachmentId": "null"
+            }
+          }
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/recovery_teacher_train/round1/cell_266/tool_audit.json",
+      "call_index": 9
+    }
+  },
+  "gym-email-mcp::get_label": {
+    "shape": {
+      "id": "string",
+      "name": "string",
+      "messageListVisibility": "string",
+      "labelListVisibility": "string",
+      "type": "string",
+      "messagesTotal": "number",
+      "messagesUnread": "number",
+      "threadsTotal": "number",
+      "threadsUnread": "number",
+      "color": {
+        "textColor": "string",
+        "backgroundColor": "string"
+      }
+    },
+    "provenance": {
+      "source": "runs/ds_recovery_sample40/cell_20/tool_audit.json",
+      "call_index": 3
+    }
+  },
+  "gym-email-mcp::list_cse_identities": {
+    "shape": {
+      "cseIdentities": {
+        "array_of": {
+          "emailAddress": "string",
+          "primaryKeyPairId": "string",
+          "signAndEncryptKeyPairs": "null"
+        }
+      },
+      "nextPageToken": "null"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_email/attempts.jsonl",
+      "line": 2,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-email-mcp::email_list_cse_keypairs": {
+    "shape": {
+      "cseKeyPairs": {
+        "array_of": {
+          "keyPairId": "string",
+          "pem": "string",
+          "subjectEmailAddresses": {
+            "array_of": "string"
+          },
+          "enablementState": "string",
+          "disableTime": "null",
+          "privateKeyMetadata": {
+            "array_of": "unobserved_empty"
+          }
+        }
+      },
+      "nextPageToken": "null"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/validation/oracle/runs/all_domains_email/attempts.jsonl",
+      "line": 5,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-email-mcp::email_create_cse_keypair": {
+    "shape": {
+      "keyPairId": "string",
+      "pem": "string",
+      "subjectEmailAddresses": {
+        "array_of": "string"
+      },
+      "enablementState": "string",
+      "disableTime": "null",
+      "privateKeyMetadata": {
+        "array_of": "unobserved_empty"
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_email/attempts.jsonl",
+      "line": 2,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-email-mcp::email_disable_cse_keypair": {
+    "shape": {
+      "keyPairId": "string",
+      "pem": "string",
+      "subjectEmailAddresses": {
+        "array_of": "string"
+      },
+      "enablementState": "string",
+      "disableTime": "string",
+      "privateKeyMetadata": {
+        "array_of": "unobserved_empty"
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_email/attempts.jsonl",
+      "line": 2,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-email-mcp::patch_cse_identity": {
+    "shape": {
+      "emailAddress": "string",
+      "primaryKeyPairId": "string",
+      "signAndEncryptKeyPairs": "null"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_email/attempts.jsonl",
+      "line": 2,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "sn-hr-internal::fetch_hr_profiles": {
+    "shape": {
+      "success": "boolean",
+      "count": "number",
+      "hr_profiles": {
+        "array_of": "unobserved_empty"
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/validation/oracle/runs/all_domains_hr/attempts.jsonl",
+      "line": 10,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-teams-mcp::list_team_apps": {
+    "shape": {
+      "@odata.context": "string",
+      "value": {
+        "array_of": {
+          "id": "string",
+          "externalId": "null",
+          "displayName": "string",
+          "distributionMethod": "string"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/validation/oracle/runs/all_domains_teams/attempts.jsonl",
+      "line": 3,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-teams-mcp::provision_channel_email": {
+    "shape": {
+      "@odata.type": "string",
+      "email": "string"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/validation/oracle/runs/all_domains_teams/attempts.jsonl",
+      "line": 3,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-email-mcp::delete_message": {
+    "shape": {},
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_hybrid/attempts.jsonl",
+      "line": 8,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-teams-mcp::list_groups": {
+    "shape": {
+      "odata_context": "string",
+      "value": {
+        "array_of": {
+          "id": "string",
+          "displayName": "string"
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_teams/attempts.jsonl",
+      "line": 1,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-teams-mcp::update_group": {
+    "shape": {
+      "id": "string",
+      "deletedDateTime": "null",
+      "classification": "null",
+      "createdDateTime": "string",
+      "description": "string",
+      "displayName": "string",
+      "expirationDateTime": "null",
+      "groupTypes": {
+        "array_of": "string"
+      },
+      "isAssignableToRole": "null",
+      "mail": "string",
+      "mailEnabled": "boolean",
+      "mailNickname": "string",
+      "membershipRule": "null",
+      "membershipRuleProcessingState": "null",
+      "onPremisesDomainName": "null",
+      "onPremisesLastSyncDateTime": "null",
+      "onPremisesNetBiosName": "null",
+      "onPremisesSamAccountName": "null",
+      "onPremisesSecurityIdentifier": "null",
+      "onPremisesSyncEnabled": "null",
+      "preferredDataLocation": "null",
+      "preferredLanguage": "null",
+      "proxyAddresses": {
+        "array_of": "unobserved_empty"
+      },
+      "renewedDateTime": "null",
+      "resourceBehaviorOptions": "null",
+      "resourceProvisioningOptions": "null",
+      "securityEnabled": "boolean",
+      "securityIdentifier": "null",
+      "serviceProvisioningErrors": {
+        "array_of": "unobserved_empty"
+      },
+      "theme": "null",
+      "visibility": "string",
+      "onPremisesProvisioningErrors": "null",
+      "allowExternalSenders": "null",
+      "autoSubscribeNewMembers": "null",
+      "assignedLabels": "null",
+      "assignedLicenses": "null",
+      "hideFromAddressLists": "null",
+      "hideFromOutlookClients": "null",
+      "isSubscribedByMail": "null",
+      "unseenCount": "null",
+      "isManagementRestricted": "null",
+      "isArchived": "null",
+      "hasMembersWithLicenseErrors": "null",
+      "licenseProcessingState": "null"
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_teams/attempts.jsonl",
+      "line": 1,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-teams-mcp::list_call_records": {
+    "shape": {
+      "@odata.context": "string",
+      "value": {
+        "array_of": {
+          "id": "string",
+          "startDateTime": "string",
+          "endDateTime": "string",
+          "type": "string",
+          "modalities": {
+            "array_of": "unobserved_empty"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_teams/attempts.jsonl",
+      "line": 3,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-teams-mcp::get_call_record": {
+    "shape": {
+      "@odata.context": "string",
+      "version": "number",
+      "type": "string",
+      "modalities": {
+        "array_of": "string"
+      },
+      "lastModifiedDateTime": "null",
+      "startDateTime": "string",
+      "endDateTime": "string",
+      "id": "string",
+      "participants_v2@odata.context": "string",
+      "participants_v2": {
+        "array_of": {
+          "id": "string",
+          "identity": {
+            "user": {
+              "id": "string",
+              "displayName": "string",
+              "tenantId": "string",
+              "userPrincipalName": "string"
+            }
+          }
+        }
+      },
+      "sessions@odata.context": "string",
+      "sessions": {
+        "array_of": "unobserved_empty"
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_teams/attempts.jsonl",
+      "line": 3,
+      "kind": "native normal successful tool response"
+    }
+  },
+  "gym-email-mcp::email_get_cse_keypair": {
+    "shape": {
+      "keyPairId": "string",
+      "pem": "string",
+      "subjectEmailAddresses": {
+        "array_of": "string"
+      },
+      "enablementState": "string",
+      "disableTime": "null",
+      "privateKeyMetadata": {
+        "array_of": "unobserved_empty"
+      }
+    },
+    "provenance": {
+      "source": "runs/base_temperature0_evaluation/base-val-test-temperature0-rtx5090x2-20260919T123515Z-2111/test/plus_5_tools/runs/all_domains_email/attempts.jsonl",
+      "line": 2,
+      "kind": "native normal successful tool response"
+    }
+  }
+}

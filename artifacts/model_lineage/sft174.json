@@ -1,0 +1,11 @@
+{
+  "checkpoint": "global_step_174",
+  "epoch": 2,
+  "train_records": 692,
+  "global_batch_size": 8,
+  "total_training_steps": 261,
+  "base_model": "MidTool/Arctic-MidTool-RL-4B",
+  "base_revision": "38b5e742fd20023058cd2cb207358dd033556773",
+  "weight_dtype": "float32",
+  "note": "Bind the accepted epoch-2 export, not the latest SFT or RL checkpoint."
+}

@@ -1,0 +1,64 @@
+{
+  "scheduler": "finite_budget",
+  "seed": 20260920,
+  "priority": [
+    "unknown_commit",
+    "unknown_commit_create",
+    "ignored_filter",
+    "partial_read",
+    "truncated_read",
+    "reply_mixup",
+    "transient_unexecuted"
+  ],
+  "preferred_mechanisms": [
+    "unknown_commit",
+    "unknown_commit_create",
+    "ignored_filter",
+    "reply_mixup"
+  ],
+  "task_caps": {},
+  "point_policy": "earliest_strictly_eligible",
+  "max_zero_hit_replays": 1,
+  "binding": "eligible_calls",
+  "groups": {
+    "transient_unexecuted": "unexecuted",
+    "partial_read": "missing_read",
+    "truncated_read": "missing_read",
+    "unknown_commit": "unknown_commit",
+    "unknown_commit_create": "unknown_commit",
+    "ignored_filter": "ignored_filter",
+    "reply_mixup": "reply_mixup"
+  },
+  "reservation_mode": "wait_for_priority_label",
+  "repeat_probabilities": {
+    "transient_unexecuted": {
+      "1": 0.3333333333333333,
+      "2": 0.3333333333333333,
+      "4": 0.3333333333333333
+    },
+    "partial_read": {
+      "1": 0.5,
+      "4": 0.5
+    },
+    "truncated_read": {
+      "1": 0.5,
+      "4": 0.5
+    },
+    "unknown_commit": {
+      "1": 0.5,
+      "2": 0.5
+    },
+    "unknown_commit_create": {
+      "1": 0.5,
+      "2": 0.5
+    },
+    "ignored_filter": {
+      "1": 0.5,
+      "2": 0.5
+    },
+    "reply_mixup": {
+      "1": 0.5,
+      "4": 0.5
+    }
+  }
+}

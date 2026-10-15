@@ -1,0 +1,102 @@
+diff --git a/verl/trainer/ppo/ray_trainer.py b/verl/trainer/ppo/ray_trainer.py
+index 220e1ff..9432b8c 100644
+--- a/verl/trainer/ppo/ray_trainer.py
++++ b/verl/trainer/ppo/ray_trainer.py
+@@ -1052,8 +1052,7 @@ class RayPPOTrainer:
+         if recovery_storage:
+             from robustops.training.recovery_rl_storage import finish_checkpoint
+             finish_checkpoint(save_root, self.global_steps,
+-                protected_steps=recovery_checkpoint.get('protected_steps', []),
+-                max_to_keep=recovery_checkpoint.get('max_to_keep', 1))
++                max_to_keep=recovery_checkpoint.get('max_to_keep'))
+             if export_model and self.global_steps in recovery_checkpoint.get('hf_export_steps', []):
+                 from robustops.training.recovery_rl_storage import export_full_model
+                 export_full_model(local_global_step_folder, self.config.recovery.output, self.global_steps)
+diff --git a/verl/trainer/sft_trainer.py b/verl/trainer/sft_trainer.py
+index 0c4aa8e..0c2aa72 100644
+--- a/verl/trainer/sft_trainer.py
++++ b/verl/trainer/sft_trainer.py
+@@ -337,8 +337,10 @@ class SFTTrainer:
+                 log_only_rank_0=True,
+             )
+ 
+-        # Calculate which epoch we're starting from for sampler.set_epoch()
+-        start_epoch = global_step // self.steps_per_epoch
++        # Checkpoints are saved after yielding a batch, before the stateful
++        # loader observes StopIteration. At an epoch boundary, first drain
++        # that saved iterator before advancing the sampler to the next epoch.
++        start_epoch = max(global_step - 1, 0) // self.steps_per_epoch
+ 
+         meta_info = {
+             "use_remove_padding": self.config.model.use_remove_padding,
+diff --git a/verl/utils/checkpoint/checkpoint_handler.py b/verl/utils/checkpoint/checkpoint_handler.py
+index 65c9d1d..866307e 100644
+--- a/verl/utils/checkpoint/checkpoint_handler.py
++++ b/verl/utils/checkpoint/checkpoint_handler.py
+@@ -19,6 +19,7 @@ import json
+ import logging
+ import os
+ import re
++import shutil
+ from enum import Enum
+ 
+ import torch
+@@ -66,6 +67,10 @@ class CheckpointHandler:
+         mode=OrchestrationMode.SPMD,
+         lora_train_meta=None,
+     ):
++        if max_ckpt_to_keep is not None and (
++            type(max_ckpt_to_keep) is not int or max_ckpt_to_keep <= 0
++        ):
++            raise ValueError("max_ckpt_to_keep must be null or a positive integer")
+         self.default_local_dir = default_local_dir
+         self.max_ckpt_to_keep = max_ckpt_to_keep
+         self.default_hdfs_dir = default_hdfs_dir
+@@ -96,12 +101,9 @@ class CheckpointHandler:
+         if self.rank == 0:
+             print(f"Saving checkpoint to: {local_global_step_folder}")
+ 
+-        # Get max checkpoints to keep
+-        max_ckpt_to_keep = self.max_ckpt_to_keep
+-
+-        # Use checkpoint manager to save
++        # Retire older generations only after model and dataloader state are saved.
+         self.engine.save_checkpoint(
+-            local_path=local_global_step_folder, global_step=step, max_ckpt_to_keep=max_ckpt_to_keep
++            local_path=local_global_step_folder, global_step=step, max_ckpt_to_keep=None
+         )
+ 
+         # Save dataloader state. Note that we only save the iterator in the train_dataloader.
+@@ -123,6 +125,9 @@ class CheckpointHandler:
+             torch.save(dataloader_state_dict, dataloader_local_path)
+             print(f"Saved dataloader state to: {dataloader_local_path}")
+ 
++        if self.mode == OrchestrationMode.SPMD:
++            torch.distributed.barrier()
++
+         if self.rank == 0:
+             # Update latest checkpoint tracker (atomic write)
+             tracker_file = get_checkpoint_tracker_filename(self.default_local_dir)
+@@ -137,6 +142,22 @@ class CheckpointHandler:
+             hdfs_io.makedirs(self.default_hdfs_dir, exist_ok=True)
+             hdfs_io.copy(src=local_global_step_folder, dst=self.default_hdfs_dir, dirs_exist_ok=True)
+ 
++        if self.rank == 0 and self.max_ckpt_to_keep is not None:
++            # Discover prior saves from disk so retention also works after resume.
++            generations = []
++            with os.scandir(self.default_local_dir) as entries:
++                for entry in entries:
++                    match = re.fullmatch(r"global_step_(\d+)", entry.name)
++                    if (
++                        match
++                        and entry.is_dir(follow_symlinks=False)
++                        and int(match[1]) <= step
++                        and os.path.isfile(os.path.join(entry.path, "data_0.pt"))
++                    ):
++                        generations.append((int(match[1]), entry.path))
++            for _, path in sorted(generations)[:-self.max_ckpt_to_keep]:
++                shutil.rmtree(path)
++
+         if self.mode == OrchestrationMode.SPMD:
+             torch.distributed.barrier()
+ 

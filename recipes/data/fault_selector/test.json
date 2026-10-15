@@ -1,0 +1,21 @@
+{
+  "partition": "test",
+  "manifest": "data/task_sets/enterpriseops.jsonl",
+  "schema_catalog": "data/tool_schemas.json",
+  "task_recipes": "recipes/enterpriseops/paired",
+  "modes": {
+    "oracle": "oracle",
+    "plus_5_tools": "plus5"
+  },
+  "output": "runs/fault_selector/test",
+  "concurrency": 16,
+  "provider": {
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-flash",
+    "api_key_env": "DEEPSEEK_API_KEY",
+    "local_env_file": ".env.deepseek"
+  },
+  "max_tokens": 7000,
+  "expected_task_modes": 130,
+  "response_shapes": "data/fault_selector/response_shape_observations.json"
+}

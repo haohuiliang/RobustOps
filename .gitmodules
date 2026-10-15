@@ -1,0 +1,8 @@
+[submodule "verl"]
+	path = verl
+	url = https://github.com/verl-project/verl.git
+	revision = e9618406de5bad40041d7612554e465ec2003ec1
+[submodule "enterpriseops_gym"]
+	path = enterpriseops_gym
+	url = https://github.com/ServiceNow/EnterpriseOps-Gym.git
+	revision = 271f2c357f763376997dfd16807fcde2474ae41b

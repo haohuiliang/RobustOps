@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "runs": [
+    {
+      "path": "runs/base_test"
+    },
+    {
+      "path": "runs/sft_test"
+    },
+    {
+      "path": "runs/rl_test"
+    },
+    {
+      "path": "runs/teacher_fixed_test",
+      "model_key": "teacher"
+    }
+  ],
+  "output": "runs/comparison/summary_with_teacher.json"
+}

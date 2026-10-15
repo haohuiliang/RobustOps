@@ -1,0 +1,23 @@
+{
+  "manifest": "data/task_sets/enterpriseops.jsonl",
+  "partitions": [
+    "train",
+    "validation"
+  ],
+  "modes": [
+    "oracle",
+    "plus_5_tools"
+  ],
+  "task_data": "data/raw/EnterpriseOps-Gym",
+  "database_archive": "enterpriseops_gym/gym_dbs.zip",
+  "database_schema": "data/verifier_graph/database_schema.json",
+  "generation_config": "recipes/data/verifier_graph_model.json",
+  "run_dir": "runs/verifier_graph/train_val",
+  "output": "runs/verifier_graph/dataset",
+  "max_attempts": 3,
+  "provider": {
+    "base_url": "https://api.deepseek.com",
+    "api_key_env": "DEEPSEEK_API_KEY",
+    "local_env_file": ".env.deepseek"
+  }
+}

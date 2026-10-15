@@ -1,0 +1,1032 @@
+[
+  {
+    "domain": "itsm",
+    "schema": {
+      "description": "Add a new user group to the system. Group name must be unique. Returns the newly created group object. Requires x-itsm-user-token for authentication requirements. Returns 401 Unauthorized if token is invalid or missing. Response includes sys_* audit fields.",
+      "name": "add_new_user_group",
+      "parameters": {
+        "additionalProperties": false,
+        "properties": {
+          "active": {
+            "default": true,
+            "description": "Whether the group is active",
+            "type": "boolean"
+          },
+          "description": {
+            "default": "",
+            "description": "Group's description",
+            "type": "string"
+          },
+          "email": {
+            "default": "",
+            "description": "Group's email address",
+            "format": "email",
+            "type": "string"
+          },
+          "manager_id": {
+            "default": "",
+            "description": "Group manager's user ID",
+            "type": "string"
+          },
+          "name": {
+            "description": "Group's name",
+            "maxLength": 80,
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": {
+            "description": "Group's type",
+            "enum": [
+              "IT Support",
+              "Service Desk",
+              "Field Support Technicians",
+              "Infrastructure Problem Team"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "type"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "domain": "csm",
+    "schema": {
+      "description": "Add a user to a group. Combination of group_id and user_id should be unique.",
+      "name": "add_new_group_member",
+      "parameters": {
+        "properties": {
+          "group_id": {
+            "description": "Identifier of the group the user will be added to.",
+            "type": "integer"
+          },
+          "user_id": {
+            "description": "Identifier of the user being added to the group.",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "group_id",
+          "user_id"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "domain": "hr",
+    "schema": {
+      "description": "Add a user to a group. Validates that both group and user exist in the same organization and that the user is not already a member. Returns the created membership details.",
+      "name": "add_new_group_member",
+      "parameters": {
+        "properties": {
+          "group_id": {
+            "description": "ID of the group to add the user to. Example: '1', '42'",
+            "type": "string"
+          },
+          "user_id": {
+            "description": "ID of the user to add to the group. Example: '5', '123'",
+            "type": "string"
+          }
+        },
+        "required": [
+          "group_id",
+          "user_id"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "domain": "hr",
+    "schema": {
+      "description": "Create a new user group in the HR system. Validates name uniqueness within organization and group type validity. Group is automatically assigned to the requester's organization. Returns complete group details including auto-generated ID and timestamps. Requires groups/crud permission.",
+      "name": "add_new_user_group",
+      "parameters": {
+        "properties": {
+          "active": {
+            "default": true,
+            "description": "Whether the group is active. Defaults to true.",
+            "type": "boolean"
+          },
+          "name": {
+            "description": "Group name (1-80 characters, must be unique within organization). Only letters, spaces, hyphens (-), apostrophes ('), and periods (.) allowed. Special characters like @#$%^&*()!~` are not permitted. Examples: 'IT Support Team', 'HR Service Desk', 'L1 Support'",
+            "maxLength": 80,
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": {
+            "description": "Group type - determines the group's purpose and capabilities",
+            "enum": [
+              "IT Support",
+              "Service Desk",
+              "Field Support Technicians",
+              "Infrastructure Problem Team"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "type"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "domain": "hr",
+    "schema": {
+      "description": "Create a new user in the HR system. Validates email uniqueness within organization, name combination uniqueness, and role validity. User is automatically assigned to the requester's organization. Returns complete user details including auto-generated ID and timestamps.",
+      "name": "add_new_user",
+      "parameters": {
+        "properties": {
+          "active": {
+            "default": true,
+            "description": "Whether the user account is active. Defaults to true.",
+            "type": "boolean"
+          },
+          "email": {
+            "description": "User's work email address (must be valid RFC-compliant email format and unique within organization). Invalid characters like *&^%#$ in email addresses are not allowed. Examples: 'john.doe@company.com', 'user+tag@example.org'",
+            "format": "email",
+            "maxLength": 120,
+            "type": "string"
+          },
+          "first_name": {
+            "description": "User's first name (1-60 characters). Only letters, spaces, hyphens (-), apostrophes ('), and periods (.) allowed. Special characters like @#$%^&*() are not allowed. Examples: 'John', 'Maria', 'José', 'Mary-Jane', 'O'Brien'",
+            "maxLength": 60,
+            "minLength": 1,
+            "type": "string"
+          },
+          "last_name": {
+            "description": "User's last name (1-60 characters). Only letters, spaces, hyphens (-), apostrophes ('), and periods (.) allowed. Special characters like @#$%^&*() are not allowed. Examples: 'Doe', 'Garcia', 'O'Brien', 'Van Der Berg'",
+            "maxLength": 60,
+            "minLength": 1,
+            "type": "string"
+          },
+          "phone": {
+            "description": "User's phone number (optional, max 30 characters). Examples: '+1-555-123-4567', '(555) 123-4567'",
+            "maxLength": 30,
+            "type": "string"
+          },
+          "role": {
+            "description": "User's role in the system. Determines permissions.",
+            "enum": [
+              "admin",
+              "agent",
+              "manager",
+              "employee"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "first_name",
+          "last_name",
+          "email",
+          "role"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "domain": "itsm",
+    "schema": {
+      "description": "Create a new user in the system.\n        \n        Use this tool to add a new user with the specified details. The system automatically generates\n        user_id (incremental: USER_001, USER_002, etc.), user_name (from first.last), and other system fields.\n        \n        Authentication Requirements:\n          - x-itsm-user-token: Optional user authentication token. Validates the requester's identity.\n          - API returns 401 Unauthorized if provided token is invalid.\n        \n        Required Parameters:\n          - first_name: User's first name (1-60 characters)\n          - last_name: User's last name (1-60 characters)\n          - email: User's email address (must be unique and valid format)\n          - phone: User's phone number (format: +1-415-555-0101, must be unique)\n          - role: User's role (must be one of: admin, manager, agent, reporter)\n          - active: Whether the user account is active (true or false)\n        \n        Optional Parameters:\n          - user_name: User login name (generated from first.last if not provided)\n          - location_id: Location identifier\n        \n        Note: The organization ID (org_id) is automatically set from the authenticated user's organization.\n        \n        Auto-Generated Fields:\n          - user_id: Incremental ID (USER_001, USER_002, etc.)\n          - user_name: Generated from first_name.last_name (lowercase)\n          - static_token: Secure authentication token\n          - created_on and updated_on timestamps\n          - sys_id and other audit fields\n        \n        Returns the newly created user object with all fields.",
+      "name": "add_new_user",
+      "parameters": {
+        "properties": {
+          "active": {
+            "description": "Whether the user account is active",
+            "type": "boolean"
+          },
+          "email": {
+            "description": "User's email address (valid email format required)",
+            "format": "email",
+            "type": "string"
+          },
+          "first_name": {
+            "description": "User's first name (non-empty string, 1-60 characters)",
+            "maxLength": 60,
+            "minLength": 1,
+            "type": "string"
+          },
+          "last_name": {
+            "description": "User's last name (non-empty string, 1-60 characters)",
+            "maxLength": 60,
+            "minLength": 1,
+            "type": "string"
+          },
+          "location_id": {
+            "default": "",
+            "description": "Location identifier",
+            "type": "string"
+          },
+          "phone": {
+            "description": "User's phone number (format: +1-415-555-0101)",
+            "pattern": "^\\+\\d{1,3}-\\d{3}-\\d{3}-\\d{4}$",
+            "type": "string"
+          },
+          "role": {
+            "description": "User's role in the system",
+            "enum": [
+              "admin",
+              "manager",
+              "agent",
+              "reporter"
+            ],
+            "type": "string"
+          },
+          "user_name": {
+            "description": "User login name (generated from first.last if not provided)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "first_name",
+          "last_name",
+          "email",
+          "phone",
+          "role",
+          "active"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "domain": "csm",
+    "schema": {
+      "description": "Create a new user record. A user represents an individual who interacts with the system, such as support agents, managers, or customers.",
+      "name": "add_new_user",
+      "parameters": {
+        "properties": {
+          "active": {
+            "description": "Whether the user is active (true) or inactive (false).",
+            "type": "boolean"
+          },
+          "email": {
+            "description": "Unique email address of the user.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "first_name": {
+            "description": "User's first name.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "last_name": {
+            "description": "User's last name.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "location_id": {
+            "description": "Associated location identifier. Optional. Location where user resides/works.",
+            "type": "integer"
+          },
+          "phone": {
+            "description": "Contact phone number of the user.",
+            "type": "string"
+          },
+          "role": {
+            "description": "User role within the system.",
+            "enum": [
+              "admin",
+              "agent",
+              "manager",
+              "customer"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "first_name",
+          "last_name",
+          "email",
+          "role",
+          "active"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "domain": "csm",
+    "schema": {
+      "description": "Create a notification for a case (optionally tied to knowledge). Returns the created notification record. A notification represents a message sent to a customer or user regarding updates, alerts, or information related to a support case.",
+      "name": "send_notification",
+      "parameters": {
+        "properties": {
+          "case_id": {
+            "description": "Case ID this notification is related to.",
+            "type": "integer"
+          },
+          "email": {
+            "description": "Recipient email address of the notification.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "knowledge_id": {
+            "description": "Optional knowledge article ID linked to this notification.",
+            "type": "integer"
+          },
+          "type": {
+            "description": "Type of notification being sent.",
+            "enum": [
+              "report",
+              "update",
+              "alert",
+              "reminder",
+              "solution_proposal",
+              "next_steps",
+              "other"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "case_id",
+          "email",
+          "type"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "domain": "itsm",
+    "schema": {
+      "description": "Create and send a new notification.\n        \n        Use this tool to create a new notification associated with an incident.\n        \n        Parameters:\n          - incident_id (required): ID of the associated incident\n          - email (required): Email address for notification delivery\n          - type (optional): Type of notification (alert, update, reminder, report, solution_proposal, other)\n          - status (optional): Status of notification (queued, sent, delivered, opened, failed)\n          - subject (optional): Subject of the notification\n          - message (optional): Message content of the notification\n        \n        Returns the created notification object.",
+      "name": "send_notification",
+      "parameters": {
+        "properties": {
+          "email": {
+            "description": "Email address for notification delivery",
+            "type": "string"
+          },
+          "incident_id": {
+            "description": "ID of the associated incident",
+            "type": "string"
+          },
+          "message": {
+            "description": "Message content of the notification",
+            "type": "string"
+          },
+          "status": {
+            "default": "queued",
+            "description": "Status of notification",
+            "enum": [
+              "queued",
+              "sent",
+              "delivered",
+              "opened",
+              "failed"
+            ],
+            "type": "string"
+          },
+          "subject": {
+            "description": "Subject of the notification",
+            "type": "string"
+          },
+          "type": {
+            "description": "Type of notification",
+            "enum": [
+              "alert",
+              "update",
+              "reminder",
+              "report",
+              "solution_proposal",
+              "other"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "incident_id",
+          "email"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "domain": "hr",
+    "schema": {
+      "description": "Get user by email address. Searches for user with exact email match (case-insensitive) within the organization. Returns complete user details if found.",
+      "name": "get_user_using_email",
+      "parameters": {
+        "properties": {
+          "email": {
+            "description": "The email address of the user to find. Example: 'john.doe@company.com'",
+            "format": "email",
+            "type": "string"
+          }
+        },
+        "required": [
+          "email"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "domain": "hr",
+    "schema": {
+      "description": "List all members of a specific group with optional filtering by member_id or user_id. Returns membership records.",
+      "name": "list_group_members",
+      "parameters": {
+        "properties": {
+          "group_id": {
+            "description": "ID of the group to list members for (required). Example: 1, 42",
+            "type": "integer"
+          },
+          "member_id": {
+            "description": "Filter by exact member ID (optional). Example: 5",
+            "type": "integer"
+          },
+          "user_id": {
+            "description": "Filter by exact user ID (optional). Example: 10",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "group_id"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "domain": "csm",
+    "schema": {
+      "description": "List user group members with optional filters. Combination of group_id and user_id is unique.",
+      "name": "list_group_members",
+      "parameters": {
+        "properties": {
+          "created_after": {
+            "description": "Return only memberships created after this timestamp (YYYY-MM-DD HH:MM:SS).",
+            "type": "string"
+          },
+          "created_before": {
+            "description": "Return only memberships created before this timestamp (YYYY-MM-DD HH:MM:SS).",
+            "type": "string"
+          },
+          "group_id": {
+            "description": "Filter by group identifier.",
+            "type": "integer"
+          },
+          "member_id": {
+            "description": "Filter by unique membership identifier.",
+            "type": "integer"
+          },
+          "user_id": {
+            "description": "Filter by user identifier.",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      }
+    }
+  },
+  {
+    "domain": "teams",
+    "schema": {
+      "description": "List users in the organization.\n\n        Retrieves a list of user objects following Microsoft Graph API v1.0 structure.\n        Supports OData query parameters for filtering, sorting, pagination, and field selection.\n\n        This endpoint corresponds to GET /users in Microsoft Graph API.\n\n        OData Query Parameters:\n          - _top: Optional. Number of items to return (1-999, default: 100)\n          - _skip: Optional. Number of items to skip for pagination (≥0, default: 0)\n          - _filter: Optional. OData filter expression with support for:\n            * Comparison operators: eq, ne, gt, lt, ge, le\n            * String functions: startswith(), endswith(), contains()\n            * Logical operators: and, or\n            * Examples:\n              - \"displayName eq 'Alice Johnson'\"\n              - \"displayName eq 'Alice' or displayName eq 'Bob'\"\n              - \"startswith(displayName,'A') and accountEnabled eq true\"\n          - _orderby: Optional. OData orderby expression (e.g., \"displayName asc\")\n          - _select: Optional. Comma-separated list of properties to return\n          - _count: Optional. Include total count in response (true/False)\n\n        Default Properties Returned:\n          - businessPhones, displayName, givenName, id, jobTitle, mail,\n          - mobilePhone, officeLocation, preferredLanguage, surname, userPrincipalName\n\n        Response Structure:\n          - Returns list of users with Microsoft Graph API v1.0 format:\n            * @odata.context: Metadata context URL\n            * @odata.count: Total count (if _count=true)\n            * @odata.nextLink: Next page URL (if more results available)\n            * value: Array of user objects\n\n        Authentication:\n          - Requires x-teams-access-token header with valid access token\n          - Token will be validated against user database\n\n        Status Codes:\n          - 200: Success - Users retrieved successfully\n          - 400: Bad Request - Invalid query parameters\n          - 401: Unauthorized - Invalid or missing access token\n          - 500: Internal Server Error",
+      "name": "list_users",
+      "parameters": {
+        "properties": {
+          "_count": {
+            "default": false,
+            "description": "Include total count in response",
+            "type": "boolean"
+          },
+          "_filter": {
+            "description": "OData filter expression. Supports: eq, ne, gt, lt, ge, le operators; startswith(), endswith(), contains() functions; and, or logical operators. Examples: \"displayName eq 'Alice Johnson'\", \"displayName eq 'Alice' or displayName eq 'Bob'\", \"startswith(displayName,'A') and accountEnabled eq true\"",
+            "maxLength": 2000,
+            "type": "string"
+          },
+          "_orderby": {
+            "description": "OData orderby expression (e.g., \"displayName asc\" or \"createdDateTime desc\")",
+            "maxLength": 500,
+            "type": "string"
+          },
+          "_select": {
+            "description": "Comma-separated list of properties to return (e.g., \"displayName,mail,jobTitle\")",
+            "maxLength": 1000,
+            "type": "string"
+          },
+          "_skip": {
+            "default": 0,
+            "description": "Number of items to skip for pagination",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "_top": {
+            "default": 100,
+            "description": "Number of items to return (1-999)",
+            "maximum": 999,
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "domain": "hr",
+    "schema": {
+      "description": "List users with filtering, pagination, and sorting. Supports text search (email_like, first_name_like, last_name_like), role filtering (roles array), and active status. Returns paginated results with metadata (total_count, returned_count, limit, offset).",
+      "name": "list_users",
+      "parameters": {
+        "properties": {
+          "active": {
+            "description": "Filter by active status. Example: true",
+            "type": "boolean"
+          },
+          "email_like": {
+            "description": "Email contains text (case-insensitive partial match). Example: 'john' matches 'john@example.com' and 'johnny@test.com'",
+            "type": "string"
+          },
+          "first_name_like": {
+            "description": "First name contains text (case-insensitive). Example: 'jo'",
+            "type": "string"
+          },
+          "last_name_like": {
+            "description": "Last name contains text (case-insensitive). Example: 'sm'",
+            "type": "string"
+          },
+          "limit": {
+            "default": 50,
+            "description": "Maximum results to return (default: 50, max: 100). Example: 20",
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "offset": {
+            "default": 0,
+            "description": "Skip N records for pagination (default: 0). Example: 20",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "order_by": {
+            "default": "created_at",
+            "description": "Field to sort by (default: created_at)",
+            "enum": [
+              "user_id",
+              "first_name",
+              "last_name",
+              "email",
+              "phone",
+              "role",
+              "active",
+              "created_at",
+              "updated_at"
+            ],
+            "type": "string"
+          },
+          "order_direction": {
+            "default": "asc",
+            "description": "Sort direction (default: asc). Example: 'desc'",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string"
+          },
+          "roles": {
+            "description": "Filter by one or more roles. Example: ['admin'], ['admin', 'manager']",
+            "items": {
+              "enum": [
+                "admin",
+                "agent",
+                "manager",
+                "employee"
+              ],
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "domain": "csm",
+    "schema": {
+      "description": "List users with optional filters. None of the filters are mandatory. If no filters are provided, all users will be returned.",
+      "name": "list_users",
+      "parameters": {
+        "properties": {
+          "active": {
+            "description": "Filter by active status (true = active, false = inactive).",
+            "type": "boolean"
+          },
+          "created_after": {
+            "description": "Return only users created after this timestamp (YYYY-MM-DD HH:MM:SS).",
+            "type": "string"
+          },
+          "created_before": {
+            "description": "Return only users created before this timestamp (YYYY-MM-DD HH:MM:SS).",
+            "type": "string"
+          },
+          "email": {
+            "description": "Filter by user email address (exact match) (unique).",
+            "type": "string"
+          },
+          "first_name": {
+            "description": "Filter by user's first name.",
+            "type": "string"
+          },
+          "last_name": {
+            "description": "Filter by user's last name.",
+            "type": "string"
+          },
+          "location_id": {
+            "description": "Filter by location identifier.",
+            "type": "integer"
+          },
+          "phone": {
+            "description": "Filter by phone number.",
+            "type": "string"
+          },
+          "role": {
+            "description": "Filter by user role (admin, agent, manager, or customer).",
+            "enum": [
+              "admin",
+              "agent",
+              "manager",
+              "customer"
+            ],
+            "type": "string"
+          },
+          "user_id": {
+            "description": "Filter by unique user identifier.",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      }
+    }
+  },
+  {
+    "domain": "itsm",
+    "schema": {
+      "description": "List users with optional filters.\n        \n        Use this tool to retrieve a list of users. Without filters, returns all users.\n        With filters, returns only users matching the specified criteria.\n        \n        Authentication Requirements:\n          - x-itsm-user-token: Optional user authentication token. Validates the requester's identity.\n          - API returns 401 Unauthorized if provided token is invalid.\n        \n        Optional Filters:\n          - email: Filter by exact email address\n          - user_id: Filter by exact user ID\n          - first_name: Filter by first name (case-insensitive, partial match)\n          - last_name: Filter by last name (case-insensitive, partial match)\n          - phone: Filter by phone number (format: +1-415-555-0101)\n          - role: Filter by role (admin, manager, agent, reporter)\n          - active: Filter by active status (true or false)\n          - created_after: Filter users created after date (ISO 8601 format: 2024-01-15 or 2024-01-15T09:00:00)\n          - created_before: Filter users created before date (ISO 8601 format)\n        \n        Returns a list of user objects matching the filters, or all users if no filters provided.",
+      "name": "list_users",
+      "parameters": {
+        "properties": {
+          "active": {
+            "default": "",
+            "description": "Filter by active status (true/false)",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "created_after": {
+            "default": "",
+            "description": "Filter users created after this date (ISO 8601 format)",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "created_before": {
+            "default": "",
+            "description": "Filter users created before this date (ISO 8601 format)",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "email": {
+            "default": "",
+            "description": "Filter by email address (exact match)",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "first_name": {
+            "default": "",
+            "description": "Filter by first name (partial match)",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "last_name": {
+            "default": "",
+            "description": "Filter by last name (partial match)",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "phone": {
+            "default": "",
+            "description": "Filter by phone number (partial match)",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "role": {
+            "default": "",
+            "description": "Filter by user role (admin, manager, agent, reporter)",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "user_id": {
+            "default": "",
+            "description": "Filter by user ID (exact match)",
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "domain": "itsm",
+    "schema": {
+      "description": "Retrieve a user by their email address.\n        \n        Use this tool to find a specific user using their email address as the identifier.\n        The email must be in valid format (e.g., user@domain.com).\n        \n        Authentication Requirements:\n          - x-itsm-user-token: Optional valid user authentication token. Validates the requester's identity.\n          - API returns 401 Unauthorized if provided token is invalid.\n        \n        Parameters:\n          - email (required): User's email address\n        \n        Returns a single user object if found, or an error if the user doesn't exist or email format is invalid.",
+      "name": "get_user_using_email",
+      "parameters": {
+        "properties": {
+          "email": {
+            "description": "User's email address",
+            "format": "email",
+            "type": "string"
+          }
+        },
+        "required": [
+          "email"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "domain": "hr",
+    "schema": {
+      "description": "Send a new notification, scoped to user's organization.\n        \n        Creates a new notification for the specified HR case and email address.\n        \n        Required parameters:\n        - hr_case_id: HR case ID (must belong to user's organization)\n        - email: Recipient email address (must belong to a user in the same organization)\n        \n        Optional parameters:\n        - type: Notification type. Valid types: report, update, alert, reminder, solution_proposal, other (default: other). All lowercase, case-sensitive.\n        - status: Notification status. Valid statuses: draft, ready, awaiting_approval, work_in_progress, closed_complete, closed_incomplete, awaiting_acceptance, suspended, cancelled. All lowercase, case-sensitive.\n        \n        Example payload:\n        {\n            \"hr_case_id\": 1,\n            \"email\": \"user@example.com\",\n            \"type\": \"alert\",\n            \"status\": \"ready\"\n        }",
+      "name": "send_notification",
+      "parameters": {
+        "properties": {
+          "email": {
+            "description": "Recipient email address (required)",
+            "type": "string"
+          },
+          "hr_case_id": {
+            "description": "HR case ID (required)",
+            "type": "integer"
+          },
+          "status": {
+            "description": "Notification status (draft, ready, awaiting_approval, work_in_progress, closed_complete, closed_incomplete, awaiting_acceptance, suspended, cancelled)",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "type": {
+            "description": "Notification type (report, update, alert, reminder, solution_proposal, other). Default: other",
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "hr_case_id",
+          "email"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "domain": "csm",
+    "schema": {
+      "description": "Update an existing user (partial updates supported). A user represents an individual who interacts with the system, such as support agents, managers, or customers.",
+      "name": "update_user_details",
+      "parameters": {
+        "properties": {
+          "active": {
+            "description": "Updated active status (true = active, false = inactive).",
+            "type": "boolean"
+          },
+          "email": {
+            "description": "New email address for the user.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "first_name": {
+            "description": "Updated first name of the user.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "last_name": {
+            "description": "Updated last name of the user.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "location_id": {
+            "description": "Updated location identifier.",
+            "type": "integer"
+          },
+          "phone": {
+            "description": "Updated phone number.",
+            "type": "string"
+          },
+          "role": {
+            "description": "Updated role of the user.",
+            "enum": [
+              "admin",
+              "agent",
+              "manager",
+              "customer"
+            ],
+            "type": "string"
+          },
+          "user_id": {
+            "description": "Unique identifier of the user to update.",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "user_id"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "domain": "hr",
+    "schema": {
+      "description": "Update an existing user in the HR system with smart change detection. Only updates fields that have actually changed. Validates email uniqueness, name combination uniqueness, and role validity. User must exist in organization. Returns updated user details and list of changes made.",
+      "name": "update_user_details",
+      "parameters": {
+        "properties": {
+          "active": {
+            "description": "New active status (optional). Set to false to deactivate user. Only provide if changing.",
+            "type": "boolean"
+          },
+          "email": {
+            "description": "New email address (optional). Must be valid RFC-compliant email format and unique within organization. Invalid characters like *&^%#$ in email addresses are not allowed. Only provide if changing. Example: 'new.email@company.com'",
+            "format": "email",
+            "maxLength": 120,
+            "type": "string"
+          },
+          "first_name": {
+            "description": "New first name (optional, 1-60 characters). Only letters, spaces, hyphens (-), apostrophes ('), and periods (.) allowed. Special characters like @#$%^&*() are not allowed. Only provide if changing. Example: 'NewFirstName', 'Mary-Jane'",
+            "maxLength": 60,
+            "minLength": 1,
+            "type": "string"
+          },
+          "last_name": {
+            "description": "New last name (optional, 1-60 characters). Only letters, spaces, hyphens (-), apostrophes ('), and periods (.) allowed. Special characters like @#$%^&*() are not allowed. Only provide if changing. Example: 'NewLastName', 'O'Brien'",
+            "maxLength": 60,
+            "minLength": 1,
+            "type": "string"
+          },
+          "phone": {
+            "description": "New phone number (optional, max 30 characters). Only provide if changing. Example: '+1-555-999-8888'",
+            "maxLength": 30,
+            "type": "string"
+          },
+          "role": {
+            "description": "New role (optional). Only provide if changing. Valid values determine user permissions.",
+            "enum": [
+              "admin",
+              "agent",
+              "manager",
+              "employee"
+            ],
+            "type": "string"
+          },
+          "user_id": {
+            "description": "ID of the user to update (required). Must exist in the organization. Example: '1', '42'",
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  {
+    "domain": "itsm",
+    "schema": {
+      "description": "Update specific fields of an existing user.\n        \n        Use this tool to update one or more fields of a user identified by user_id.\n        At least one field (besides user_id) must be provided. The tool validates that\n        the new values are different from current values (idempotency check).\n        \n        Authentication Requirements:\n          - x-itsm-user-token: Optional user authentication token. Validates the requester's identity.\n          - API returns 401 Unauthorized if provided token is invalid.\n        \n        Required Parameter:\n          - user_id: Unique identifier of the user to update\n        \n        Optional Parameters (at least one required):\n          - email: Updated email address (must be unique and valid format)\n          - first_name: Updated first name (1-60 characters)\n          - last_name: Updated last name (1-60 characters)\n          - active: Updated active status (true or false)\n          - phone: Updated phone number (format: +1-415-555-0101, must be unique)\n          - role: Updated role (must be one of: admin, manager, agent, reporter)\n          - user_name: Updated user login name (must be unique)\n          - company_id: Updated company identifier\n          - location_id: Updated location identifier\n        \n        Note: Updating a field to its current value will result in an error (no changes detected).\n        System fields like sys_id, created_on, etc. cannot be directly modified.\n        \n        Returns the updated user object with all fields.",
+      "name": "update_user_details",
+      "parameters": {
+        "properties": {
+          "active": {
+            "description": "Updated active status",
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "company_id": {
+            "default": "",
+            "description": "Updated company identifier",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "email": {
+            "description": "Updated email address (valid email format required)",
+            "format": "email",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "first_name": {
+            "description": "Updated first name (non-empty string, 1-60 characters)",
+            "maxLength": 60,
+            "minLength": 1,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "last_name": {
+            "description": "Updated last name (non-empty string, 1-60 characters)",
+            "maxLength": 60,
+            "minLength": 1,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "location_id": {
+            "default": "",
+            "description": "Updated location identifier",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "phone": {
+            "description": "Updated phone number (format: +1-415-555-0101)",
+            "pattern": "^\\+\\d{1,3}-\\d{3}-\\d{3}-\\d{4}$",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "role": {
+            "description": "Updated user role",
+            "enum": [
+              "admin",
+              "manager",
+              "agent",
+              "reporter"
+            ],
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "user_id": {
+            "description": "User's unique identifier to identify which user to update",
+            "type": "string"
+          },
+          "user_name": {
+            "default": "",
+            "description": "Updated user login name (must be unique)",
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "user_id"
+        ],
+        "type": "object"
+      }
+    }
+  }
+]

@@ -1,0 +1,1310 @@
+{
+  "schema_version": 1,
+  "partition": "test",
+  "budget_revision": "unknown_commit_cap2",
+  "source": "trajectories/Arctic-MidTool-RL-4B/fault/{oracle,plus5}/test/temperature_0/data/attempts.jsonl",
+  "selector_policy": "artifacts/test_fault_policy/policy.json",
+  "candidate_budgets": "artifacts/test_fault_policy/candidate_budgets.json",
+  "rows": [
+    {
+      "cell": 1,
+      "task_id": "task_20251124_112741_995_0a0bf089_3906a767",
+      "mode": "oracle",
+      "domain": "calendar",
+      "kind": "transient_unexecuted",
+      "budget": 2,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 2,
+      "task_id": "task_20251202_171004_871_0a0bf089_489e2b2d",
+      "mode": "oracle",
+      "domain": "calendar",
+      "kind": "transient_unexecuted",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 3,
+      "task_id": "task_20251203_184109_641_6f5b66fc_e62d330e",
+      "mode": "oracle",
+      "domain": "calendar",
+      "kind": "reply_mixup",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 4,
+      "task_id": "task_20251205_032409_945_0a0bf089_61f5be29",
+      "mode": "oracle",
+      "domain": "calendar",
+      "kind": "truncated_read",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 5,
+      "task_id": "task_20260102_175948_337_6f5b66fc_f9bfbf1d",
+      "mode": "oracle",
+      "domain": "calendar",
+      "kind": "reply_mixup",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 6,
+      "task_id": "task_20260104_143530_440_6f5b66fc_b6b24e96",
+      "mode": "oracle",
+      "domain": "calendar",
+      "kind": "truncated_read",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 7,
+      "task_id": "task_20251128_072831_616_6cd2e092_426f7c81",
+      "mode": "oracle",
+      "domain": "csm",
+      "kind": "unknown_commit",
+      "budget": 2,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 8,
+      "task_id": "task_20251201_164641_724_109c89c0_1b29acb9",
+      "mode": "oracle",
+      "domain": "csm",
+      "kind": "ignored_filter",
+      "budget": 2,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 9,
+      "task_id": "task_20251204_231522_245_e6427839_5d09c3c2",
+      "mode": "oracle",
+      "domain": "csm",
+      "kind": "unknown_commit",
+      "budget": 2,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 10,
+      "task_id": "task_20251206_113950_467_6cd2e092_1a268d87",
+      "mode": "oracle",
+      "domain": "csm",
+      "kind": "reply_mixup",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 11,
+      "task_id": "task_20251206_130444_802_6cd2e092_8979087f",
+      "mode": "oracle",
+      "domain": "csm",
+      "kind": "ignored_filter",
+      "budget": 2,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 12,
+      "task_id": "task_20251210_051952_801_99ba2325_a136867b",
+      "mode": "oracle",
+      "domain": "csm",
+      "kind": "ignored_filter",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 13,
+      "task_id": "task_20260102_162857_012_391f1eff_39478d55",
+      "mode": "oracle",
+      "domain": "csm",
+      "kind": "truncated_read",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 14,
+      "task_id": "task_20260102_165223_158_99ba2325_67a4a1e9",
+      "mode": "oracle",
+      "domain": "csm",
+      "kind": "unknown_commit",
+      "budget": 2,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 15,
+      "task_id": "task_20260106_073527_320_e6427839_e2e2ac8d",
+      "mode": "oracle",
+      "domain": "csm",
+      "kind": "transient_unexecuted",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 16,
+      "task_id": "task_20260106_134616_649_e6427839_7dba5a00",
+      "mode": "oracle",
+      "domain": "csm",
+      "kind": "transient_unexecuted",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 17,
+      "task_id": "task_20260121_163208_054_1afb323a_7f40ee66",
+      "mode": "oracle",
+      "domain": "csm",
+      "kind": "reply_mixup",
+      "budget": 4,
+      "base_injected_calls": 3,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 18,
+      "task_id": "task_20251126_122651_325_be6c9105_1864c322",
+      "mode": "oracle",
+      "domain": "drive",
+      "kind": "unknown_commit_create",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 19,
+      "task_id": "task_20251126_145836_025_be6c9105_3b572b98",
+      "mode": "oracle",
+      "domain": "drive",
+      "kind": "unknown_commit_create",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 20,
+      "task_id": "task_20251204_092557_093_ae7b45e2_24132aa0",
+      "mode": "oracle",
+      "domain": "drive",
+      "kind": "truncated_read",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 21,
+      "task_id": "task_20260107_135115_794_be6c9105_f0911f6a",
+      "mode": "oracle",
+      "domain": "drive",
+      "kind": "transient_unexecuted",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 22,
+      "task_id": "task_20260107_153010_997_be6c9105_6165e5db",
+      "mode": "oracle",
+      "domain": "drive",
+      "kind": "reply_mixup",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 23,
+      "task_id": "task_20260109_034708_645_be6c9105_8b22bcd8",
+      "mode": "oracle",
+      "domain": "drive",
+      "kind": "truncated_read",
+      "budget": 4,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 24,
+      "task_id": "task_20260109_134319_026_64a4ebb9_98c48f81",
+      "mode": "oracle",
+      "domain": "drive",
+      "kind": "transient_unexecuted",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 25,
+      "task_id": "task_20251125_202309_857_e7cfb93b_9c156259",
+      "mode": "oracle",
+      "domain": "email",
+      "kind": "ignored_filter",
+      "budget": 2,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 26,
+      "task_id": "task_20251211_194841_657_8ce75c22_43c6bc2f",
+      "mode": "oracle",
+      "domain": "email",
+      "kind": "unknown_commit_create",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 27,
+      "task_id": "task_20260106_153333_351_1628b966_f96547a2",
+      "mode": "oracle",
+      "domain": "email",
+      "kind": "truncated_read",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 28,
+      "task_id": "task_20260106_213903_609_e7cfb93b_5e95c001",
+      "mode": "oracle",
+      "domain": "email",
+      "kind": "reply_mixup",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 29,
+      "task_id": "task_20260107_202437_273_911d75d7_89789b9a",
+      "mode": "oracle",
+      "domain": "email",
+      "kind": "reply_mixup",
+      "budget": 1,
+      "base_injected_calls": 0,
+      "kind_source": "reserved_label"
+    },
+    {
+      "cell": 30,
+      "task_id": "task_20260107_212831_019_911d75d7_d1212b63",
+      "mode": "oracle",
+      "domain": "email",
+      "kind": "transient_unexecuted",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 31,
+      "task_id": "task_20251216_123530_079_ec0cb5dd_3b89aab7",
+      "mode": "oracle",
+      "domain": "hr",
+      "kind": "transient_unexecuted",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 32,
+      "task_id": "task_20251226_094920_495_99ba2325_627386b2",
+      "mode": "oracle",
+      "domain": "hr",
+      "kind": "ignored_filter",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 33,
+      "task_id": "task_20251226_121423_362_c4ad7a70_4be55408",
+      "mode": "oracle",
+      "domain": "hr",
+      "kind": "ignored_filter",
+      "budget": 2,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 34,
+      "task_id": "task_20251226_133552_038_99ba2325_71415006",
+      "mode": "oracle",
+      "domain": "hr",
+      "kind": "reply_mixup",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 35,
+      "task_id": "task_20251226_135729_497_c4ad7a70_788f5baf",
+      "mode": "oracle",
+      "domain": "hr",
+      "kind": "partial_read",
+      "budget": 4,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 36,
+      "task_id": "task_20260114_180423_838_00364ece_9f2ad35c",
+      "mode": "oracle",
+      "domain": "hr",
+      "kind": "ignored_filter",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 37,
+      "task_id": "task_20260115_043251_808_ad5a67e3_2a60bc82",
+      "mode": "oracle",
+      "domain": "hr",
+      "kind": "unknown_commit_create",
+      "budget": 2,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 38,
+      "task_id": "task_20260116_104653_444_99ba2325_320d5ca4",
+      "mode": "oracle",
+      "domain": "hr",
+      "kind": "reply_mixup",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 39,
+      "task_id": "task_20260116_112648_773_99ba2325_c572f123",
+      "mode": "oracle",
+      "domain": "hr",
+      "kind": "unknown_commit_create",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 40,
+      "task_id": "task_20260119_022056_842_ad5a67e3_964df197",
+      "mode": "oracle",
+      "domain": "hr",
+      "kind": "partial_read",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 41,
+      "task_id": "task_20251216_223804_332_df2c536d_a1d9c559",
+      "mode": "oracle",
+      "domain": "hybrid",
+      "kind": "transient_unexecuted",
+      "budget": 2,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 42,
+      "task_id": "task_20251218_115158_065_1628b966_72217cb4",
+      "mode": "oracle",
+      "domain": "hybrid",
+      "kind": "truncated_read",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 43,
+      "task_id": "task_20251223_005949_519_13762b97_e08c84a3",
+      "mode": "oracle",
+      "domain": "hybrid",
+      "kind": "reply_mixup",
+      "budget": 4,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 44,
+      "task_id": "task_20251226_150647_118_13762b97_8da0c6a5",
+      "mode": "oracle",
+      "domain": "hybrid",
+      "kind": "unknown_commit_create",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 45,
+      "task_id": "task_20251226_153741_362_13762b97_efb07353",
+      "mode": "oracle",
+      "domain": "hybrid",
+      "kind": "reply_mixup",
+      "budget": 4,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 46,
+      "task_id": "task_20260112_125407_584_1628b966_f5dd38b6",
+      "mode": "oracle",
+      "domain": "hybrid",
+      "kind": "ignored_filter",
+      "budget": 2,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 47,
+      "task_id": "task_20260114_174605_380_1628b966_b09f4a35",
+      "mode": "oracle",
+      "domain": "hybrid",
+      "kind": "ignored_filter",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 48,
+      "task_id": "task_20260116_054437_417_59bb807c_d73ca3e4",
+      "mode": "oracle",
+      "domain": "hybrid",
+      "kind": "truncated_read",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 49,
+      "task_id": "task_20260119_162417_443_d8f93f2d_2b15bc38",
+      "mode": "oracle",
+      "domain": "hybrid",
+      "kind": "unknown_commit",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 50,
+      "task_id": "task_20251210_205620_593_391f1eff_ad65c160",
+      "mode": "oracle",
+      "domain": "itsm",
+      "kind": "partial_read",
+      "budget": 4,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 51,
+      "task_id": "task_20251218_082708_201_99ba2325_51726f9c",
+      "mode": "oracle",
+      "domain": "itsm",
+      "kind": "transient_unexecuted",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 52,
+      "task_id": "task_20251218_124419_383_66392a82_52c8290e",
+      "mode": "oracle",
+      "domain": "itsm",
+      "kind": "reply_mixup",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 53,
+      "task_id": "task_20251218_164829_676_97d7df7d_893f6b2c",
+      "mode": "oracle",
+      "domain": "itsm",
+      "kind": "ignored_filter",
+      "budget": 2,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 54,
+      "task_id": "task_20251219_130920_558_99ba2325_7f9481df",
+      "mode": "oracle",
+      "domain": "itsm",
+      "kind": "transient_unexecuted",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 55,
+      "task_id": "task_20251220_074606_220_0be70e35_6bb33392",
+      "mode": "oracle",
+      "domain": "itsm",
+      "kind": "ignored_filter",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 56,
+      "task_id": "task_20251222_084449_326_66392a82_cadddb04",
+      "mode": "oracle",
+      "domain": "itsm",
+      "kind": "unknown_commit_create",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 57,
+      "task_id": "task_20251223_135402_072_c5ca08eb_67009578",
+      "mode": "oracle",
+      "domain": "itsm",
+      "kind": "truncated_read",
+      "budget": 4,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 58,
+      "task_id": "task_20260113_182602_664_46ca2862_b6ef60ca",
+      "mode": "oracle",
+      "domain": "itsm",
+      "kind": "unknown_commit_create",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 59,
+      "task_id": "task_20260115_152733_296_46ca2862_55f848d3",
+      "mode": "oracle",
+      "domain": "itsm",
+      "kind": "reply_mixup",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 60,
+      "task_id": "task_20260117_000130_134_2aa6b0ad_a20f3a61",
+      "mode": "oracle",
+      "domain": "itsm",
+      "kind": "ignored_filter",
+      "budget": 2,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 61,
+      "task_id": "task_20251126_054150_897_7ebc1127_60097647",
+      "mode": "oracle",
+      "domain": "teams",
+      "kind": "transient_unexecuted",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 62,
+      "task_id": "task_20251204_095942_786_b5bd4eb9_636f2147",
+      "mode": "oracle",
+      "domain": "teams",
+      "kind": "transient_unexecuted",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 63,
+      "task_id": "task_20260105_163515_719_8e9e30d7_d86e69de",
+      "mode": "oracle",
+      "domain": "teams",
+      "kind": "reply_mixup",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 64,
+      "task_id": "task_20260107_174701_432_464ee3e0_16e768aa",
+      "mode": "oracle",
+      "domain": "teams",
+      "kind": "truncated_read",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 65,
+      "task_id": "task_20260108_194921_186_8e9e30d7_a087d6f8",
+      "mode": "oracle",
+      "domain": "teams",
+      "kind": "ignored_filter",
+      "budget": 2,
+      "base_injected_calls": 0,
+      "kind_source": "reserved_label"
+    },
+    {
+      "cell": 66,
+      "task_id": "task_20260109_060901_602_8e9e30d7_06581f9f",
+      "mode": "oracle",
+      "domain": "teams",
+      "kind": "truncated_read",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 67,
+      "task_id": "task_20251202_171004_871_0a0bf089_489e2b2d",
+      "mode": "plus_5_tools",
+      "domain": "calendar",
+      "kind": "transient_unexecuted",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 68,
+      "task_id": "task_20251203_184109_641_6f5b66fc_e62d330e",
+      "mode": "plus_5_tools",
+      "domain": "calendar",
+      "kind": "reply_mixup",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 69,
+      "task_id": "task_20251205_032409_945_0a0bf089_61f5be29",
+      "mode": "plus_5_tools",
+      "domain": "calendar",
+      "kind": "truncated_read",
+      "budget": 4,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 70,
+      "task_id": "task_20260102_175948_337_6f5b66fc_f9bfbf1d",
+      "mode": "plus_5_tools",
+      "domain": "calendar",
+      "kind": "unknown_commit",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 71,
+      "task_id": "task_20260104_143530_440_6f5b66fc_b6b24e96",
+      "mode": "plus_5_tools",
+      "domain": "calendar",
+      "kind": "reply_mixup",
+      "budget": 4,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 72,
+      "task_id": "task_20251128_072831_616_6cd2e092_426f7c81",
+      "mode": "plus_5_tools",
+      "domain": "csm",
+      "kind": "ignored_filter",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 73,
+      "task_id": "task_20251201_164641_724_109c89c0_1b29acb9",
+      "mode": "plus_5_tools",
+      "domain": "csm",
+      "kind": "ignored_filter",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 74,
+      "task_id": "task_20251204_231522_245_e6427839_5d09c3c2",
+      "mode": "plus_5_tools",
+      "domain": "csm",
+      "kind": "unknown_commit",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 75,
+      "task_id": "task_20251206_113950_467_6cd2e092_1a268d87",
+      "mode": "plus_5_tools",
+      "domain": "csm",
+      "kind": "unknown_commit",
+      "budget": 2,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 76,
+      "task_id": "task_20251206_130444_802_6cd2e092_8979087f",
+      "mode": "plus_5_tools",
+      "domain": "csm",
+      "kind": "unknown_commit",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 77,
+      "task_id": "task_20251210_051952_801_99ba2325_a136867b",
+      "mode": "plus_5_tools",
+      "domain": "csm",
+      "kind": "transient_unexecuted",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 78,
+      "task_id": "task_20260102_162857_012_391f1eff_39478d55",
+      "mode": "plus_5_tools",
+      "domain": "csm",
+      "kind": "transient_unexecuted",
+      "budget": 2,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 79,
+      "task_id": "task_20260102_165223_158_99ba2325_67a4a1e9",
+      "mode": "plus_5_tools",
+      "domain": "csm",
+      "kind": "ignored_filter",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 80,
+      "task_id": "task_20260106_073527_320_e6427839_e2e2ac8d",
+      "mode": "plus_5_tools",
+      "domain": "csm",
+      "kind": "reply_mixup",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 81,
+      "task_id": "task_20260106_134616_649_e6427839_7dba5a00",
+      "mode": "plus_5_tools",
+      "domain": "csm",
+      "kind": "truncated_read",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 82,
+      "task_id": "task_20260121_163208_054_1afb323a_7f40ee66",
+      "mode": "plus_5_tools",
+      "domain": "csm",
+      "kind": "ignored_filter",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 83,
+      "task_id": "task_20251126_122651_325_be6c9105_1864c322",
+      "mode": "plus_5_tools",
+      "domain": "drive",
+      "kind": "unknown_commit",
+      "budget": 2,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 84,
+      "task_id": "task_20251126_145836_025_be6c9105_3b572b98",
+      "mode": "plus_5_tools",
+      "domain": "drive",
+      "kind": "reply_mixup",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 85,
+      "task_id": "task_20251204_092557_093_ae7b45e2_24132aa0",
+      "mode": "plus_5_tools",
+      "domain": "drive",
+      "kind": "transient_unexecuted",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 86,
+      "task_id": "task_20260107_135115_794_be6c9105_f0911f6a",
+      "mode": "plus_5_tools",
+      "domain": "drive",
+      "kind": "truncated_read",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 87,
+      "task_id": "task_20260107_153010_997_be6c9105_6165e5db",
+      "mode": "plus_5_tools",
+      "domain": "drive",
+      "kind": "reply_mixup",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 88,
+      "task_id": "task_20260109_034708_645_be6c9105_8b22bcd8",
+      "mode": "plus_5_tools",
+      "domain": "drive",
+      "kind": "unknown_commit_create",
+      "budget": 2,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 89,
+      "task_id": "task_20260109_134319_026_64a4ebb9_98c48f81",
+      "mode": "plus_5_tools",
+      "domain": "drive",
+      "kind": "truncated_read",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 90,
+      "task_id": "task_20251125_202309_857_e7cfb93b_9c156259",
+      "mode": "plus_5_tools",
+      "domain": "email",
+      "kind": "ignored_filter",
+      "budget": 2,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 91,
+      "task_id": "task_20251211_194841_657_8ce75c22_43c6bc2f",
+      "mode": "plus_5_tools",
+      "domain": "email",
+      "kind": "partial_read",
+      "budget": 4,
+      "base_injected_calls": 3,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 92,
+      "task_id": "task_20260106_153333_351_1628b966_f96547a2",
+      "mode": "plus_5_tools",
+      "domain": "email",
+      "kind": "transient_unexecuted",
+      "budget": 4,
+      "base_injected_calls": 3,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 93,
+      "task_id": "task_20260106_213903_609_e7cfb93b_5e95c001",
+      "mode": "plus_5_tools",
+      "domain": "email",
+      "kind": "transient_unexecuted",
+      "budget": 2,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 94,
+      "task_id": "task_20260107_202437_273_911d75d7_89789b9a",
+      "mode": "plus_5_tools",
+      "domain": "email",
+      "kind": "truncated_read",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 95,
+      "task_id": "task_20260107_212831_019_911d75d7_d1212b63",
+      "mode": "plus_5_tools",
+      "domain": "email",
+      "kind": "reply_mixup",
+      "budget": 4,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 96,
+      "task_id": "task_20251216_123530_079_ec0cb5dd_3b89aab7",
+      "mode": "plus_5_tools",
+      "domain": "hr",
+      "kind": "reply_mixup",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 97,
+      "task_id": "task_20251226_094920_495_99ba2325_627386b2",
+      "mode": "plus_5_tools",
+      "domain": "hr",
+      "kind": "reply_mixup",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 98,
+      "task_id": "task_20251226_121423_362_c4ad7a70_4be55408",
+      "mode": "plus_5_tools",
+      "domain": "hr",
+      "kind": "transient_unexecuted",
+      "budget": 2,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 99,
+      "task_id": "task_20251226_133552_038_99ba2325_71415006",
+      "mode": "plus_5_tools",
+      "domain": "hr",
+      "kind": "unknown_commit_create",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 100,
+      "task_id": "task_20251226_135729_497_c4ad7a70_788f5baf",
+      "mode": "plus_5_tools",
+      "domain": "hr",
+      "kind": "transient_unexecuted",
+      "budget": 2,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 101,
+      "task_id": "task_20260114_180423_838_00364ece_9f2ad35c",
+      "mode": "plus_5_tools",
+      "domain": "hr",
+      "kind": "transient_unexecuted",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 102,
+      "task_id": "task_20260115_043251_808_ad5a67e3_2a60bc82",
+      "mode": "plus_5_tools",
+      "domain": "hr",
+      "kind": "unknown_commit_create",
+      "budget": 2,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 103,
+      "task_id": "task_20260116_104653_444_99ba2325_320d5ca4",
+      "mode": "plus_5_tools",
+      "domain": "hr",
+      "kind": "partial_read",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 104,
+      "task_id": "task_20260116_112648_773_99ba2325_c572f123",
+      "mode": "plus_5_tools",
+      "domain": "hr",
+      "kind": "unknown_commit_create",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 105,
+      "task_id": "task_20260119_022056_842_ad5a67e3_964df197",
+      "mode": "plus_5_tools",
+      "domain": "hr",
+      "kind": "reply_mixup",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 106,
+      "task_id": "task_20251216_223804_332_df2c536d_a1d9c559",
+      "mode": "plus_5_tools",
+      "domain": "hybrid",
+      "kind": "truncated_read",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 107,
+      "task_id": "task_20251218_115158_065_1628b966_72217cb4",
+      "mode": "plus_5_tools",
+      "domain": "hybrid",
+      "kind": "truncated_read",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 108,
+      "task_id": "task_20251223_005949_519_13762b97_e08c84a3",
+      "mode": "plus_5_tools",
+      "domain": "hybrid",
+      "kind": "unknown_commit_create",
+      "budget": 2,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 109,
+      "task_id": "task_20251226_150647_118_13762b97_8da0c6a5",
+      "mode": "plus_5_tools",
+      "domain": "hybrid",
+      "kind": "reply_mixup",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 110,
+      "task_id": "task_20251226_153741_362_13762b97_efb07353",
+      "mode": "plus_5_tools",
+      "domain": "hybrid",
+      "kind": "reply_mixup",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 111,
+      "task_id": "task_20260112_125407_584_1628b966_f5dd38b6",
+      "mode": "plus_5_tools",
+      "domain": "hybrid",
+      "kind": "truncated_read",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 112,
+      "task_id": "task_20260114_174605_380_1628b966_b09f4a35",
+      "mode": "plus_5_tools",
+      "domain": "hybrid",
+      "kind": "unknown_commit",
+      "budget": 2,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 113,
+      "task_id": "task_20260116_054437_417_59bb807c_d73ca3e4",
+      "mode": "plus_5_tools",
+      "domain": "hybrid",
+      "kind": "transient_unexecuted",
+      "budget": 2,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 114,
+      "task_id": "task_20260119_162417_443_d8f93f2d_2b15bc38",
+      "mode": "plus_5_tools",
+      "domain": "hybrid",
+      "kind": "ignored_filter",
+      "budget": 2,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 115,
+      "task_id": "task_20251210_205620_593_391f1eff_ad65c160",
+      "mode": "plus_5_tools",
+      "domain": "itsm",
+      "kind": "ignored_filter",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 116,
+      "task_id": "task_20251218_082708_201_99ba2325_51726f9c",
+      "mode": "plus_5_tools",
+      "domain": "itsm",
+      "kind": "ignored_filter",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 117,
+      "task_id": "task_20251218_124419_383_66392a82_52c8290e",
+      "mode": "plus_5_tools",
+      "domain": "itsm",
+      "kind": "unknown_commit_create",
+      "budget": 2,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 118,
+      "task_id": "task_20251218_164829_676_97d7df7d_893f6b2c",
+      "mode": "plus_5_tools",
+      "domain": "itsm",
+      "kind": "unknown_commit_create",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 119,
+      "task_id": "task_20251219_130920_558_99ba2325_7f9481df",
+      "mode": "plus_5_tools",
+      "domain": "itsm",
+      "kind": "transient_unexecuted",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 120,
+      "task_id": "task_20251220_074606_220_0be70e35_6bb33392",
+      "mode": "plus_5_tools",
+      "domain": "itsm",
+      "kind": "ignored_filter",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 121,
+      "task_id": "task_20251222_084449_326_66392a82_cadddb04",
+      "mode": "plus_5_tools",
+      "domain": "itsm",
+      "kind": "reply_mixup",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 122,
+      "task_id": "task_20251223_135402_072_c5ca08eb_67009578",
+      "mode": "plus_5_tools",
+      "domain": "itsm",
+      "kind": "truncated_read",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 123,
+      "task_id": "task_20260113_182602_664_46ca2862_b6ef60ca",
+      "mode": "plus_5_tools",
+      "domain": "itsm",
+      "kind": "ignored_filter",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 124,
+      "task_id": "task_20260115_152733_296_46ca2862_55f848d3",
+      "mode": "plus_5_tools",
+      "domain": "itsm",
+      "kind": "transient_unexecuted",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 125,
+      "task_id": "task_20260117_000130_134_2aa6b0ad_a20f3a61",
+      "mode": "plus_5_tools",
+      "domain": "itsm",
+      "kind": "ignored_filter",
+      "budget": 2,
+      "base_injected_calls": 2,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 126,
+      "task_id": "task_20251204_095942_786_b5bd4eb9_636f2147",
+      "mode": "plus_5_tools",
+      "domain": "teams",
+      "kind": "reply_mixup",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 127,
+      "task_id": "task_20260105_163515_719_8e9e30d7_d86e69de",
+      "mode": "plus_5_tools",
+      "domain": "teams",
+      "kind": "unknown_commit_create",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 128,
+      "task_id": "task_20260107_174701_432_464ee3e0_16e768aa",
+      "mode": "plus_5_tools",
+      "domain": "teams",
+      "kind": "transient_unexecuted",
+      "budget": 4,
+      "base_injected_calls": 4,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 129,
+      "task_id": "task_20260108_194921_186_8e9e30d7_a087d6f8",
+      "mode": "plus_5_tools",
+      "domain": "teams",
+      "kind": "partial_read",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    },
+    {
+      "cell": 130,
+      "task_id": "task_20260109_060901_602_8e9e30d7_06581f9f",
+      "mode": "plus_5_tools",
+      "domain": "teams",
+      "kind": "reply_mixup",
+      "budget": 1,
+      "base_injected_calls": 1,
+      "kind_source": "selected_mechanism"
+    }
+  ]
+}

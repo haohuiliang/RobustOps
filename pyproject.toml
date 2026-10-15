@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "robustops"
+version = "0.1.0"
+readme = "README.md"
+license = "Apache-2.0"
+description = "Fault-aware post-training for stateful enterprise tool agents"
+requires-python = ">=3.11"
+dependencies = [
+  "httpx>=0.27,<1",
+  "jsonschema>=4.23,<5",
+  "pyarrow>=16",
+  "transformers>=4.57,!=5.6.0,<5.11",
+]
+
+[project.urls]
+Repository = "https://github.com/haohuiliang/RobustOps"
+Models = "https://huggingface.co/haohuiliang"
+Trajectories = "https://huggingface.co/datasets/haohuiliang/RobustOps-Trajectories"
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.8,<4"]
+test = [
+  "pytest>=8,<10",
+  "sqlalchemy>=2,<3",
+]
+
+[project.scripts]
+robustops-train = "robustops.cli:train_main"
+robustops-inference = "robustops.cli:inference_main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

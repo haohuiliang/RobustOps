@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "interface": "inference",
+  "pipeline": "case_inference",
+  "mode": "evaluation",
+  "cases": "data/cases/train.json",
+  "tokenizer": "models/base/Arctic-MidTool-RL-4B",
+  "output": "runs/cases/rl",
+  "backend": {
+    "kind": "local",
+    "model": "RobustOps-RL-4B-BF16",
+    "path": "models/rl",
+    "weight_dtype": "bfloat16"
+  },
+  "limits": {
+    "temperature": 0,
+    "max_turns": 50,
+    "max_context_tokens": 32768,
+    "max_generation_tokens": 2048
+  },
+  "teacher": {
+    "guidance_variant": "consistent_narration"
+  },
+  "resume": true,
+  "mcp_port_offset": 4000
+}

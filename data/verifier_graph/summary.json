@@ -1,0 +1,92 @@
+{
+  "status": "complete",
+  "prompt_status": "final",
+  "source_run": "runs/verifier_graph/train_val",
+  "coverage": {
+    "base_tasks": 582,
+    "partition_base_tasks": {
+      "train": 518,
+      "validation": 64
+    },
+    "mode_pairs": 1152,
+    "partition_mode_pairs": {
+      "train": 1025,
+      "validation": 127
+    },
+    "mode_counts": {
+      "oracle": 582,
+      "plus_5_tools": 570
+    },
+    "unique_graphs": 582,
+    "reused_graphs": 235,
+    "new_requests": 347,
+    "reordered_modes": 23,
+    "excluded_blocked_tasks": [
+      "task_20251127_070938_325_b393a327_a40b1f4e",
+      "task_20251204_115902_743_13762b97_19892db1",
+      "task_20260107_180857_873_ae7b45e2_47771a8c"
+    ],
+    "test_included": false
+  },
+  "config": {
+    "model": "deepseek-flash",
+    "thinking": "enabled",
+    "reasoning_effort": "high",
+    "temperature": null,
+    "max_tokens": 64000,
+    "request_timeout_seconds": 900,
+    "retries": 0,
+    "output_contract": "original_verifier_graph",
+    "graph_representation": "direct_dag",
+    "prompt_source": "prompts/verifier_graph.md",
+    "total_concurrency": 16,
+    "prompt_variant": "context_first_then_independent_progress",
+    "status": "final",
+    "finalized_on": "2026-10-03",
+    "acceptance": "Original full-success equivalence; original checks and equal weights retained. Partial-credit dependency tradeoffs accepted by user.",
+    "requests": 347,
+    "reused_graphs": 235,
+    "unique_graphs": 582,
+    "revision": "9eda15da2172eea0c2f3d85853bbe2007595919e",
+    "dirty": " M CURRENT.md\n M DOCS.md\n M EXPERIMENT_LOGS.md\n M MEMORY.md\n M RESEARCH.md\n M artifacts/spql_step30_review/README.md\n M artifacts/spql_step30_review/policy_gap_review.md\n M docs/FAULT_SELECTOR.md\n M docs/PROJECT_STORY.md\n M docs/RECOVERY_TEACHER_SAMPLING.md\n M docs/RL_NORMALIZATION_DECISIONS.md\n M recipes/data/recovery_fault_scope.json\n M recipes/data/recovery_teacher/sampling_plan.json\n M recipes/inference/README.md\n M scripts/ds_fault_pilot.py\n M scripts/prepare_recovery_evaluation.py\n M scripts/prepare_recovery_sft_training.py\n M scripts/prepare_recovery_teacher.py\n M scripts/prepare_recovery_validation.py\n M scripts/recovery_reward_focus.py\n M src/robustops/data/fault_candidate_prompt.py\n M src/robustops/data/fault_dataset.py\n M src/robustops/data/fault_selection.py\n M src/robustops/data/recovery_sampling.py\n M src/robustops/evaluation/fixed_fault.py\n M src/robustops/evaluation/tool_fault.py\n M src/robustops/training/recovery_credit_comparison.py\n M src/robustops/training/recovery_local_credit.py\n M src/robustops/training/recovery_rl_joint.py\n M src/robustops/training/recovery_rl_pilot.py\n M src/robustops/training/recovery_rl_preflight.py\n M tests/test_creation_fault_paths.py\n M tests/test_fault_candidates.py\n M tests/test_fault_selector_batch.py\n M tests/test_fixed_fault.py\n M tests/test_recovery_fourth_length.py\n M tests/test_recovery_local_credit.py\n M tests/test_recovery_rl_joint.py\n M tests/test_recovery_sampling.py\n D tests/test_stale_disabled.py\n M tests/test_tool_fault.py\n m verl\n?? artifacts/spql_step30_review/credit_coverage_update.json\n?? artifacts/spql_step30_review/current_rule_shadow.json\n?? artifacts/spql_step30_review/current_rule_shadow.md\n?? artifacts/spql_step30_review/ds_verifier_pilot.json\n?? artifacts/spql_step30_review/ds_verifier_pilot.md\n?? artifacts/spql_step30_review/fault_training_signal.json\n?? artifacts/spql_step30_review/temporal_credit_offline.json\n?? artifacts/spql_step30_review/temporal_credit_offline.md\n?? artifacts/spql_step30_review/training_deviation_experiments.json\n?? artifacts/spql_step30_review/training_deviation_experiments.md\n?? artifacts/spql_step30_review/verifier_overhead.json\n?? artifacts/spql_step30_review/verifier_overhead.md\n?? data/verifier_graph/\n?? prompts/\n?? recipes/data/verifier_graph/\n?? recipes/inference/verifier_graph.json\n?? scripts/analysis/\n?? scripts/build_verifier_graphs.py\n?? src/robustops/data/verifier_graph.py\n?? src/robustops/data/verifier_graph_batch.py\n?? src/robustops/prompts.py\n?? tests/test_fault_kinds.py\n",
+    "no_mcp": true,
+    "no_gpu": true,
+    "no_training": true,
+    "command": "PYTHONPATH=src python scripts/build_verifier_graphs.py --config recipes/data/verifier_graph/train_val.json --phase run",
+    "prepare_command": "PYTHONPATH=src python scripts/build_verifier_graphs.py --config recipes/data/verifier_graph/train_val.json --phase prepare --reuse-from runs/rl_pilot_analysis/ds_verifier_final_train_val/generation",
+    "python_runtime": "/root/miniconda3/envs/verl_r/bin/python",
+    "platform": "Linux-5.4.0-162-generic-x86_64-with-glibc2.35",
+    "seed": null,
+    "api_only": true,
+    "task_source_revision": "c8e538eae8a6205294f0a86675fefdc1fac408f6"
+  },
+  "new_api_attempts": 348,
+  "new_first_attempt_valid": 346,
+  "retry_attempts": 1,
+  "retained_failed_attempts": [
+    {
+      "label": "graph_0219_train_hybrid",
+      "folder": "runs/verifier_graph/train_val/generation",
+      "attempt": 1,
+      "error": "JSONDecodeError: Expecting ',' delimiter: line 1 column 741 (char 740)",
+      "http_status": null
+    }
+  ],
+  "graph_summary": {
+    "graphs": 582,
+    "nodes": 2780,
+    "edges": 828,
+    "empty_graphs": 253,
+    "boolean_vectors": 701428
+  },
+  "all_full_success_equivalent": true,
+  "original_sql_unchanged": true,
+  "mode_original_order_preserved": true,
+  "train_validation_disjoint": true,
+  "test_included": false,
+  "training_integration": true,
+  "publication_entry": "scripts/build_verifier_graphs.py",
+  "proof": "Every original node is retained and AND-gated only by original nodes in a finite DAG: all original true iff all gated true. Each unique graph has exhaustive Boolean verification; every mode has exact original-contract mapping.",
+  "training_executed": false,
+  "training_integration_evidence": "runs/verifier_graph/train_val/training_integration.json"
+}
