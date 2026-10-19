@@ -32,9 +32,9 @@ Tasks from [EnterpriseOps-Gym](https://github.com/ServiceNow/EnterpriseOps-Gym) 
 
 ## Results at a glance
 
-The teacher model is DeepSeek-V4.1-Flash. Test task success across Base → SFT → RL120, compared with the teacher model:
+The teacher model is DeepSeek-V4.1-Flash-0910. Test task success across Base → SFT → RL120, compared with the teacher model:
 
-| Evaluation set | Base | SFT | RL120 | DeepSeek-V4.1-Flash |
+| Evaluation set | Base | SFT | RL120 | DeepSeek-V4.1-Flash-0910 |
 |---|---:|---:|---:|---:|
 | Clean: all 130 items | 15/130 (11.54%) | 28/130 (21.54%, +10.00 pp) | 40/130 (30.77%, +9.23 pp) | 46/130 (35.38%) |
 | Fault: 116 common-hit items | 9/116 (7.76%) | 28/116 (24.14%, +16.38 pp) | 39/116 (33.62%, +9.48 pp) | 39/116 (33.62%) |
@@ -167,7 +167,7 @@ These mechanisms have counterparts in real services: Microsoft Graph [rejects th
 
 ### Ready-to-use teacher products
 
-These three products were prepared with assistance from DeepSeek-V4.1-Flash. Default recipes read the supplied files directly:
+These three products were prepared with assistance from DeepSeek-V4.1-Flash-0910. Default recipes read the supplied files directly:
 
 | Product | Supplied data | Use |
 |---|---|---|
@@ -203,7 +203,7 @@ The [selector prompt](prompts/fault_selector.md) follows these principles:
 
 See [fault selection](https://www.github.com/haohuiliang/RobustOps/blob/main/prompts/README.md#user-content-fault-selection) for detailed principles.
 
-[data/fault_selector/](data/fault_selector/) provides ready-to-use Train, Val and Test candidate labels, generated offline with DeepSeek-V4.1-Flash from these inputs. The scheduler and injector consume the labels; they are not added to the execution model's context as extra instructions.
+[data/fault_selector/](data/fault_selector/) provides ready-to-use Train, Val and Test candidate labels, generated offline with DeepSeek-V4.1-Flash-0910 from these inputs. The scheduler and injector consume the labels; they are not added to the execution model's context as extra instructions.
 
 ### Fault injection strategy
 
@@ -272,7 +272,7 @@ Teacher guidance follows these writing principles:
 
 See [SFT guidance](https://www.github.com/haohuiliang/RobustOps/blob/main/prompts/README.md#user-content-sft-guidance) for detailed principles. Teacher guidance supports collection and is removed from student inputs and teacher evaluation.
 
-[data/sft/](data/sft/) provides ready-to-use teacher demonstrations and supervision masks. DeepSeek-V4.1-Flash collects guided trajectories using the original task, policy and tool responses during execution. Task-success and context checks plus supervision processing determine the exported data. Extra teacher guidance is removed during export; student inputs retain the original task and actual execution history.
+[data/sft/](data/sft/) provides ready-to-use teacher demonstrations and supervision masks. DeepSeek-V4.1-Flash-0910 collects guided trajectories using the original task, policy and tool responses during execution. Task-success and context checks plus supervision processing determine the exported data. Extra teacher guidance is removed during export; student inputs retain the original task and actual execution history.
 
 For self-collection, see the [data guide](https://www.github.com/haohuiliang/RobustOps/blob/main/data/README.md#user-content-collect-sft-demonstrations).
 
@@ -380,7 +380,7 @@ The [verifier dependency graph prompt](prompts/verifier_graph.md) follows these 
 
 The program checks for cycles and verifies that full graph credit is equivalent to all checks passing. See [verifier dependency graph generation](https://www.github.com/haohuiliang/RobustOps/blob/main/prompts/README.md#user-content-verifier-dependency-graph-generation) for detailed principles.
 
-[data/verifier_graph/](data/verifier_graph/) provides ready-to-use graphs, generated offline with DeepSeek-V4.1-Flash from tasks, checks and schema. SQL, expected values and graph metadata do not enter the execution model's context.
+[data/verifier_graph/](data/verifier_graph/) provides ready-to-use graphs, generated offline with DeepSeek-V4.1-Flash-0910 from tasks, checks and schema. SQL, expected values and graph metadata do not enter the execution model's context.
 
 #### Local credit: a better trajectory can still contain unwanted actions
 

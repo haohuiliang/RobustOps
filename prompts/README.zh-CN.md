@@ -26,7 +26,7 @@
 - 可靠回执无需反复核验，仍有可执行工作时不提前结束；不强制固定工具顺序或统一重试次数。
 - 使用通用规则，不提供逐题答案、verifier 内容或隐藏故障信息；导出学生数据和运行教师评估时移除指导。
 
-[data/sft/](../data/sft/) 提供可直接使用的教师示范与监督掩码。DeepSeek-V4.1-Flash 根据原始任务、策略和执行中的工具返回，在教师指导下采集轨迹，再经任务成功、上下文验收与监督处理后导出。额外教师指导在导出时移除，学生输入保留原始任务与真实执行历史。
+[data/sft/](../data/sft/) 提供可直接使用的教师示范与监督掩码。DeepSeek-V4.1-Flash-0910 根据原始任务、策略和执行中的工具返回，在教师指导下采集轨迹，再经任务成功、上下文验收与监督处理后导出。额外教师指导在导出时移除，学生输入保留原始任务与真实执行历史。
 
 ## 故障选择
 
@@ -51,7 +51,7 @@ bash run.sh inference --config recipes/inference/fault_selector.json
 - 每个工具逐项独立检查所有故障，先写证据理由再给一致的标签；允许空标签，不按案例打补丁或为覆盖率凑标签。
 - 标签只限定候选范围。实际参数、返回、计数、历史与状态由注入器核验；verifier 只辅助理解任务，其隐藏值不作为智能体已知信息。
 
-[data/fault_selector/](../data/fault_selector/) 提供可直接使用的 Train、Val、Test 候选标签，由 DeepSeek-V4.1-Flash 根据上述输入离线辅助生成。标签供调度器和注入器使用，不作为额外提示加入执行模型上下文。
+[data/fault_selector/](../data/fault_selector/) 提供可直接使用的 Train、Val、Test 候选标签，由 DeepSeek-V4.1-Flash-0910 根据上述输入离线辅助生成。标签供调度器和注入器使用，不作为额外提示加入执行模型上下文。
 
 ## 检验依赖图生成
 
@@ -83,7 +83,7 @@ python scripts/build_verifier_graphs.py --config recipes/data/verifier_graph.jso
 
 API 密钥设置见[教师 API 配置](https://www.github.com/haohuiliang/RobustOps/blob/main/recipes/README.zh-CN.md#user-content-教师-api-配置)。
 
-[data/verifier_graph/](../data/verifier_graph/) 提供可直接使用的图，由 DeepSeek-V4.1-Flash 根据任务、检查和 schema 离线辅助生成。SQL、期望值和图元数据不进入执行模型的上下文。
+[data/verifier_graph/](../data/verifier_graph/) 提供可直接使用的图，由 DeepSeek-V4.1-Flash-0910 根据任务、检查和 schema 离线辅助生成。SQL、期望值和图元数据不进入执行模型的上下文。
 
 ## 运行案例
 

@@ -32,9 +32,9 @@ RobustOps 是一个面向企业工具调用智能体的开源大语言模型后�
 
 ## 结果概览
 
-本项目使用 DeepSeek-V4.1-Flash 作为教师模型。在固定测试集（Test）上，比较 Base → SFT → RL120 与教师模型的任务成功率：
+本项目使用 DeepSeek-V4.1-Flash-0910 作为教师模型。在固定测试集（Test）上，比较 Base → SFT → RL120 与教师模型的任务成功率：
 
-| 评估口径 | Base | SFT | RL120 | DeepSeek-V4.1-Flash |
+| 评估口径 | Base | SFT | RL120 | DeepSeek-V4.1-Flash-0910 |
 |---|---:|---:|---:|---:|
 | 无注入（`clean`）：全部 130 项 | 15/130（11.54%） | 28/130（21.54%，+10.00 pp） | 40/130（30.77%，+9.23 pp） | 46/130（35.38%） |
 | 故障（`fault`）：公共命中 116 项 | 9/116（7.76%） | 28/116（24.14%，+16.38 pp） | 39/116（33.62%，+9.48 pp） | 39/116（33.62%） |
@@ -167,7 +167,7 @@ bash backends/enterpriseops/prepare_udocker.sh all
 
 ### 可直接使用的教师产物
 
-以下三类产物均由 DeepSeek-V4.1-Flash 辅助生成，默认配置直接读取仓库中的文件：
+以下三类产物均由 DeepSeek-V4.1-Flash-0910 辅助生成，默认配置直接读取仓库中的文件：
 
 | 产物 | 提供的数据 | 用途 |
 |---|---|---|
@@ -203,7 +203,7 @@ Base 更倾向逐次调用工具，教师模型则更常在同一轮提出多条
 
 详细原则见故障选择（[Fault selection](https://www.github.com/haohuiliang/RobustOps/blob/main/prompts/README.zh-CN.md#user-content-故障选择)）。
 
-[data/fault_selector/](data/fault_selector/) 提供可直接使用的 Train、Val、Test 候选标签，由 DeepSeek-V4.1-Flash 根据上述输入离线辅助生成。标签供调度器和注入器使用，不作为额外提示加入执行模型上下文。
+[data/fault_selector/](data/fault_selector/) 提供可直接使用的 Train、Val、Test 候选标签，由 DeepSeek-V4.1-Flash-0910 根据上述输入离线辅助生成。标签供调度器和注入器使用，不作为额外提示加入执行模型上下文。
 
 ### 故障注入策略
 
@@ -272,7 +272,7 @@ SFT 为 RL 提供冷启动。SFT 把教师成功解决任务的方法与执行�
 
 详细原则见 SFT 引导（[SFT guidance](https://www.github.com/haohuiliang/RobustOps/blob/main/prompts/README.zh-CN.md#user-content-sft-引导)）。教师指导只用于辅助采集，导出学生输入和运行教师评估时均移除。
 
-[data/sft/](data/sft/) 提供可直接使用的教师示范与监督 mask。DeepSeek-V4.1-Flash 根据原始任务、策略和执行中的工具返回，在教师指导下采集轨迹，再经任务成功、上下文验收与监督处理后导出。额外教师指导在导出时移除，学生输入保留原始任务与真实执行历史。
+[data/sft/](data/sft/) 提供可直接使用的教师示范与监督 mask。DeepSeek-V4.1-Flash-0910 根据原始任务、策略和执行中的工具返回，在教师指导下采集轨迹，再经任务成功、上下文验收与监督处理后导出。额外教师指导在导出时移除，学生输入保留原始任务与真实执行历史。
 
 自行采集见数据指南（[Data guide](https://www.github.com/haohuiliang/RobustOps/blob/main/data/README.zh-CN.md#user-content-自行采集-sft-示范)）。
 
@@ -380,7 +380,7 @@ $$
 
 程序检查无环，并验证图满分与检查全部通过等价。详细原则见检验依赖图生成（[Verifier graph](https://www.github.com/haohuiliang/RobustOps/blob/main/prompts/README.zh-CN.md#user-content-检验依赖图生成)）。
 
-[data/verifier_graph/](data/verifier_graph/) 提供可直接使用的图，由 DeepSeek-V4.1-Flash 根据任务、检查和 schema 离线辅助生成。SQL、期望值和图元数据不进入执行模型的上下文。
+[data/verifier_graph/](data/verifier_graph/) 提供可直接使用的图，由 DeepSeek-V4.1-Flash-0910 根据任务、检查和 schema 离线辅助生成。SQL、期望值和图元数据不进入执行模型的上下文。
 
 #### 局部信用：较好的轨迹也有不该鼓励的动作
 

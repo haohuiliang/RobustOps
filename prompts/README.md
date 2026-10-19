@@ -28,7 +28,7 @@ More restrictive variants did not establish a stable supervision-quality gain, a
 - Avoid redundant checks after reliable receipts and premature stopping while executable work remains. Do not prescribe a fixed tool order or uniform retry count.
 - Use general rules without case-specific answers, verifier contents or hidden fault information. Remove guidance from student data and teacher evaluation.
 
-[data/sft/](../data/sft/) provides ready-to-use teacher demonstrations and supervision masks. DeepSeek-V4.1-Flash collects guided trajectories using the original task, policy and tool responses during execution. Task-success and context checks plus supervision processing determine the exported data. Extra teacher guidance is removed during export; student inputs retain the original task and actual execution history.
+[data/sft/](../data/sft/) provides ready-to-use teacher demonstrations and supervision masks. DeepSeek-V4.1-Flash-0910 collects guided trajectories using the original task, policy and tool responses during execution. Task-success and context checks plus supervision processing determine the exported data. Extra teacher guidance is removed during export; student inputs retain the original task and actual execution history.
 
 ## Fault selection
 
@@ -53,7 +53,7 @@ bash run.sh inference --config recipes/inference/fault_selector.json
 - Check every fault independently for each tool, writing evidence before consistent labels. Allow empty labels without task-specific patches or coverage quotas.
 - Labels only define candidates. The injector verifies actual arguments, returns, counts, history and state. Task verifiers aid task interpretation; hidden values are not agent knowledge.
 
-[data/fault_selector/](../data/fault_selector/) provides ready-to-use Train, Val and Test candidate labels, generated offline with DeepSeek-V4.1-Flash from these inputs. The scheduler and injector consume the labels; they are not added to the execution model's context as extra instructions.
+[data/fault_selector/](../data/fault_selector/) provides ready-to-use Train, Val and Test candidate labels, generated offline with DeepSeek-V4.1-Flash-0910 from these inputs. The scheduler and injector consume the labels; they are not added to the execution model's context as extra instructions.
 
 ## Verifier dependency graph generation
 
@@ -85,7 +85,7 @@ Generation freezes the prompt and request/response records in its run directory.
 
 See [teacher API configuration](https://www.github.com/haohuiliang/RobustOps/blob/main/recipes/README.md#user-content-teacher-api-configuration) for API key setup.
 
-[data/verifier_graph/](../data/verifier_graph/) provides ready-to-use graphs, generated offline with DeepSeek-V4.1-Flash from tasks, checks and schema. SQL, expected values and graph metadata do not enter the execution model's context.
+[data/verifier_graph/](../data/verifier_graph/) provides ready-to-use graphs, generated offline with DeepSeek-V4.1-Flash-0910 from tasks, checks and schema. SQL, expected values and graph metadata do not enter the execution model's context.
 
 ## Run a case
 
