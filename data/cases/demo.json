@@ -1,0 +1,424 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "case_id": "teams_channels",
+      "title": "Organize Teams channels",
+      "task_id": "task_20251126_054150_897_7ebc1127_60097647",
+      "domain": "teams",
+      "mode": "oracle",
+      "partition": "test",
+      "seed": 20260830,
+      "selection": {
+        "tools": [
+          {
+            "tool": "list_teams",
+            "role": "read",
+            "reason": "Used to resolve the team ID for 'TechCorp Solutions Team' before channel operations; a legitimate prerequisite lookup. Returns a collection with @odata.count support via _count, but the observed shape shows only id in value array and no count field in the observed response, so partial_read count evidence is not established.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "reply_mixup"
+            ]
+          },
+          {
+            "tool": "list_channels",
+            "role": "read",
+            "reason": "Used to check whether 'Engineering Initiatives Hub' already exists and to find the 'External Partners Hub' channel ID for archiving. Observed shape includes @odata.count (number) alongside the value array, giving native count evidence for partial_read.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "partial_read",
+              "ignored_filter",
+              "reply_mixup"
+            ]
+          },
+          {
+            "tool": "create_channel",
+            "role": "write",
+            "reason": "Creates the new 'Engineering Initiatives Hub' channel under the resolved team. Creation may commit while the generated channel id/receipt is lost; list_channels can rediscover the created channel by its known displayName and teamId scope.",
+            "recovery_tools": [
+              "list_channels"
+            ],
+            "replay_basis": "",
+            "faults": [
+              "transient_unexecuted",
+              "unknown_commit_create"
+            ]
+          },
+          {
+            "tool": "archive_channel",
+            "role": "write",
+            "reason": "Archives the existing 'External Partners Hub' channel. This is an existing-resource write; list_channels can read back the channel and its isArchived state to verify the complete intended effect.",
+            "recovery_tools": [
+              "list_channels"
+            ],
+            "replay_basis": "",
+            "faults": [
+              "transient_unexecuted",
+              "unknown_commit"
+            ]
+          }
+        ]
+      },
+      "conditions": [
+        "clean"
+      ],
+      "initial_state": "seeded_task",
+      "reference_cell": 61
+    },
+    {
+      "case_id": "drive_access",
+      "title": "Approve document access",
+      "task_id": "task_20251126_122651_325_be6c9105_1864c322",
+      "domain": "drive",
+      "mode": "oracle",
+      "partition": "test",
+      "seed": 20260830,
+      "selection": {
+        "tools": [
+          {
+            "tool": "update_files",
+            "role": "write",
+            "reason": "Task requires updating the file description and custom properties (partnership metadata) on the existing 'Technical Spec.pdf'; patch semantics with known field values. Observed response returns the updated file object including description and properties, but properties observed as null in the sample shape, so readback of custom metadata via this tool is not guaranteed.",
+            "recovery_tools": [],
+            "replay_basis": "Known-value replacement of description and properties is replayable: the request supplies the exact intended description string and the exact key-value metadata pairs, and patch semantics replace those fields with the same known values, so repeating the call yields the same intended state without additional side effects.",
+            "faults": [
+              "transient_unexecuted",
+              "unknown_commit"
+            ]
+          },
+          {
+            "tool": "create_permission",
+            "role": "write",
+            "reason": "Task requires granting viewing privileges to external.user@partner.com and commenting capabilities to consultant@external.com on the file. Creating permissions is a non-idempotent write; a lost acknowledgement could leave the permission committed or not. No exposed pure read lists permissions on the file (update_files returns permissions:null, list_files returns file summaries), so the same-resource permission state cannot be verified through an exposed read.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "transient_unexecuted"
+            ]
+          },
+          {
+            "tool": "list_files",
+            "role": "read",
+            "reason": "Used to look up the file ID for 'Technical Spec.pdf' by name query. Pure collection read; observed shape has files array and nextPageToken but no numeric total/count field, so partial_read is not supported.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "reply_mixup"
+            ]
+          },
+          {
+            "tool": "list_comments",
+            "role": "read",
+            "reason": "Used to verify the created comment and to check existing comments on the file. Pure collection read; observed shape has comments array and nextPageToken but no numeric total/count field, so partial_read is not supported.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "reply_mixup"
+            ]
+          },
+          {
+            "tool": "resolve_accessproposals",
+            "role": "write",
+            "reason": "Task requires granting the outstanding access request from external.user@partner.com with viewing privileges, which is done by accepting the access proposal with role reader. This is a state-changing resolution of an existing proposal; a lost acknowledgement could leave the proposal resolved or not. list_accessproposals can re-read the proposal status to verify the resolution.",
+            "recovery_tools": [
+              "list_accessproposals"
+            ],
+            "replay_basis": "",
+            "faults": [
+              "transient_unexecuted",
+              "unknown_commit"
+            ]
+          },
+          {
+            "tool": "create_comments",
+            "role": "write",
+            "reason": "Task requires adding a comment with the specified partnership review text. Creating a comment is a non-idempotent write; a lost acknowledgement could leave the comment committed or not. list_comments can re-read the file's comments to verify the comment content and author.",
+            "recovery_tools": [
+              "list_comments"
+            ],
+            "replay_basis": "",
+            "faults": [
+              "transient_unexecuted",
+              "unknown_commit_create"
+            ]
+          },
+          {
+            "tool": "list_accessproposals",
+            "role": "read",
+            "reason": "Used to find the outstanding access proposal from external.user@partner.com and to verify its resolution status after resolve_accessproposals. Pure collection read; observed shape not supplied with a numeric total/count field, so partial_read is not supported.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "reply_mixup"
+            ]
+          }
+        ]
+      },
+      "conditions": [
+        "clean"
+      ],
+      "initial_state": "seeded_task",
+      "reference_cell": 18
+    },
+    {
+      "case_id": "itsm_reply",
+      "title": "Repair device cost and open an incident",
+      "task_id": "task_20251218_124419_383_66392a82_52c8290e",
+      "domain": "itsm",
+      "mode": "oracle",
+      "partition": "test",
+      "seed": 20260830,
+      "selection": {
+        "tools": [
+          {
+            "tool": "create_incident",
+            "role": "write",
+            "reason": "Task explicitly requires opening a high-impact, high-urgency incident describing the freezing/dropped-call issue; this is the exposed creation operation. It returns a generated incident_id/number receipt, so creation receipt loss is plausible. Recovery discovery is possible via list_users/get_user for caller identity and find_configuration_item_by_serial_number for the CI, but no exposed incident search/list exists to discover the created incident by its original properties, so unknown_commit_create is not supported. transient_unexecuted applies because it is a task-relevant write.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "transient_unexecuted"
+            ]
+          },
+          {
+            "tool": "get_user",
+            "role": "read",
+            "reason": "Used to resolve/verify the caller (Elena Petrov) and confirm user identity/active status before creating the incident. Pure read of a single user object; no collection count evidence, so partial_read is unsupported. It is a plausible same-route read that can supply history for reply_mixup, and its serialized response can be truncated.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "reply_mixup"
+            ]
+          },
+          {
+            "tool": "update_configuration_item",
+            "role": "write",
+            "reason": "Task requires correcting the wrong cost to £4,000 on the existing CI. This is an existing-resource write with a known replacement value (cost=4000), so unknown_commit is plausible and exact replay of the known-value replacement is safe. The CI can also be read back via find_configuration_item_by_serial_number to verify the complete intended effect. transient_unexecuted applies as a task-relevant write.",
+            "recovery_tools": [
+              "find_configuration_item_by_serial_number"
+            ],
+            "replay_basis": "Known-value replacement of cost=4000 on the identified CI; exact replay is safe because the exposed update is an idempotent field replacement and the CI can be read back by serial number.",
+            "faults": [
+              "transient_unexecuted",
+              "unknown_commit"
+            ]
+          },
+          {
+            "tool": "find_configuration_item_by_serial_number",
+            "role": "read",
+            "reason": "Used to locate the CI by serial number VC-HUB-LON-014 and to verify the corrected cost after update. Pure single-object read; no collection count evidence, so partial_read is unsupported. It is a plausible same-route read that can supply history for reply_mixup, and its serialized response can be truncated.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "reply_mixup"
+            ]
+          },
+          {
+            "tool": "list_users",
+            "role": "read",
+            "reason": "Used to find/verify Elena Petrov as the caller/contact for the device. The observed response includes a numeric total_count, so partial_read is supported for this counted collection. It is also a pure read whose serialized response can be truncated, and a plausible same-route read that can supply history for reply_mixup.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "partial_read",
+              "reply_mixup"
+            ]
+          }
+        ]
+      },
+      "conditions": [
+        "fault"
+      ],
+      "initial_state": "seeded_task",
+      "reference_cell": 52,
+      "fault": {
+        "kind": "reply_mixup",
+        "budget": 1,
+        "binding": "eligible_calls",
+        "point_policy": "earliest_strictly_eligible"
+      }
+    },
+    {
+      "case_id": "calendar_retry",
+      "title": "Create a calendar after rejected writes",
+      "task_id": "task_20251202_171004_871_0a0bf089_489e2b2d",
+      "domain": "calendar",
+      "mode": "oracle",
+      "partition": "test",
+      "seed": 20260830,
+      "selection": {
+        "tools": [
+          {
+            "tool": "create_calendar",
+            "role": "write",
+            "reason": "Creates a new secondary calendar; task explicitly requires creating 'Orion Strategy Tracker'. Response returns generated id needed for subsequent steps.",
+            "recovery_tools": [],
+            "replay_basis": "Creation receipt loss: no exposed list/search tool for calendars is available to discover the created calendar by summary/timeZone, and no documented idempotency behavior is supplied, so unknown_commit_create is unsupported.",
+            "faults": [
+              "transient_unexecuted"
+            ]
+          },
+          {
+            "tool": "create_event",
+            "role": "write",
+            "reason": "Creates the requested 'Orion Launch Briefing' event with attendees on the new calendar; task explicitly requires scheduling this event.",
+            "recovery_tools": [],
+            "replay_basis": "Creation receipt loss: no exposed event getter/list tool is available to discover the created event by summary/time, and no documented idempotency behavior is supplied, so unknown_commit_create is unsupported.",
+            "faults": [
+              "transient_unexecuted"
+            ]
+          },
+          {
+            "tool": "add_calendar_to_list",
+            "role": "write",
+            "reason": "Adds the created calendar to the user's calendar list with colorId 7; task explicitly requires this step.",
+            "recovery_tools": [],
+            "replay_basis": "No exposed read tool returns the calendar list entry to verify colorId after a lost acknowledgement, and no documented idempotency behavior is supplied, so unknown_commit is unsupported.",
+            "faults": [
+              "transient_unexecuted"
+            ]
+          },
+          {
+            "tool": "patch_calendar",
+            "role": "write",
+            "reason": "Partially updates calendar metadata; task requires setting location to 'Manhattan Innovation Center' on the created calendar.",
+            "recovery_tools": [],
+            "replay_basis": "No exposed calendar getter is available to read back the location after a lost acknowledgement, and no documented idempotency behavior is supplied, so unknown_commit is unsupported.",
+            "faults": [
+              "transient_unexecuted"
+            ]
+          }
+        ]
+      },
+      "conditions": [
+        "fault"
+      ],
+      "initial_state": "seeded_task",
+      "reference_cell": 2,
+      "fault": {
+        "kind": "transient_unexecuted",
+        "budget": 4,
+        "binding": "eligible_calls",
+        "point_policy": "earliest_strictly_eligible"
+      }
+    },
+    {
+      "case_id": "hr_filter",
+      "title": "Reassign ready HR cases with an ignored filter",
+      "task_id": "task_20251226_094920_495_99ba2325_627386b2",
+      "domain": "hr",
+      "mode": "oracle",
+      "partition": "test",
+      "seed": 20260830,
+      "selection": {
+        "tools": [
+          {
+            "tool": "list_group_members",
+            "role": "read",
+            "reason": "Pure read of group membership records; task-relevant to verify Susan Adams' membership in Global Service Desk (a prerequisite for assigning her as owner) and to inspect Field Ops - North membership. Returns a counted collection (count field observed).",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "partial_read",
+              "reply_mixup"
+            ]
+          },
+          {
+            "tool": "find_group_by_name",
+            "role": "read",
+            "reason": "Pure read resolving group names to IDs; needed to obtain Global Service Desk and Field Ops - North group IDs for the reassignment workflow.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "reply_mixup"
+            ]
+          },
+          {
+            "tool": "get_user_using_name",
+            "role": "read",
+            "reason": "Pure read resolving Susan Adams to a user_id; required to check her active status/role and to set her as case owner.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "reply_mixup"
+            ]
+          },
+          {
+            "tool": "list_hr_cases",
+            "role": "read",
+            "reason": "Pure collection read used to find critical-priority ready cases in Field Ops - North. Observed shape includes total_count and returned_count numeric fields, supporting partial_read detection.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "partial_read",
+              "ignored_filter",
+              "reply_mixup"
+            ]
+          },
+          {
+            "tool": "get_users_hr_profile",
+            "role": "read",
+            "reason": "Pure read of Susan Adams' HR profile to confirm employment type (full-time) and role alignment.",
+            "recovery_tools": [],
+            "replay_basis": "",
+            "faults": [
+              "truncated_read",
+              "reply_mixup"
+            ]
+          },
+          {
+            "tool": "update_hr_case",
+            "role": "write",
+            "reason": "Existing-resource write updating case assignment_group and assigned_to for the critical ready cases. Returns the updated case with expanded relationships, enabling verification of complete intended effects via list_hr_cases.",
+            "recovery_tools": [
+              "list_hr_cases"
+            ],
+            "replay_basis": "",
+            "faults": [
+              "transient_unexecuted",
+              "unknown_commit"
+            ]
+          },
+          {
+            "tool": "add_new_group_member",
+            "role": "write",
+            "reason": "Creates a new group membership record (Susan Adams into Global Service Desk). Creation receipt loss is recoverable by listing group members to discover the created membership by original group_id/user_id.",
+            "recovery_tools": [
+              "list_group_members"
+            ],
+            "replay_basis": "",
+            "faults": [
+              "transient_unexecuted",
+              "unknown_commit_create"
+            ]
+          }
+        ]
+      },
+      "conditions": [
+        "fault"
+      ],
+      "initial_state": "seeded_task",
+      "reference_cell": 32,
+      "fault": {
+        "kind": "ignored_filter",
+        "budget": 1,
+        "binding": "eligible_calls",
+        "point_policy": "earliest_strictly_eligible"
+      }
+    }
+  ]
+}

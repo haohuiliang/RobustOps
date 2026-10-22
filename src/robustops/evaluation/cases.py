@@ -68,6 +68,12 @@ def build_plan(root, recipe):
     cases=read(root/recipe['cases'])['cases']
     if not cases or len({c['case_id'] for c in cases})!=len(cases):
         raise LaunchConfigError('Case IDs must be nonempty and unique')
+    if recipe.get('case_ids'):
+        requested=set(recipe['case_ids'])
+        unknown=requested-{c['case_id'] for c in cases}
+        if unknown:
+            raise LaunchConfigError(f'Unknown case IDs: {sorted(unknown)}')
+        cases=[c for c in cases if c['case_id'] in requested]
     manifest={r['task_id']:r for r in map(json.loads,(root/'data/task_sets/enterpriseops.jsonl').read_text().splitlines())}
     pool_path=recipe.get('teacher',{}).get('pool','data/task_sets/sft_collection_pool.json')
     if recipe['mode']=='teacher_data':

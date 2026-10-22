@@ -179,6 +179,8 @@ bash backends/enterpriseops/prepare_udocker.sh all
 
 ## 4. 运行评估与准备教师数据
 
+快速对比 Base 与 RL 的执行过程，见 [examples/README.zh-CN.md](examples/README.zh-CN.md)。
+
 ### 统一执行方式
 
 Base 更倾向逐次调用工具，教师模型则更常在同一轮提出多条调用。为使教师示范和评估沿用 Base 的逐步交互方式，各模型均保留单次工具调用（`plan_preserving`）：每轮执行第一条工具调用，再根据真实返回重新推理。

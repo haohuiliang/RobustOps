@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "interface": "inference",
+  "pipeline": "case_inference",
+  "mode": "evaluation",
+  "cases": "data/cases/demo.json",
+  "tokenizer": "models/base/Arctic-MidTool-RL-4B",
+  "output": "runs/demo/base",
+  "backend": {
+    "kind": "local",
+    "model": "Arctic-MidTool-RL-4B",
+    "path": "models/base/Arctic-MidTool-RL-4B",
+    "weight_dtype": "bfloat16"
+  },
+  "limits": {
+    "temperature": 0,
+    "max_turns": 50,
+    "max_context_tokens": 32768,
+    "max_generation_tokens": 2048
+  },
+  "resume": true,
+  "mcp_port_offset": 4000
+}

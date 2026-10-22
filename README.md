@@ -179,6 +179,8 @@ To generate or collect your own, see [fault-selector scans](https://www.github.c
 
 ## 4. Run evaluation and prepare teacher data
 
+For a quick Base / RL comparison, see the [five inference examples](examples/README.md).
+
 ### Shared execution protocol
 
 Base tends to call tools one at a time, while the teacher more often proposes several calls in the same turn. To align teacher demonstrations and evaluation with Base's stepwise interaction, all models retain one tool call per turn (`plan_preserving`): execute the first proposed call, then infer the next action from its actual result.
